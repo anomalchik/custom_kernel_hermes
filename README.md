@@ -1,2 +1,4 @@
 # custom_kernel_hermes
-WORK LCM Driver
+Thx NeKit1000
+1.WORK LCM Driver
+2.ADD touch
