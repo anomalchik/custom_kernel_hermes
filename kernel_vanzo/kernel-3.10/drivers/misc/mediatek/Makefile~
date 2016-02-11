@@ -259,7 +259,7 @@ obj-y	+= selinux_warning/
 # MTK PASR SW flow
 obj-$(CONFIG_MTKPASR)	+= mtkpasr/
 
-#obj-$(CONFIG_MTK_TC1_FEATURE)	+= tc1_interface/
+obj-$(CONFIG_MTK_TC1_FEATURE)	+= tc1_interface/
 
 obj-$(CONFIG_MTK_SWITCH_TX_POWER) += sw_tx_power/
 
