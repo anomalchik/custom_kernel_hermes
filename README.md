@@ -12,4 +12,3 @@ WORK ROM and Recovery
 
 5.BT
 
-6.SDcard
