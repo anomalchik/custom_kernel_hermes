@@ -1,6 +1,6 @@
 # custom_kernel_hermes
 
-It starts only recovery
+WORK ROM and Recovery
 
 1.WORK LCM Driver
 
@@ -8,3 +8,8 @@ It starts only recovery
 
 3.Fix Sdcard
 
+4.Wi-fi
+
+5.BT
+
+6.SDcard
