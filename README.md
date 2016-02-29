@@ -12,3 +12,10 @@ WORK ROM and Recovery
 
 5.BT
 
+6.alps
+
+7.accel
+
+8.mag
+
+9.giro

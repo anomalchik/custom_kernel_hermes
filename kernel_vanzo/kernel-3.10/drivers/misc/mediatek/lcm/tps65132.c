@@ -2,6 +2,7 @@
 #include <linux/string.h>
 #endif
 #include "lcm_drv.h"
+#include "tps65132_i2c.h"
 
 #ifdef BUILD_LK
 	#include <platform/mt_gpio.h>

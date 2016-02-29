@@ -515,6 +515,7 @@ static int acc_input_init(struct acc_context *cxt)
 	input_set_capability(dev, EV_ABS, EVENT_TYPE_ACCEL_Y);
 	input_set_capability(dev, EV_ABS, EVENT_TYPE_ACCEL_Z);
 	input_set_capability(dev, EV_ABS, EVENT_TYPE_ACCEL_STATUS);
+	input_set_capability(dev, EV_REL, EVENT_TYPE_ACCEL_UPDATE);
 
 	input_set_abs_params(dev, EVENT_TYPE_ACCEL_X, ACC_VALUE_MIN, ACC_VALUE_MAX, 0, 0);
 	input_set_abs_params(dev, EVENT_TYPE_ACCEL_Y, ACC_VALUE_MIN, ACC_VALUE_MAX, 0, 0);
@@ -611,6 +612,7 @@ int acc_data_report(int x, int y, int z, int status)
 	input_report_abs(cxt->idev, EVENT_TYPE_ACCEL_Y, y);
 	input_report_abs(cxt->idev, EVENT_TYPE_ACCEL_Z, z);
 	input_report_abs(cxt->idev, EVENT_TYPE_ACCEL_STATUS, status);
+	input_report_rel(cxt->idev, EVENT_TYPE_ACCEL_UPDATE, 1);
 	input_sync(cxt->idev);
 	return err;
 }
@@ -646,7 +648,7 @@ static int acc_probe(struct platform_device *pdev)
 		goto exit_alloc_input_dev_failed;
 	}
 
-#if defined(CONFIG_HAS_EARLYSUSPEND)
+#if defined(CONFIG_HAS_EARLYSUSPEND) && defined(CONFIG_EARLYSUSPEND)
 	atomic_set(&(acc_context_obj->early_suspend), 0);
 	acc_context_obj->early_drv.level = EARLY_SUSPEND_LEVEL_STOP_DRAWING - 1,
 	    acc_context_obj->early_drv.suspend = acc_early_suspend,

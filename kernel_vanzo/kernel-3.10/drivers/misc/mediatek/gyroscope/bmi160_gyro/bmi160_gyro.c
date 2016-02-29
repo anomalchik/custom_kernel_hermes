@@ -1181,7 +1181,7 @@ static ssize_t store_trace_value(struct device_driver *ddri,
 	if (1 == sscanf(buf, "0x%x", &trace))
 		atomic_set(&obj->trace, trace);
 	else
-		GYRO_ERR("invalid content: '%s', length = %d\n", buf, count);
+		//GYRO_ERR("invalid content: '%s', length = %d\n", buf, count);
 
 	return count;
 }

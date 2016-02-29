@@ -120,6 +120,10 @@ ifeq ($(CONFIG_MTK_FT5406_82),y)
 obj-y	+=  ft5406_82/
 endif
 
+ifeq ($(CONFIG_MTK_FT5436),y)
+obj-y	+=  ft5436/
+endif
+
 ifeq ($(CONFIG_MTK_FT5206),y)
 obj-y	+=  ft5206/
 endif

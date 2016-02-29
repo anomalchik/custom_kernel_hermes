@@ -31,6 +31,7 @@
 #define EVENT_TYPE_ACCEL_X          		ABS_X
 #define EVENT_TYPE_ACCEL_Y          		ABS_Y
 #define EVENT_TYPE_ACCEL_Z          		ABS_Z
+#define EVENT_TYPE_ACCEL_UPDATE              REL_X
 #define EVENT_TYPE_ACCEL_STATUS     ABS_WHEEL
 #define EVENT_TYPE_ACCEL_DIV        ABS_GAS
 

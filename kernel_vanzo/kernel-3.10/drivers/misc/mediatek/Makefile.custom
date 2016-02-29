@@ -88,7 +88,8 @@ ccflags-y += -I$(MTK_CUSTOM_PATH)/accdet/$(MTK_PLATFORM) \
              -I$(MTK_CUSTOM_PATH)/sensorHub/inc \
              -I$(MTK_CUSTOM_PATH)/smi/$(MTK_PLATFORM) \
              -I$(MTK_CUSTOM_PATH)/ssw/inc \
-             -I$(MTK_CUSTOM_PATH)/sync \
+             -I$(MTK_CUSTOM_PATH)/jpeg/mt6795 \
+	     -I$(MTK_CUSTOM_PATH)/sync \
              -I$(MTK_CUSTOM_PATH)/uart/$(MTK_PLATFORM) \
              -I$(MTK_CUSTOM_PATH)/vibrator/$(MTK_PLATFORM) \
              -I$(MTK_CUSTOM_PATH)/video/$(MTK_PLATFORM) \
