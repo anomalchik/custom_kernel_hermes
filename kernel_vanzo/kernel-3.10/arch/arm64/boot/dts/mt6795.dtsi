@@ -151,15 +151,7 @@
 			alignment = <0 0x2000000>;
 			alloc-ranges = <0 0x40000000 0 0xC0000000>;
 		};
-	/*
-		mt6795-tmp-reserved-memory {
-			compatible = "mt6795-tmp-reserved-memory";
-			reg = <0 0x7c000000 0 0x4000000>;
-			no-map;
-		};
-	*/
 	};
-
 	
 	gic: interrupt-controller@0x10220000 {
 		compatible = "mtk,mt-gic";
@@ -501,11 +493,11 @@
 						<0 144 0x8>;
 		};
 
-                CQDMA@0x10212c00 {
-                        compatible = "mediatek,CQDMA";
-                        reg = <0x10212c00 0x1000>;
-                        interrupts = <0 143 0x8>;
-                        nr_channel = <1>;
+        CQDMA@0x10212c00 {
+            compatible = "mediatek,CQDMA";
+            reg = <0x10212c00 0x1000>;
+            interrupts = <0 143 0x8>;
+            nr_channel = <1>;
                 };
 
 		DRAMC1_NAO@0x10213000 {
@@ -699,8 +691,7 @@
 			interrupts = <0 87 0x8>;
 			def_speed = <130>;
 		};
-		
-/*	
+			
 		I2C4@0x11011000 {
 			compatible = "mediatek,I2C4";
 			cell-index = <4>;
@@ -708,7 +699,6 @@
 			interrupts = <0 88 0x8>;
 			def_speed = <140>;
 		};
-*/
 
 		SPI1@0x1100A000 {
 			compatible = "mediatek,SPI1";
@@ -1521,23 +1511,7 @@
 		orientation@0 {
 			compatible = "mediatek,orientation";
 	};
-/* Vanzo:wuzhiyong on: Fri, 06 Mar 2015 21:25:43 +0800
- * add hall devicetree remoteir
- */
-        hall_driver@0 {
-            compatible = "mediatek,hall_driver";
-       };
-        remoteplatformdev@0 {
-            compatible = "mediatek,remoteplatformdev";
-       };
-//End of vanzo:wuzhiyong
-/* Vanzo:dingge on: Thu, 02 Apr 2015 15:04:57 +0800
- * add breathlight
- */
-        breathlight@0 {
-            compatible = "mediatek,breathlight";
-       };
-// End of Vanzo: dingge
 
 /* sensor end */
 };
+

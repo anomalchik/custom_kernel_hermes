@@ -1007,187 +1007,24 @@ config MTK_AUDIO_EXTCODEC_SUPPORT
 	  If you say Y, enable MTK_AUDIO_EXTCODEC_SUPPORT driver.
 
 # ALSPS sensor
-config MTK_CM36283
-	bool "CM36283 for MediaTek package"
-	default n
-
-config MTK_GP2AP002S00F
-	bool "GP2AP002S00F for MediaTek package"
-	default n
-
-config MTK_APM_16D
-	bool "APM_16D for MediaTek package"
-	default n
-
-config MTK_EPL2182
-	bool "EPL2182 for MediaTek package"
-	default n
-
-config MTK_EPL2182_NEW
-	bool "EPL2182 for MediaTek package"
-	default n
-
-config MTK_STK3X1X
-	bool "STK3X1X for MediaTek package"
-	default n
-
-config MTK_STK3X1X_NEW
-	bool "STK3X1X for MediaTek package"
-	default n
-config MTK_CM36652_NEW
-	bool "cm36652 for MediaTek package"
-	default n
-
-config MTK_APDS9930
-	bool "APDS9930 for MediaTek package"
-	default n
-
-config MTK_CM3232_NEW
-	bool "CM3232 for MediaTek package"
-	default n
-
-config MTK_APDS9930_NEW
-	bool "APDS9930_NEW for MediaTek package"
+config MTK_LTR559
+	bool "LTR559 for MediaTek package"
 	default n
 
 # Accelerometer sensor
-config MTK_KXTJ2_1009
-	bool "KXTJ2 1009 for MediaTek package"
+config MTK_BMI160_ACC
+	bool "MTK_BMI160_ACC for MediaTek package"
 	default n
-
-config MTK_KXTIK1004
-	bool "KXTIK1004 for MediaTek package"
-	default n
-
-config MTK_K2DH
-	bool "K2DH for MediaTek package"
-	default n
-
-config MTK_BMA222E
-	bool "BMA222E for MediaTek package"
-	default n
-
-config MTK_BMA222E_NEW
-	bool "BMA222E for MediaTek package"
-	default n
-
-config MTK_MC3410_NEW
-	bool "MC3410 for MediaTek package"
-	default n
-config MTK_MPU6050G_NEW
-	bool "MPU6050G for MediaTek package"
-	default n
-
-config MTK_BMA250
-	bool "Accelerometer BMA250 for MediaTek package"
-	default n
-
-config MTK_MPU6515A
-        bool "MPU6515A for MediaTek package"
-        default n
-
-config MTK_MPU60X0
-        bool "MPU60X0 for MediaTek package"
-        default n
-
-config MTK_KXTJ2_1009_NEW
-        bool "KXTJ2_1009 for MediaTek package"
-        default n
-
-config MTK_MC3XXX_AUTO
-        bool "MTK_MC3XXX_AUTO for MediaTek package"
-        default n
-        
-config MTK_BMA250E
-        bool "MTK_BMA250E for MediaTek package"
-        default n
 
 # Gyro sensor
-config MTK_MPU3050C
-	bool "MPU3050C for MediaTek package"
+config MTK_BMI160_GYRO
+	bool "BMI160_GYRO for MediaTek package"
 	default n
 
-config MTK_MPU3000
-	bool "MPU3000 for MediaTek package"
-	default n
-
-config MTK_MPU3000_NEW
-	bool "MPU3000 for MediaTek package"
-	default n
-config MTK_MPU6050GY_NEW
-	bool "MPU6050GY for MediaTek package"
-	default n
-
-config MTK_ITG1010_NEW
-        bool "ITG1010 for MediaTek package"
-        default n
-config MTK_MPU6515G
-        bool "MPU6515G for MediaTek package"
-        default n
-
-config MTK_MPU3050C_NEW
-        bool "MPU3050C for MediaTek package"
-        default n
-
-config MTK_MPU6050C
-        bool "MPU6050C for MediaTek package"
-        default n
-        
 # Magnet sensor
-config MTK_AKM8963
-	bool "AKM8963 for MediaTek package"
-	default n
 
-config MTK_AKM8963_NEW
-	bool "AKM8963 for MediaTek package"
-	default n
-	
-config MTK_AKM09911
-	bool "AKM09911 for MediaTek package"
-	default n
-	
-config MTK_AKM09911_NEW
-	bool "AKM09911 for MediaTek package"
-	default n
-
-config MTK_HSCDTD006
-	bool "HSCDTD006 for MediaTek package"
-	default n
-
-config MTK_BMM050
-	bool "MTK_BMM050 for MediaTek package"
-	default n
-
-config MTK_BMM050_NEW
-	bool "MTK_BMM050_NEW for MediaTek package"
-	default n
-
-config MTK_BMM050
-	bool "MTK_BMM050 for MediaTek package"
-	default n
-
-config MTK_MMC3416X
-	bool "MTK_MMC3416X for MediaTek package"
-	default n
-
-config MTK_BMA250
-	bool "MTK_BMA250 for MediaTek package"
-	default n
-
-config MTK_BMA050
-	bool "MTK_BMA050 for MediaTek package"
-	default n
-
-config MTK_BMA050_NEW
-	bool "MTK_BMA050_NEW for MediaTek package"
-	default n
-
-config MTK_S2200
-	bool "S2200 for Mediatek package"
-	default n
-
-config MTK_YAS532
-        bool "YAS532 for Mediatek package"
+config MTK_YAS537
+        bool "YAS537 for Mediatek package"
         default n
 
 # Barometer sensor
@@ -1818,3 +1655,8 @@ config MTK_EXTMEM
 	   bool "mtk external memory"
 	   depends on MTK_INTERNAL
 	   default n
+#--------------------------RGK driver cfg add (start)------------------------------	  
+config RGK_DRIVER_FG_CW2015
+        bool "RGK for cw2015 charger ic"
+        default n
+#--------------------------RGK driver cfg add (end)------------------------------

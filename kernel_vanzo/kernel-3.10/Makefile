@@ -376,14 +376,12 @@ LINUXINCLUDE    := \
 
 KBUILD_CPPFLAGS := -D__KERNEL__
 
-# Vanzo:wangfei on: Tue, 06 Jan 2015 16:23:16 +0800
-# here remove these cflags check for compile problem
-# delete -Werror-implicit-function-declaration -Werror=format -Werror=int-to-pointer-cast -Werror=pointer-to-int-cast
- KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
-           -fno-strict-aliasing -fno-common \
-           -Wno-format-security \
-          -fno-delete-null-pointer-checks 
-# End of Vanzo:wangfei
+KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
+		   -fno-strict-aliasing -fno-common \
+		   -Werror-implicit-function-declaration \
+		   -Wno-format-security \
+		   -fno-delete-null-pointer-checks \
+		   -Werror=format -Werror=int-to-pointer-cast -Werror=pointer-to-int-cast
 
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=

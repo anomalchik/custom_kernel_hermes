@@ -43,6 +43,7 @@ else
 	else 
 	    ifeq ($(CONFIG_ARCH_MT6752),y)
 	        obj-$(CONFIG_MTK_LENS_DUMMYLENS_SUPPORT) += mt6752/dummy_lens/
+	        obj-$(CONFIG_MTK_LENS_AD5820AF_SUPPORT) += mt6752/ad5820af/
 	        obj-$(CONFIG_MTK_LENS_AD5823AF_SUPPORT) += mt6752/ad5823/
 	        obj-$(CONFIG_MTK_LENS_AD5823AF_SUPPORT) += mt6752/ad5823af/
 	        obj-$(CONFIG_MTK_LENS_BU6424AF_SUPPORT) += mt6752/bu6424af/
@@ -59,6 +60,21 @@ else
 	
 	    else
 	        obj-$(CONFIG_MTK_LENS_DUMMYLENS_SUPPORT)   += mt6795/dummy_lens/
+	        obj-$(CONFIG_MTK_LENS_AD5820AF_SUPPORT)    += mt6795/ad5820af/
+	        obj-$(CONFIG_MTK_LENS_AD5823AF_SUPPORT)    += mt6795/ad5823/
+	        obj-$(CONFIG_MTK_LENS_AD5823AF_SUPPORT)    += mt6795/ad5823af/
+	        obj-$(CONFIG_MTK_LENS_BU6424AF_SUPPORT)    += mt6795/bu6424af/
+	        obj-$(CONFIG_MTK_LENS_BU6429AF_SUPPORT)    += mt6795/bu6429af/
+	        obj-$(CONFIG_MTK_LENS_BU64745GWZAF_SUPPORT)+= mt6795/bu64745gwzaf/
+	        obj-$(CONFIG_MTK_LENS_DW9714AF_SUPPORT)    += mt6795/dw9714af/
+	        obj-$(CONFIG_MTK_LENS_DW9718AF_SUPPORT)    += mt6795/dw9718af/
+	        obj-$(CONFIG_MTK_LENS_FM50AF_SUPPORT)      += mt6795/fm50af/
+	        obj-$(CONFIG_MTK_LENS_MT9P017AF_SUPPORT)   += mt6795/mt9p017af/
+	        obj-$(CONFIG_MTK_LENS_OV8825AF_SUPPORT)    += mt6795/ov8825af/
+	        obj-$(CONFIG_MTK_LENS_SENSORDRIVE_SUPPORT) += mt6795/sensordrive/
+	        obj-$(CONFIG_MTK_LENS_LC898122AF_SUPPORT) += mt6795/lc898122af/
+	        obj-$(CONFIG_MTK_LENS_LC898212AF_SUPPORT)    += mt6795/lc898212af/
+	        obj-$(CONFIG_MTK_LENS_AK7345AF_SUPPORT)    += mt6795/ak7345af/
 	        obj-$(CONFIG_MTK_LENS_DW9761BAF_SUPPORT)    += mt6795/dw9761baf/
 	    endif
 	endif

@@ -66,7 +66,6 @@ static struct binder_node *binder_context_mgr_node;
 static kuid_t binder_context_mgr_uid = INVALID_UID;
 static int binder_last_id;
 static struct workqueue_struct *binder_deferred_workqueue;
-static pid_t system_server_pid;
 
 #define RT_PRIO_INHERIT			"v1.7"
 #ifdef RT_PRIO_INHERIT
@@ -112,13 +111,13 @@ static pid_t system_server_pid;
 #define MAGIC_SERVICE_NAME_OFFSET	68
 
 #define MAX_ENG_TRANS_LOG_BUFF_LEN	10240
-
+static pid_t system_server_pid;
 static int binder_check_buf_pid;
 static int binder_check_buf_tid;
 static unsigned long binder_log_level = 0;
 char aee_msg[512];
 char aee_word[100];
-static int bt_folder = 0;//just for native backtrace
+//static int bt_folder = 0;//just for native backtrace
 #define TRANS_LOG_LEN 210
 char large_msg[TRANS_LOG_LEN];
 
@@ -983,7 +982,7 @@ static int binder_bwdog_thread(void *__unused)
  * @cmd:	string of command
  * @w:		wait type
  */
-static void binder_usermodehelper(char *cmd, int w)
+/*static void binder_usermodehelper(char *cmd, int w)
 {
 	int ret;
 	char *envp[] = {"HOME=/", "TERM=linux", "PATH=/sbin:/system/bin", NULL};
@@ -993,7 +992,7 @@ static void binder_usermodehelper(char *cmd, int w)
 	pr_debug("%s\n", argv[2]);
 	if ((ret = call_usermodehelper(argv[0], argv, envp, w)) != 0)
 		pr_err("%s: return %d\n", __func__, ret);
-}
+}*/
 
 /**
  * find_process_by_pid - convert pid to task_struct

@@ -57,7 +57,6 @@ uint32_t in_lowmem = 0;
 #include <linux/ion_drv.h>
 #endif
 
-/* From page_alloc.c, for urgent allocations in preemptible situation */
 extern void show_free_areas_minimum(void);
 
 #ifdef CONFIG_ZRAM
@@ -70,7 +69,7 @@ extern void mlog(int type);
 #else
 #define CONVERT_ADJ(x) (x)
 #define REVERT_ADJ(x) (x)
-#endif // CONFIG_ANDROID_LOW_MEMORY_KILLER_AUTODETECT_OOM_ADJ_VALUES
+#endif 
 
 static short lowmem_debug_adj = CONVERT_ADJ(1);
 #ifdef CONFIG_MT_ENG_BUILD
@@ -98,18 +97,18 @@ static short lowmem_adj[9] = {
 };
 static int lowmem_adj_size = 9;
 int lowmem_minfree[9] = {
-	4 * 256,	/*  0 ->  4MB */
-	12 * 256,	/*  1 -> 12MB */
-	20 * 256,	/*  2 -> 20MB */
-	24 * 256,	/*  4 -> 24MB */
-	28 * 256,	/*  6 -> 28MB */
-	32 * 256,	/*  8 -> 32MB */
-	36 * 256,	/*  9 -> 36MB */
-	40 * 256,	/* 12 -> 40MB */
-	48 * 256,	/* 15 -> 48MB */
+	4 * 256,	
+	12 * 256,	
+	20 * 256,	
+	24 * 256,	
+	28 * 256,	
+	32 * 256,	
+	36 * 256,	
+	40 * 256,	
+	48 * 256,	
 };
 static int lowmem_minfree_size = 9;
-#else //CONFIG_MTK_LCA_RAM_OPTIMIZE
+#else 
 static short lowmem_adj[6] = {
 	0,
 	1,
@@ -118,13 +117,13 @@ static short lowmem_adj[6] = {
 };
 static int lowmem_adj_size = 4;
 static int lowmem_minfree[6] = {
-	3 * 512,	/* 6MB */
-	2 * 1024,	/* 8MB */
-	4 * 1024,	/* 16MB */
-	16 * 1024,	/* 64MB */
+	3 * 512,	
+	2 * 1024,	
+	4 * 1024,	
+	16 * 1024,	
 };
 static int lowmem_minfree_size = 4;
-#endif //CONFIG_MTK_LCA_RAM_OPTIMIZE
+#endif 
 
 #ifdef CONFIG_HIGHMEM
 static int total_low_ratio = 1;
@@ -170,8 +169,7 @@ static int lowmem_shrink(struct shrinker *s, struct shrink_control *sc)
 	short selected_oom_score_adj;
 	int array_size = ARRAY_SIZE(lowmem_adj);
 	int other_free = global_page_state(NR_FREE_PAGES) - totalreserve_pages;
-	int other_file = global_page_state(NR_FILE_PAGES) -
-						global_page_state(NR_SHMEM);
+	int other_file ;
 
 	int print_extra_info = 0;
 	static unsigned long lowmem_print_extra_info_timeout = 0;
@@ -180,23 +178,16 @@ static int lowmem_shrink(struct shrinker *s, struct shrink_control *sc)
 	int other_anon = global_page_state(NR_INACTIVE_ANON) - global_page_state(NR_ACTIVE_ANON);
 #endif
 #ifdef CONFIG_MT_ENG_BUILD	
-	/*dump memory info when framework low memory*/
-	int pid_dump = -1; // process which need to be dump
+	
+	int pid_dump = -1; 
 	int pid_sec_mem = -1;
 	int max_mem = 0;
-#endif // CONFIG_MT_ENG_BUILD
-        /*
-	 * If we already have a death outstanding, then
-	 * bail out right away; indicating to vmscan
-	 * that we have nothing further to offer on
-	 * this pass.
-	 *
-	 */
+#endif 
 	if (lowmem_deathpending &&
 	    time_before_eq(jiffies, lowmem_deathpending_timeout))
 		return -1;
 	
-	/* We are in MTKPASR stage! */
+	
 	if (unlikely(current->flags & PF_MTKPASR)) {
 		return -1;
 	}
@@ -206,42 +197,43 @@ static int lowmem_shrink(struct shrinker *s, struct shrink_control *sc)
 	    return -1;
 	}
 
-#ifdef CONFIG_ZRAM
-	other_file -= total_swapcache_pages();
-#endif
+	if (global_page_state(NR_SHMEM) + global_page_state(NR_MLOCK) + total_swapcache_pages() <
+		global_page_state(NR_FILE_PAGES))
+		other_file = global_page_state(NR_FILE_PAGES) -
+						global_page_state(NR_SHMEM) -
+						global_page_state(NR_MLOCK) -
+						total_swapcache_pages();
+	else
+		other_file = 0;
 
 #ifdef CONFIG_HIGHMEM
-    	/* 
-	 * Check whether it is caused by low memory in normal zone!
-	 * This will help solve over-reclaiming situation while total free pages is enough, but normal zone is under low memory.
-	 */
 	if (gfp_zone(sc->gfp_mask) == ZONE_NORMAL) {
 		int nid;
 		struct zone *z;
 
-		/* Restore other_free */
+		
 		other_free += totalreserve_pages;
 
-		/* Go through all memory nodes & substract (free, file) from ZONE_HIGHMEM */
+		
 		for_each_online_node(nid) {
 			z = &NODE_DATA(nid)->node_zones[ZONE_HIGHMEM];
 			other_free -= zone_page_state(z, NR_FREE_PAGES);
 			other_file -= zone_page_state(z, NR_FILE_PAGES);
-			/* Don't substract NR_SHMEM twice! */
+			
 			other_file += zone_page_state(z, NR_SHMEM);
-			/* Subtract high watermark of normal zone */
+			
 			z = &NODE_DATA(nid)->node_zones[ZONE_NORMAL];
 			other_free -= high_wmark_pages(z);
 		}
 
-		/* Normalize */
+		
 		other_free *= total_low_ratio;
 		other_file *= total_low_ratio;
 	}
 #endif
-	/* Let it be positive or zero */
+	
 	if (other_free < 0) {
-		/* lowmem_print(1, "Original other_free [%d] is too low!\n", other_free); */
+		
 		other_free = 0;
 	}
 
@@ -257,9 +249,9 @@ static int lowmem_shrink(struct shrinker *s, struct shrink_control *sc)
 		}
 	}
 #ifdef CONFIG_MTK_LCA_RAM_OPTIMIZE
-	// For GB3 CR ALPS00602722: walkaround CTS issue
+	
 	if (min_score_adj < 9 && other_anon > 70 * 256) {
-		// if other_anon > 70MB, don't kill adj <= 8
+		
 		min_score_adj = 9;
 	}
 #endif
@@ -275,13 +267,10 @@ static int lowmem_shrink(struct shrinker *s, struct shrink_control *sc)
 	if (sc->nr_to_scan <= 0 || min_score_adj == OOM_SCORE_ADJ_MAX + 1) {
 		lowmem_print(5, "lowmem_shrink %lu, %x, return %d\n",
 			     sc->nr_to_scan, sc->gfp_mask, rem);
-    /*
-     * disable indication if low memory
-     */
 #if defined (CONFIG_MTK_AEE_FEATURE) && defined (CONFIG_MT_ENG_BUILD)
 		if (in_lowmem) {
 			in_lowmem = 0;
-			//DAL_LowMemoryOff();
+			
 			lowmem_print(1, "LowMemoryOff\n");
 		}
 #endif
@@ -290,7 +279,7 @@ static int lowmem_shrink(struct shrinker *s, struct shrink_control *sc)
 	}
 	selected_oom_score_adj = min_score_adj;
 
-	// add debug log
+	
 	if (output_expect(enable_candidate_log)) {
 		if (min_score_adj <= lowmem_debug_adj) {
 			if (time_after_eq(jiffies, lowmem_print_extra_info_timeout)) {
@@ -350,10 +339,10 @@ static int lowmem_shrink(struct shrinker *s, struct shrink_control *sc)
 				lowmem_print(1, "Candidate %d (%s), adj %d, score_adj %d, rss %lu, rswap %lu, to kill\n",
         				     p->pid, p->comm, REVERT_ADJ(oom_score_adj), oom_score_adj, get_mm_rss(p->mm),
         				     get_mm_counter(p->mm, MM_SWAPENTS));
-#else // CONFIG_ZRAM
+#else 
 				lowmem_print(1, "Candidate %d (%s), adj %d, score_adj %d, rss %lu, to kill\n",
         				     p->pid, p->comm, REVERT_ADJ(oom_score_adj), oom_score_adj, get_mm_rss(p->mm));
-#endif // CONFIG_ZRAM
+#endif 
 			}
 		}
 		
@@ -362,10 +351,6 @@ static int lowmem_shrink(struct shrinker *s, struct shrink_control *sc)
 #ifdef CONFIG_ZRAM
 		tasksize += get_mm_counter(p->mm, MM_SWAPENTS);
 #endif
-		/*
-         * dump memory info when framework low memory:
-         * record the first two pid which consumed most memory.
-         */
 		if (tasksize > max_mem) {
 			max_mem = tasksize;
 			pid_sec_mem = pid_dump;
@@ -396,8 +381,8 @@ static int lowmem_shrink(struct shrinker *s, struct shrink_control *sc)
 				continue;
 		}
 #ifdef CONFIG_MTK_LCA_RAM_OPTIMIZE
-		// For KK CR ALPS01426325: walkaround CTS issue
-		// if cached > 30MB, don't kill ub:secureRandom while its adj is 9
+		
+		
 		if (!strcmp(p->comm, "ub:secureRandom") && (REVERT_ADJ(oom_score_adj)==9) && (other_file > 30*256)) {
 		    lowmem_print(1, "select but ignore '%s' (%d), oom_score_adj %d, oom_adj %d, size %d, to kill\n" \
 		                    "cache %ldkB is below limit %ldkB",
@@ -407,6 +392,29 @@ static int lowmem_shrink(struct shrinker *s, struct shrink_control *sc)
 		    continue;
 		}
 #endif		
+
+#ifdef CONFIG_ANDROID_LOW_MEMORY_KILLER_HTC_WA_TO_PROTECT_ZYGOTE
+		
+		if (!strncmp("main",p->comm,4) && p->parent && p->parent->pid == 1 ) {
+			if (oom_score_adj != OOM_SCORE_ADJ_MIN) {
+				lowmem_print(1, "select but ignore '%s' (%d), oom_score_adj %d, oom_adj %d, size %d, to kill with invalid adj values\n" \
+								"cache %ldkB is below limit %ldkB",
+					p->comm, p->pid, oom_score_adj, REVERT_ADJ(oom_score_adj), tasksize,
+					other_file * (long)(PAGE_SIZE / 1024),
+					minfree * (long)(PAGE_SIZE / 1024));
+
+				
+				task_lock(p);
+				p->signal->oom_score_adj = OOM_SCORE_ADJ_MIN;
+				task_unlock(p);
+
+				lowmem_print(1, "reset the '%s' (%d) adj values: oom_score_adj %d, oom_adj %d\n",
+						p->comm, p->pid, OOM_SCORE_ADJ_MIN, REVERT_ADJ(OOM_SCORE_ADJ_MIN));
+				continue;
+			}
+		}
+#endif
+
 		selected = p;
 		selected_tasksize = tasksize;
 		selected_oom_score_adj = oom_score_adj;
@@ -435,18 +443,15 @@ static int lowmem_shrink(struct shrinker *s, struct shrink_control *sc)
 				lowmem_print(1, "low memory info:\n");
 				show_free_areas_minimum();
 			#ifdef CONFIG_ION_MTK
-				/* Show ION status */
+				
 				lowmem_print(1, "ion_mm_heap_total_memory[%ld]\n",(unsigned long)ion_mm_heap_total_memory());
 				ion_mm_heap_memory_detail();
 			#endif
 			}
 		}
 
-		/*
-		 * when kill adj=0 process trigger kernel warning, only in MTK internal eng load
-		 */
 #if defined (CONFIG_MTK_AEE_FEATURE) && defined (CONFIG_MT_ENG_BUILD)
-		if (selected_oom_score_adj <= lowmem_kernel_warn_adj) { // can set lowmem_kernel_warn_adj=16 for test
+		if (selected_oom_score_adj <= lowmem_kernel_warn_adj) { 
 			#define MSG_SIZE_TO_AEE 70
 			char msg_to_aee[MSG_SIZE_TO_AEE];
 			lowmem_print(1, "low memory trigger kernel warning\n");
@@ -455,22 +460,19 @@ static int lowmem_shrink(struct shrinker *s, struct shrink_control *sc)
   				pid_dump = pid_sec_mem;
    			snprintf(msg_to_aee, MSG_SIZE_TO_AEE, "please contact AP/AF memory module owner[pid:%d]\n", pid_dump);
  			aee_kernel_warning_api("LMK", 0, DB_OPT_DEFAULT|DB_OPT_DUMPSYS_ACTIVITY|DB_OPT_LOW_MEMORY_KILLER
-                        		| DB_OPT_PID_MEMORY_INFO /*for smaps and hprof*/
+                        		| DB_OPT_PID_MEMORY_INFO 
                         		| DB_OPT_PROCESS_COREDUMP
                         		| DB_OPT_DUMPSYS_SURFACEFLINGER
                         		| DB_OPT_DUMPSYS_PROCSTATS,
                                 "Framework low memory\nCRDISPATCH_KEY:FLM_APAF", msg_to_aee);
 		}
 #endif
-		/*
-		 * show an indication if low memory
-		 */
 #if defined (CONFIG_MTK_AEE_FEATURE) && defined (CONFIG_MT_ENG_BUILD)
 		if (!in_lowmem && selected_oom_score_adj <= lowmem_debug_adj) {
 			in_lowmem = 1;
-			//DAL_LowMemoryOn();
+			
 			lowmem_print(1, "LowMemoryOn\n");
-			//aee_kernel_warning(module_name, lowmem_warning);
+			
 		}
 #endif
 
@@ -566,7 +568,7 @@ static int lowmem_adj_array_set(const char *val, const struct kernel_param *kp)
 
 	ret = param_array_ops.set(val, kp);
 
-	/* HACK: Autodetect oom_adj values in lowmem_adj array */
+	
 	lowmem_autodetect_oom_adj_values();
 
 	return ret;
@@ -597,12 +599,6 @@ static const struct kparam_array __param_arr_adj = {
 };
 #endif
 
-/*
- * get_min_free_pages
- * returns the low memory killer watermark of the given pid,
- * When the system free memory is lower than the watermark, the LMK (low memory
- * killer) may try to kill processes.
- */
 int get_min_free_pages(pid_t pid)
 {
     struct task_struct *p = 0;
@@ -616,12 +612,12 @@ int get_min_free_pages(pid_t pid)
             array_size = lowmem_minfree_size;
 
     for_each_process(p) {
-        /* search pid */
+        
         if (p->pid == pid) {
             task_lock(p);
             target_oom_adj = p->signal->oom_score_adj;
             task_unlock(p);
-            /* get min_free value of the pid */
+            
             for (i = array_size - 1; i >= 0; i--) {
                 if (target_oom_adj >= lowmem_adj[i]) {
                     lowmem_print(3, KERN_INFO"pid: %d, target_oom_adj = %d, "
@@ -642,18 +638,16 @@ out:
 }
 EXPORT_SYMBOL(get_min_free_pages);
 
-/* Query LMK minfree settings */
-/* To query default value, you can input index with value -1. */
 size_t query_lmk_minfree(int index)
 {
 	int which;
 
-	/* Invalid input index, return default value */
+	
 	if (index < 0) {
 		return lowmem_minfree[2];
 	}
 	
-	/* Find a corresponding output */
+	
 	which = 5;
 	do {
 		if (lowmem_adj[which] <= index) {
@@ -661,7 +655,7 @@ size_t query_lmk_minfree(int index)
 		}
 	} while (--which >= 0);
 
-	/* Fix underflow bug */
+	
 	which = (which < 0)? 0 : which;
 
 	return lowmem_minfree[which];

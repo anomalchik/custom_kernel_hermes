@@ -686,13 +686,6 @@ static int mtk_xhci_phy_init(int argc, char **argv)
 
 int mtk_xhci_ip_init(struct usb_hcd *hcd, struct xhci_hcd *xhci)
 {
-/*Vanzo:wuzhiyong on Mon 20 Apr 12:17:00 +0800
- * init otg
- */
-    mt_set_gpio_mode(GPIO_OTG_IDDIG_EINT_PIN, 1);
-    mt_set_gpio_pull_select(GPIO_OTG_IDDIG_EINT_PIN, GPIO_PULL_UP);
-    mt_set_gpio_pull_enable(GPIO_OTG_IDDIG_EINT_PIN, GPIO_PULL_ENABLE);
-//End of vanzo:wuzhiyong
 	mtk_xhci_set(hcd, xhci);
 	
 #ifdef CONFIG_MTK_FPGA

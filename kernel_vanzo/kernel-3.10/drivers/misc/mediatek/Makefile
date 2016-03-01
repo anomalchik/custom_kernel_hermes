@@ -25,7 +25,7 @@ ifneq ($(CONFIG_MTK_GIC),y)
 obj-y   += irq/
 endif
 
-#obj-$(CONFIG_MTK_CPU_STRESS)	+= cpu_stress/
+obj-$(CONFIG_MTK_CPU_STRESS)	+= cpu_stress/
 obj-$(CONFIG_MTK_LASTPC)	    += lastpc/
 obj-$(CONFIG_MTK_DBG_DUMP) += dbg_dump/
 
@@ -162,9 +162,9 @@ obj-$(CONFIG_ZRAM)	+= mlog/
 
 #obj-y	+= cam_cal/src/$(MTK_PLATFORM)/dummy_eeprom/
 
-#obj-$(CONFIG_MTK_CAM_CAL_GT24C32A_SUPPORT)	+= cam_cal/src/$(MTK_PLATFORM)/GT24c32a_eeprom/
-#obj-$(CONFIG_MTK_CAM_CAL_BRCC064GWZ_3_SUPPORT) += cam_cal/src/$(MTK_PLATFORM)/BRCC064GWZ_3_eeprom/
-#obj-$(CONFIG_MTK_CAM_CAL_BRCB032GWZ_3_SUPPORT) += cam_cal/src/$(MTK_PLATFORM)/BRCB032GWZ_3_eeprom/
+obj-$(CONFIG_MTK_CAM_CAL_GT24C32A_SUPPORT)	+= cam_cal/src/$(MTK_PLATFORM)/GT24c32a_eeprom/
+obj-$(CONFIG_MTK_CAM_CAL_BRCC064GWZ_3_SUPPORT) += cam_cal/src/$(MTK_PLATFORM)/BRCC064GWZ_3_eeprom/
+obj-$(CONFIG_MTK_CAM_CAL_BRCB032GWZ_3_SUPPORT) += cam_cal/src/$(MTK_PLATFORM)/BRCB032GWZ_3_eeprom/
 obj-y	+= lens/
 obj-y	+= imgsensor/src/
 
@@ -259,7 +259,7 @@ obj-y	+= selinux_warning/
 # MTK PASR SW flow
 obj-$(CONFIG_MTKPASR)	+= mtkpasr/
 
-#obj-$(CONFIG_MTK_TC1_FEATURE)	+= tc1_interface/
+obj-$(CONFIG_MTK_TC1_FEATURE)	+= tc1_interface/
 
 obj-$(CONFIG_MTK_SWITCH_TX_POWER) += sw_tx_power/
 
