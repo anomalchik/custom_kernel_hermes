@@ -19,3 +19,5 @@ WORK ROM and Recovery
 8.mag
 
 9.giro
+
+10.battery 3000mah
