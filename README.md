@@ -1,23 +1,23 @@
-# custom_kernel_hermes
+# Custom_kernel_hermes
 
-WORK ROM and Recovery
+Work rom and recovery
 
 1.LCM
 
-2.touch
+2.Touch
 
 3.Fix Sdcard
 
 4.Wi-fi
 
-5.BT
+5.Bt
 
-6.alps
+6.Alsps
 
-7.accel
+7.Accel
 
-8.mag
+8.Mag
 
-9.giro
+9.Giro
 
-10.battery 3000mah
+10.Battery 3000mah
