@@ -2,9 +2,9 @@
 
 WORK ROM and Recovery
 
-1.WORK LCM Driver
+1.LCM Driver
 
-2.ADD touch
+2.touch
 
 3.Fix Sdcard
 
