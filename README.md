@@ -2,7 +2,7 @@
 
 WORK ROM and Recovery
 
-1.LCM Driver
+1.LCM
 
 2.touch
 
