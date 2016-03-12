@@ -4,5 +4,5 @@ arch/arm64/boot/Image.gz-dtb
 export TOP=$(pwd)
 export CROSS_COMPILE=/home/igor/aarch64-linux-android-4.9-linaro-master/bin/aarch64-linux-android-
 mkdir -p $TOP/KERNEL_OBJ
-make -C kernel-3.10 O=$TOP/KERNEL_OBJ ARCH=arm64 MTK_TARGET_PROJECT=hermes CROSS_COMPILE=$TOOLCHAIN ROOTDIR=$TOP hermes_defconfig
+make -C kernel-3.10 O=$TOP/KERNEL_OBJ ARCH=arm64 MTK_TARGET_PROJECT=hermes TARGET_BUILD_VARIANT=user CROSS_COMPILE=$TOOLCHAIN ROOTDIR=$TOP hermes_defconfig
 make -C kernel-3.10 O=$TOP/KERNEL_OBJ ROOTDIR=$TOP
