@@ -79,7 +79,6 @@ static spinlock_t vibe_lock;
 static int vibe_state;
 static int ldo_state;
 static int shutdown_flag;
-int vib_Level; /* PERI-JC-VIBRATOR_Add_level_file_node-00+ */
 
 
 static int vibr_Enable(void)
@@ -192,9 +191,11 @@ static void vib_shutdown(struct platform_device *pdev)
 	if (vibe_state) {
 		printk("[vibrator]vib_shutdown: vibrator will disable\n");
 		vibe_state = 0;
+		spin_unlock_irqrestore(&vibe_lock, flags);
 		vibr_Disable();
+	} else {
+		spin_unlock_irqrestore(&vibe_lock, flags);
 	}
-	spin_unlock_irqrestore(&vibe_lock, flags);
 }
 
 /******************************************************************************
@@ -230,62 +231,6 @@ static ssize_t store_vibr_on(struct device *dev, struct device_attribute *attr, 
 }
 
 static DEVICE_ATTR(vibr_on, 0220, NULL, store_vibr_on);
-
-/* PERI-JC-VIBRATOR_Add_level_file_node-00+[ */
-static ssize_t vib_level_show(struct device *dev,struct device_attribute *attr, char *buf)
-{
-	dev_info(dev, "vib_level_show %d.\n", vib_Level);
-	return snprintf(buf, PAGE_SIZE, "%d\n", vib_Level);
-}
-
-static ssize_t vib_level_store(struct device *dev,	struct device_attribute *attr,const char *buf, size_t size)
-{
-	int Level;
-
-	Level = simple_strtoul(buf, NULL, 10);
-	if( Level < 1300 )
-	{
-		vib_Level = 1200 ;
-	}
-	else if( Level < 1500 )
-	{
-		vib_Level = 1300 ;
-	}
-	else if( Level < 1800 )
-	{
-		vib_Level = 1500 ;
-	}
-	else if( Level < 2000 )
-	{
-		vib_Level = 1800 ;
-	}
-	else if( Level < 2800 )
-	{
-		vib_Level = 2000 ;
-	}
-	else if( Level < 3000 )
-	{
-		vib_Level = 2800 ;
-	}
-	else if( Level < 3300 )
-	{
-		vib_Level = 3000 ;
-	}
-	else
-	{
-		vib_Level = 3300 ;
-	}
-	pmic_ldo_enable(MT6331_POWER_LDO_VIBR, KAL_FALSE);
-	pmic_ldo_vol_sel(MT6331_POWER_LDO_VIBR, vib_Level);
-	//pmic_ldo_enable(MT6331_POWER_LDO_VIBR, KAL_TRUE);
-	dev_info(dev, "vib_level_store %d.\n", vib_Level);
-
-	return size;
-}
-
-static DEVICE_ATTR(level, 0664, vib_level_show, vib_level_store);
-
-/* PERI-JC-VIBRATOR_Add_level_file_node-00+] */
 
 /******************************************************************************
  * vib_mod_init
@@ -342,12 +287,6 @@ static int vib_mod_init(void)
 	if (ret) {
 		printk("[vibrator]device_create_file vibr_on fail!\n");
 	}
-	/* PERI-JC-VIBRATOR_Add_level_file_node-00+[ */
-	ret = device_create_file(mtk_vibrator.dev, &dev_attr_level);
-	if (ret) {
-		printk("[vibrator]device_create_file vibr_level fail!\n");
-	}
-	/* PERI-JC-VIBRATOR_Add_level_file_node-00+] */
 
 	printk("[vibrator]vib_mod_init Done\n");
 

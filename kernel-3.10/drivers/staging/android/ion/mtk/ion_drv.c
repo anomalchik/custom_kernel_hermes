@@ -141,6 +141,7 @@ static long ion_sys_cache_sync(struct ion_client *client, ion_sys_cache_sync_par
         // By range operation
         unsigned long start = -1;
         size_t size = 0;
+        unsigned long end, page_num, page_start;
         struct ion_handle *kernel_handle;   
 
         kernel_handle = ion_drv_get_handle(client, pParam->handle, pParam->kernel_handle, from_kernel);
@@ -226,7 +227,6 @@ static long ion_sys_cache_sync(struct ion_client *client, ion_sys_cache_sync_par
         }
 
 #if 0
-        unsigned long end, page_num, page_start;
         // Cache line align
         end = start + size;
         start = (start / L1_CACHE_BYTES * L1_CACHE_BYTES);
@@ -347,7 +347,7 @@ static long ion_sys_ioctl(struct ion_client *client, unsigned int cmd, unsigned 
                 break;
             }
 
-            if (ion_phys(client, kernel_handle, (ion_phys_addr_t*)&(Param.get_phys_param.phy_addr), (size_t *)&(Param.get_phys_param.len)) < 0)
+            if (ion_phys(client, kernel_handle, (ion_phys_addr_t*)&(Param.get_phys_param.phy_addr), &(Param.get_phys_param.len)) < 0)
             {
                 Param.get_phys_param.phy_addr = 0;
                 Param.get_phys_param.len = 0;
@@ -449,7 +449,7 @@ static long ion_sys_ioctl(struct ion_client *client, unsigned int cmd, unsigned 
 	     unsigned int i;
         struct ion_handle *kernel_handle;  
         kernel_handle = ion_drv_get_handle(client, 
-                        (long)Param.record_param.handle, NULL, from_kernel);
+                        Param.record_param.handle, NULL, from_kernel);
         if(IS_ERR(kernel_handle))
         {
             IONMSG("ion_set_handle_bt fail!\n");

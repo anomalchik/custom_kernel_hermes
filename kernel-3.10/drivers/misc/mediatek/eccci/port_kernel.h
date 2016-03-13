@@ -128,7 +128,7 @@ struct ccci_rpc_clkbuf_result {
 #ifdef CONFIG_MTK_TC1_FEATURE
 #define GPIO_MAX_COUNT 6 // hardcode, becarefull with data size, should not exceed tmp_data[] in ccci_rpc_work_helper()
 #else
-#define GPIO_MAX_COUNT 6 // hardcode, becarefull with data size, should not exceed tmp_data[] in ccci_rpc_work_helper()
+#define GPIO_MAX_COUNT 3 // hardcode, becarefull with data size, should not exceed tmp_data[] in ccci_rpc_work_helper()
 #endif
 #define GPIO_PIN_NAME_STR_MAX_LEN 34
 #define ADC_CH_NAME_STR_MAX_LEN 33

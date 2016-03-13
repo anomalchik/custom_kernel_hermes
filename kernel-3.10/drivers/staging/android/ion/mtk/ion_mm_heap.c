@@ -34,8 +34,8 @@ typedef struct
 } ion_mm_buffer_info;
 
 
-#define ION_FUNC_ENTER  
-#define ION_FUNC_LEAVE  
+#define ION_FUNC_ENTER  //MMProfileLogMetaString(MMP_ION_DEBUG, MMProfileFlagStart, __func__);
+#define ION_FUNC_LEAVE  //MMProfileLogMetaString(MMP_ION_DEBUG, MMProfileFlagEnd, __func__);
 
 #define ION_PRINT_LOG_OR_SEQ(seq_file, fmt, args...) \
     do{\
@@ -51,6 +51,7 @@ static unsigned int high_order_gfp_flags = (GFP_HIGHUSER | __GFP_ZERO |
 static unsigned int low_order_gfp_flags  = (GFP_HIGHUSER | __GFP_ZERO |
 					 __GFP_NOWARN);
 static const unsigned int orders[] = {2, 0};
+//static const unsigned int orders[] = {8, 4, 0};
 static const int num_orders = ARRAY_SIZE(orders);
 static int order_to_index(unsigned int order)
 {
@@ -224,7 +225,7 @@ static int ion_mm_heap_allocate(struct ion_heap *heap,
 	}
 
 
-        
+        //create MM buffer info for it
         pBufferInfo = (ion_mm_buffer_info*) kzalloc(sizeof(ion_mm_buffer_info), GFP_KERNEL);
         if (IS_ERR_OR_NULL(pBufferInfo))
         {
@@ -293,6 +294,8 @@ void ion_mm_heap_free(struct ion_buffer *buffer)
 
     mm_heap_total_memory -= buffer->size;
 
+	/* uncached pages come from the page pools, zero them before returning
+	   for security purposes (other allocations are zerod at alloc time */
 	if (!(buffer->private_flags & ION_PRIV_FLAG_SHRINKER_FREE))
 		ion_heap_buffer_zero(buffer);
 
@@ -330,7 +333,7 @@ static int ion_mm_heap_shrink(struct ion_heap *heap, gfp_t gfp_mask,
 	for (i = 0; i < num_orders; i++) {
 		struct ion_page_pool *pool = sys_heap->pools[i];
 		nr_total += ion_page_pool_shrink(pool, gfp_mask, nr_to_scan);
-		
+		//shrink cached pool
 		nr_total += ion_page_pool_shrink(sys_heap->cached_pools[i], gfp_mask, nr_to_scan);
 	}
 
@@ -345,14 +348,14 @@ static int ion_mm_heap_phys(struct ion_heap *heap,
     if (!pBufferInfo)
     {
         IONMSG("[ion_mm_heap_phys]: Error. Invalid buffer.\n");
-        return -EFAULT; 
+        return -EFAULT; // Invalid buffer
     }
     if (pBufferInfo->eModuleID == -1)
     {
         IONMSG("[ion_mm_heap_phys]: Error. Buffer not configured.\n");
-        return -EFAULT; 
+        return -EFAULT; // Buffer not configured.
     }
-    
+    // Allocate MVA
 
     mutex_lock(&(pBufferInfo->lock));
     if (pBufferInfo->MVA == 0)
@@ -366,7 +369,7 @@ static int ion_mm_heap_phys(struct ion_heap *heap,
             return -EFAULT;
         }
     }
-    *(unsigned int *)addr = pBufferInfo->MVA;  
+    *(unsigned int *)addr = pBufferInfo->MVA;  // MVA address
     mutex_unlock(&(pBufferInfo->lock));
     *len = buffer->size;
 
@@ -379,22 +382,6 @@ void ion_mm_heap_add_freelist(struct ion_buffer *buffer)
     ion_mm_heap_free_bufferInfo(buffer);
 }
 
-int ion_mm_heap_pool_total(struct ion_heap *heap) {
-	struct ion_system_heap *sys_heap;
-	int total = 0;
-	int i;
-
-	sys_heap = container_of(heap, struct ion_system_heap, heap);
-
-	for (i = 0; i < num_orders; i++) {
-		struct ion_page_pool *pool = sys_heap->pools[i];
-		total += (pool->high_count + pool->low_count) * (1 << pool->order);
-		pool = sys_heap->cached_pools[i];
-		total += (pool->high_count + pool->low_count) * (1 << pool->order);
-	}
-
-	return total;
-}
 
 static struct ion_heap_ops system_heap_ops = {
     .allocate = ion_mm_heap_allocate,
@@ -407,7 +394,6 @@ static struct ion_heap_ops system_heap_ops = {
     .phys = ion_mm_heap_phys,
 	.shrink = ion_mm_heap_shrink,
     .add_freelist = ion_mm_heap_add_freelist,
-    .page_pool_total = ion_mm_heap_pool_total,
 };
 
 static int ion_mm_heap_debug_show(struct ion_heap *heap, struct seq_file *s,
@@ -488,7 +474,7 @@ static int ion_mm_heap_debug_show(struct ion_heap *heap, struct seq_file *s,
 
     }
 
-    
+    //dump all handle's backtrace
     down_read(&dev->lock); 
     for (n = rb_first(&dev->clients); n; n = rb_next(n)) {
         struct ion_client *client = rb_entry(n, struct ion_client,node);
@@ -539,7 +525,7 @@ static size_t ion_debug_mm_heap_total(struct ion_client *client,
         struct rb_node *n;
 
         if (mutex_trylock(&client->lock)) {
-            
+            //mutex_lock(&client->lock);
             for (n = rb_first(&client->handles); n; n = rb_next(n)) {
                 struct ion_handle *handle = rb_entry(n,
                                                      struct ion_handle,
@@ -554,7 +540,7 @@ static size_t ion_debug_mm_heap_total(struct ion_client *client,
 
 void ion_mm_heap_memory_detail(void) {
     struct ion_device *dev = g_ion_device;
-    
+    //struct ion_heap *heap = NULL;
     size_t total_size = 0;
     size_t total_orphaned_size = 0;
     struct rb_node *n;
@@ -590,7 +576,7 @@ void ion_mm_heap_memory_detail(void) {
         for (n = rb_first(&dev->buffers); n; n = rb_next(n)) {
 	    	struct ion_buffer *buffer = rb_entry(n, struct ion_buffer, node);
 	    	if ((1 << buffer->heap->id) & ION_HEAP_MULTIMEDIA_MASK) {
-	    		
+	    		//heap = buffer->heap;
 	    		total_size += buffer->size;
 	    		if (!buffer->handle_count) {
 	    			ION_PRINT_LOG_OR_SEQ(NULL, "%16.s %16u %16zu %d %d\n", buffer->task_comm,
@@ -722,7 +708,7 @@ long ion_mm_ioctl(struct ion_client *client, unsigned int cmd, unsigned long arg
 {
     ion_mm_data_t Param;
     long ret = 0;
-    
+    //char dbgstr[256];
     unsigned long ret_copy;
     ION_FUNC_ENTER;
     if (from_kernel)
@@ -747,7 +733,7 @@ long ion_mm_ioctl(struct ion_client *client, unsigned int cmd, unsigned long arg
             }
                 
             buffer = ion_handle_buffer(kernel_handle);
-            if ((int)buffer->heap->type == ION_HEAP_TYPE_MULTIMEDIA)
+            if (buffer->heap->type == ION_HEAP_TYPE_MULTIMEDIA)
             {
                 ion_mm_buffer_info* pBufferInfo = buffer->priv_virt;
                 mutex_lock(&(pBufferInfo->lock));
@@ -803,7 +789,7 @@ long ion_mm_ioctl(struct ion_client *client, unsigned int cmd, unsigned long arg
                 }
 
                 buffer = ion_handle_buffer(kernel_handle);
-                if ((int)buffer->heap->type == ION_HEAP_TYPE_MULTIMEDIA)
+                if (buffer->heap->type == ION_HEAP_TYPE_MULTIMEDIA)
                 {
                     ion_mm_buffer_info* pBufferInfo = buffer->priv_virt;
                     mutex_lock(&(pBufferInfo->lock));
@@ -840,7 +826,7 @@ long ion_mm_ioctl(struct ion_client *client, unsigned int cmd, unsigned long arg
                     break;
                 }
                 buffer = ion_handle_buffer(kernel_handle);
-                if ((int)buffer->heap->type == ION_HEAP_TYPE_MULTIMEDIA)
+                if (buffer->heap->type == ION_HEAP_TYPE_MULTIMEDIA)
                 {
                     ion_mm_buffer_info* pBufferInfo = buffer->priv_virt;
                     mutex_lock(&(pBufferInfo->lock));
@@ -878,7 +864,7 @@ long ion_mm_ioctl(struct ion_client *client, unsigned int cmd, unsigned long arg
                 }
 
                 buffer = ion_handle_buffer(kernel_handle);
-                if ((int)buffer->heap->type == ION_HEAP_TYPE_MULTIMEDIA)
+                if (buffer->heap->type == ION_HEAP_TYPE_MULTIMEDIA)
                 {
                     ion_mm_buffer_info* pBufferInfo = buffer->priv_virt;
                     mutex_lock(&(pBufferInfo->lock));
@@ -915,7 +901,7 @@ long ion_mm_ioctl(struct ion_client *client, unsigned int cmd, unsigned long arg
                     break;
                 }
                 buffer = ion_handle_buffer(kernel_handle);
-                if ((int)buffer->heap->type == ION_HEAP_TYPE_MULTIMEDIA)
+                if (buffer->heap->type == ION_HEAP_TYPE_MULTIMEDIA)
                 {
                     ion_mm_buffer_info* pBufferInfo = buffer->priv_virt;
                     mutex_lock(&(pBufferInfo->lock));
@@ -971,9 +957,4 @@ int ion_mm_heap_for_each_pool(int (*fn)(int high, int order, int cache, size_t s
 	return 0;
 }
 
-size_t htc_ion_mm_heap_size_in_pool(void)
-{
-	struct ion_heap * heap = ion_drv_get_heap(ION_HEAP_TYPE_MULTIMEDIA);
-	return heap ? ion_mm_heap_pool_total(heap) : 0;
-}
 

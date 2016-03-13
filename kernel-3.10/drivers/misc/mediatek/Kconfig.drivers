@@ -1025,11 +1025,6 @@ config MTK_YAS537
         bool "YAS537 for Mediatek package"
         default n
 
-# Barometer sensor
-config MTK_BMP180_NEW
-	bool "BMP180 for MediaTek package"
-	default n
-
 # Touch Panel
 config MTK_TOUCHPANEL
 	tristate "MediaTek Touch Panel Driver"
@@ -1037,8 +1032,8 @@ config MTK_TOUCHPANEL
 	  Say Y here if you have MediaTek MT6516 touch panel.
 	  If unsure, say N.
 
-config MTK_S7020
-         bool "S7020 for Mediatek package"
+config MTK_FT5206
+         bool "FT5206 for Mediatek package"
         default n
 
 # USB # TODO Check Choice
@@ -1576,12 +1571,6 @@ config MTK_EXTMEM
 	   bool "mtk external memory"
 	   depends on MTK_INTERNAL
 	   default n
-#
-# MTK_SSW for SIM SWITCH
-#
-config CUSTOM_KERNEL_SSW
-       bool "COMBO_FXLA2203_V2 SSW Driver
-       default n
 #--------------------------RGK driver cfg add (start)------------------------------	  
 config RGK_DRIVER_FG_CW2015
         bool "RGK for cw2015 charger ic"

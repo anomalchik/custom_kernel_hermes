@@ -64,7 +64,7 @@ enum
 #ifdef CONFIG_ARCH_MT6795
 #define MIRAVISION_HW_VERSION       (3)    // 1:6595 2:6752 3:6795 4:6735
 #else
-#define MIRAVISION_HW_VERSION       (1)    // 1:6595 2:6752 3:6795 4:6735
+#define MIRAVISION_HW_VERSION       (3)    // 1:6595 2:6752 3:6795 4:6735
 #endif
 #define MIRAVISION_SW_VERSION       (1)    // 1:Android Lollipop
 #define MIRAVISION_SW_FEATURE_VIDEO_DC  (0x1)

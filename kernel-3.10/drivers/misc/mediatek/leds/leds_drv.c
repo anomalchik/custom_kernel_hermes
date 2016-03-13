@@ -143,7 +143,8 @@ int setMaxbrightness(int max_level, int enable)
 
 #else
 	LEDS_DRV_DEBUG("setMaxbrightness go through AAL\n");
-	disp_bls_set_max_backlight(max_level);
+	disp_bls_set_max_backlight( ((((1 << LED_INTERNAL_LEVEL_BIT_CNT) - 1) * max_level +
+                     127) / 255) );
 #endif				/* endif CONFIG_MTK_AAL_SUPPORT */
 	return 0;
 

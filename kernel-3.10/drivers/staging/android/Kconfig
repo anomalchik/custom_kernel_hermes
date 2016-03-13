@@ -80,15 +80,6 @@ config ANDROID_LOW_MEMORY_KILLER_AUTODETECT_OOM_ADJ_VALUES
 	  /sys/module/lowmemorykiller/parameters/adj and convert them
 	  to oom_score_adj values.
 
-config ANDROID_LOW_MEMORY_KILLER_HTC_WA_TO_PROTECT_ZYGOTE
-	bool "Android Low Memory Killer: hTC WA to project zygote from killing with wrong oom_score_adj value"
-	depends on ANDROID_LOW_MEMORY_KILLER_AUTODETECT_OOM_ADJ_VALUES
-	default n
-	---help---
-	  If zygote's oom_score_adj != OOM_SCORE_ADJ_MIN,
-	  reset the oom_score_adj to OOM_SCORE_ADJ_MIN
-
-
 config ANDROID_INTF_ALARM_DEV
 	bool "Android alarm driver"
 	depends on RTC_CLASS

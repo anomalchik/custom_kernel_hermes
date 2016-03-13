@@ -249,7 +249,7 @@ static void system_msg_handler(struct ccci_port *port, struct ccci_request *req)
 static int get_md_gpio_val(unsigned int num)
 {
 #if defined (FEATURE_GET_MD_GPIO_VAL)
-    return mt_get_gpio_in((num | 0x80000000));// num is init gpio number
+    return mt_get_gpio_in(num);
 #else
     return -1;
 #endif

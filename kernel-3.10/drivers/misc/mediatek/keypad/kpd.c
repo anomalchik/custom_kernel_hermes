@@ -804,6 +804,11 @@ static int kpd_pdrv_probe(struct platform_device *pdev)
 	kpd_keymap[8] = 0;
 #endif
 
+#ifdef CONFIG_TOUCHSCREEN_SWEEP2WAKE
+#include <linux/input/sweep2wake.h>
+	sweep2wake_setdev(kpd_input_dev);
+#endif
+
 #if !KPD_USE_EXTEND_TYPE
 	for (i = 17; i < KPD_NUM_KEYS; i += 9)	/* only [8] works for Power key */
 		kpd_keymap[i] = 0;

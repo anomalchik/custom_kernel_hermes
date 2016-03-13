@@ -19,6 +19,10 @@ ifeq ($(CONFIG_MTK_LTR559),y)
 obj-y	+=  alsps/ltr559/
 endif
 
+ifeq ($(CONFIG_MTK_STK3X1X),y)
+obj-y	+=  alsps/stk3x1x/
+endif
+
 ifeq ($(CONFIG_MTK_BMI160_ACC),y)
 obj-y   +=  accelerometer/bmi160_acc/
 endif
@@ -29,5 +33,9 @@ endif
 
 ifeq ($(CONFIG_MTK_YAS537),y)
 obj-y	+=  magnetometer/yamaha537/
+endif
+
+ifeq ($(CONFIG_MTK_AKM09911_NEW),y)
+obj-y	+=  magnetometer/akm09911-new/
 endif
 endif

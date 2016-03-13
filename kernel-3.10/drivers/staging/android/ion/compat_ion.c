@@ -315,8 +315,9 @@ static int compat_get_ion_mm_sf_buf_info(
 			struct __ion_mm_sf_buf_info __user *data)
 {
 	compat_ulong_t handle;
+	compat_uint_t info;
 
-	int err;
+	int i, err;
 
 	err = get_user(handle, &data32->handle);
 	err |= put_user(handle, &data->handle);
@@ -333,7 +334,7 @@ static int compat_put_ion_mm_sf_buf_info(
 
 	int i, err;
 
-	err = get_user(handle, &data->handle);
+	err |= get_user(handle, &data->handle);
 	err |= put_user(handle, &data32->handle);
 
 	for(i = 0; i < ION_MM_SF_BUF_INFO_LEN; i++) {
@@ -588,7 +589,7 @@ static int compat_get_ion_custom_data(
 			struct ion_custom_data __user *data)
 {
 	compat_uint_t cmd;
-	//compat_ulong_t arg;
+	compat_ulong_t arg;
 	int err;
 
 	err = get_user(cmd, &data32->cmd);

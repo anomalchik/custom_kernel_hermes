@@ -985,11 +985,11 @@ static void md_cd_wdt_work(struct work_struct *work)
     struct md_cd_ctrl *md_ctrl = container_of(work, struct md_cd_ctrl, wdt_work);
     struct ccci_modem *md = md_ctrl->txq[0].modem;
     int ret = 0;
+    unsigned long data=md->index;
     // 1. dump RGU reg
     CCCI_INF_MSG(md->index, TAG, "Dump MD RGU registers\n");
-    md_cd_lock_cldma_clock_src(1);
     ccci_mem_dump(md->index, md_ctrl->md_rgu_base, 0x30);
-    md_cd_lock_cldma_clock_src(0);
+    
     // 2. wakelock
     wake_lock_timeout(&md_ctrl->trm_wake_lock, 10*HZ);
 
@@ -1001,18 +1001,8 @@ static void md_cd_wdt_work(struct work_struct *work)
         // 4. send message, only reset MD on non-eng load
         ccci_send_virtual_md_msg(md, CCCI_MONITOR_CH, CCCI_MD_MSG_RESET, 0);
     } else {
-        if(md->critical_user_active[2]== 0) //mdlogger closed
-        {
-            ret = md->ops->reset(md);
-            CCCI_INF_MSG(md->index, TAG, "mdlogger closed,reset MD after WDT %d \n", ret);
-            // 4. send message, only reset MD on non-eng load
-            ccci_send_virtual_md_msg(md, CCCI_MONITOR_CH, CCCI_MD_MSG_RESET, 0);
-        }
-        else
-        {
-       	    md_cd_dump_debug_register(md);
-            ccci_md_exception_notify(md, MD_WDT);
-        }
+	md_cd_dump_debug_register(md);
+        ccci_md_exception_notify(md, MD_WDT);
     }
 #endif // Mask by chao for build error
 }
@@ -1914,9 +1904,7 @@ static int md_cd_dump_info(struct ccci_modem *md, MODEM_DUMP_FLAG flag, void *bu
     }
 
 	CCCI_INF_MSG(md->index, KERN, "Dump MD RGU registers\n");
-	md_cd_lock_cldma_clock_src(1);
     ccci_mem_dump(md->index, md_ctrl->md_rgu_base, 0x30);
-	md_cd_lock_cldma_clock_src(0);
 	CCCI_INF_MSG(md->index, KERN, "wdt_enabled=%d\n", atomic_read(&md_ctrl->wdt_enabled));
 	mt_irq_dump_status(md_ctrl->hw_info->md_wdt_irq_id);
 

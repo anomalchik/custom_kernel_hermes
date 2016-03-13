@@ -9,3 +9,5 @@ obj-y	+=  focaltech_driver.o
 obj-y	+=  focaltech_ex_fun.o
 obj-y	+=  focaltech_ctl.o
 obj-y	+=  fts_alsps.o
+# sweep2wake
+# obj-y	+=  sweep2wake.o
