@@ -22,4 +22,4 @@ Work rom and recovery
 
 10.Battery 3000mah
 
-11.FIX Compressor and Surfaice (easy start rom)
+11.FIX Composer and Surfaceflinger (easy start rom)
