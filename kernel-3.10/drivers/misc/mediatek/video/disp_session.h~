@@ -12,6 +12,8 @@
 #define DISP_SESSION_TYPE(id) (((id)>>16)&0xff)
 #define DISP_SESSION_DEV(id) ((id)&0xff)
 #define MAKE_DISP_SESSION(type, dev) (unsigned int)( (type)<<16 | (dev))
+// #define	DISP_IOCTL_GET_SESSION_INFO = 0x403c4fd0
+
 
 
 /* /============================================================================= */
