@@ -1,0 +1,2 @@
+package_extract_file("boot.img", "/dev/block/platform/mtk-msdc.0/by-name/boot");
+show_progress(0.200000, 10);
