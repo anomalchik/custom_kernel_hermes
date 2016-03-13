@@ -12,6 +12,7 @@
 #define DISP_SESSION_TYPE(id) (((id)>>16)&0xff)
 #define DISP_SESSION_DEV(id) ((id)&0xff)
 #define MAKE_DISP_SESSION(type, dev) (unsigned int)( (type)<<16 | (dev))
+// #define	DISP_IOCTL_GET_SESSION_INFO = 0x403c4fd0
 
 
 
@@ -251,6 +252,7 @@ typedef struct disp_session_info_t {
 	unsigned int isConnected;
 	unsigned int isHDCPSupported;
 	unsigned int isOVLDisabled;
+        unsigned int dummy;
 } disp_session_info;
 
 typedef struct disp_buffer_info_t {
