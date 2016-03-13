@@ -30,6 +30,9 @@ Works in rom(tested 7.0.8.0) and recovery
 	* Other
 
 =================================================
+# BUILD
+Сonfigure shell script "build.sh" and RUN!
+
 # OTHER
 Dts forked from stock
 
