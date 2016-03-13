@@ -21,18 +21,18 @@ boot.zip
 boot.img
 boot.img-kernel
 
-cust_adc.h
-cust_eint.h
-cust_eint.dtsi
-cust_clk_buf.h
-cust_eint_md1.h
-cust_gpio_boot.h
-cust_gpio_usage.h
-cust.i2c.h
-cust_kpd.h
-cust_power.h
-pmic_drv.c
-pmic_drv.h
+/cust_adc.h
+/cust_eint.h
+/cust_eint.dtsi
+/cust_clk_buf.h
+/cust_eint_md1.h
+/cust_gpio_boot.h
+/cust_gpio_usage.h
+/cust.i2c.h
+/cust_kpd.h
+/cust_power.h
+/pmic_drv.c
+/pmic_drv.h
 
 .config
 .config.old
