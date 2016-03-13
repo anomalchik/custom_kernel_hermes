@@ -10,9 +10,9 @@
 * Abstract: Function for driver initial, report point, resume, suspend
 *
 ************************************************************************/
-#include "tpd.h"
-#include "tpd_custom_fts.h"
-#include "cust_gpio_usage.h"
+#include <tpd.h>
+#include <tpd_custom_fts.h>
+#include <cust_gpio_usage.h>
 #include <cust_eint.h>
 #include <linux/interrupt.h>
 #include <linux/i2c.h>

@@ -108,7 +108,7 @@ FHD   1920x1080  2key ( (160,2100);(920,2100) )           3key  ( (160,2100);(54
 #define TPD_BUTTON_HEIGH        				(40)  			//100
 #define TPD_KEY_COUNT           				3    				//  4
 #define TPD_KEYS                					{ KEY_MENU, KEY_HOMEPAGE, KEY_BACK}
-#define TPD_KEYS_DIM            	{{160,2010,20,TPD_BUTTON_HEIGH},{540,2100,20,TPD_BUTTON_HEIGH},{920,2100,20,TPD_BUTTON_HEIGH}}
+#define TPD_KEYS_DIM            	{{160,2100,20,TPD_BUTTON_HEIGH},{540,2100,20,TPD_BUTTON_HEIGH},{920,2100,20,TPD_BUTTON_HEIGH}}
 
 /*********************Custom Define end*************************************************/
 
