@@ -1,25 +1,29 @@
-# Custom_kernel_hermes
+# Custom kernel for Xiaomi Hermes (Redmi Note 2)
+# Kernel version 3.10.61 LCSH and Vanzo Hybrid
+Works in rom(tested 7.0.8.0) and recovery
 
-Work rom and recovery
+* Works:
+	* LCM(nt35596 tianma)
+	* Sdcard
+	* Wi-fi
+	* Bt
+	* IOCTL (fixed hwcomposer and surfaceflinger)
 
-1.LCM
+* Partitialy works:
+	* Touch(focaltech) - menu button don't work
+	* Alsps (ps bugged)
+	* Accel
+	* Mag
+	* Giro
+	* Battery 3000mah(sw battery driver)
 
-2.Touch
+* Don't work:
+	* LCM (nt35532_boe, nt35596_auo)
+	* MD1 and MD2
+	* Touch(atmel)
+	* Imgsensor(all img sensors)
+	* Lens
+	* CW2015 (hw battery driver)
+	* Other
+=================================================
 
-3.Fix Sdcard
-
-4.Wi-fi
-
-5.Bt
-
-6.Alsps
-
-7.Accel
-
-8.Mag
-
-9.Giro
-
-10.Battery 3000mah
-
-11.FIX Compressor and Surfaice (easy start rom)
