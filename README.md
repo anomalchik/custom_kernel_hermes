@@ -25,5 +25,6 @@ Works in rom(tested 7.0.8.0) and recovery
 	* Lens
 	* CW2015 (hw battery driver)
 	* Other
+
 =================================================
 
