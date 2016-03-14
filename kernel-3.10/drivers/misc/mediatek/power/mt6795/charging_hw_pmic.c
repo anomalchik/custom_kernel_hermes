@@ -21,8 +21,6 @@
 #define STATUS_OK	0
 #define STATUS_UNSUPPORTED	-1
 #define GETARRAYNUM(array) (sizeof(array)/sizeof(array[0]))
-
-int FG_charging_type;
  // ============================================================ //
  //global variable
  // ============================================================ //

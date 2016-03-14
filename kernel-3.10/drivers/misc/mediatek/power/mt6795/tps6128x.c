@@ -371,7 +371,7 @@ static struct platform_driver tps6128x_user_space_driver = {
     },
 };
 
-static struct i2c_board_info __initdata i2c_tps6128x = { I2C_BOARD_INFO("tps6128x", tps6128x_SLAVE_ADDR};
+static struct i2c_board_info __initdata i2c_tps6128x = { I2C_BOARD_INFO("tps6128x", tps6128x_SLAVE_ADDR)};
 #endif
 
 static int __init tps6128x_init(void)
