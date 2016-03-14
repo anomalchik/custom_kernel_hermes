@@ -8,5 +8,5 @@ export CROSS_COMPILE=/home/anomalchik/tch/android_prebuilts_gcc_linux-x86_aarch6
 cd kernel-3.10
 make mrproper
 cd ..
-rm /forpack/boot.img
+rm forpack/boot.img
 rm boot.zip
