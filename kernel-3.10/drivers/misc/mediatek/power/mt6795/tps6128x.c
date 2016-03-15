@@ -423,3 +423,4 @@ module_exit(tps6128x_exit);
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("I2C tps6128x Driver");
 MODULE_AUTHOR("James Lo<james.lo@mediatek.com>");
+

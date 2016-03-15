@@ -274,7 +274,7 @@ void _i2c_dump_info(mt_i2c *i2c)
 {
   //I2CFUC();
   int val=0; 
-  I2CLOG("I2C(%d) dump info++++++++++++++++++++++\n",i2c->id);
+  I2CLOG("I2C(%d) dump info++++ft++++++++++++++++++\n",i2c->id);
   I2CLOG("I2C structure:\n"
     I2CTAG"Clk=%d,Id=%d,Speed mode=%x,St_rs=%x,Dma_en=%x,Op=%x,Poll_en=%x,Irq_stat=%x\n"
     I2CTAG"Trans_len=%x,Trans_num=%x,Trans_auxlen=%x,Data_size=%x,speed=%d\n"

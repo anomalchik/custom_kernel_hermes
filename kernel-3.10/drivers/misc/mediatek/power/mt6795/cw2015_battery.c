@@ -106,6 +106,7 @@ static struct i2c_driver FG_CW2015_i2c_driver;
 int g_cw2015_capacity = 0;
 int g_cw2015_vol = 0;
 extern int FG_charging_type;
+
 extern int FG_charging_status;
 /*
 extern int dwc_otg_check_dpdm(void);
@@ -113,6 +114,7 @@ extern int get_gadget_connect_flag(void);
 extern int dwc_vbus_status( void );
 */
 
+#define RGK_CW2015_BATTERY_DG_4P35
 #if defined(RGK_CW2015_BATTERY_TRX_4P20)
 static u8 config_info[SIZE_BATINFO] = {
 0x15,0x7F,0x5F,0x5D,0x56,0x60,0x53,0x4A,0x4C,0x49,0x48,0x45,0x3E,0x42,0x3A,0x2C,
