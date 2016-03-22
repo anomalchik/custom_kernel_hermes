@@ -1,0 +1,317 @@
+<5>[    0.606230] (5)[120:display_esd_che][DDP/ddp_manager]enable event FRAME_DONE on scenario primary_disp, irtbit 0x4000004
+<5>[    0.606252] (5)[120:display_esd_che][DDP/ddp_manager]enable event FRAME_START on scenario primary_disp, irtbit 0x4000002
+<4>[    2.614090] (0)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[    2.614129] (0)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc07318bc00
+<4>[    2.626481] (0)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[    2.626489] (0)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[    2.626501] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[    2.626506] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[    2.626514] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[    2.626521] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[    2.626527] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[    2.626532] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[    2.626537] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[    2.626542] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[    2.626557] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[    2.626562] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[    2.626575] (0)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<4>[    4.634104] (0)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[    4.634214] (0)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc0732da800
+<4>[    4.646012] (0)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[    4.646028] (0)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[    4.646041] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[    4.646047] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[    4.646056] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[    4.646064] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[    4.646070] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[    4.646077] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[    4.646082] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[    4.646088] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[    4.646094] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[    4.646100] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[    4.646112] (0)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<4>[    6.654076] (0)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[    6.654117] (0)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc0737d7800
+<4>[    6.665493] (0)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[    6.665501] (0)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[    6.665513] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[    6.665518] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[    6.665527] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[    6.665534] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[    6.665539] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[    6.665544] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[    6.665549] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[    6.665554] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[    6.665559] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[    6.665565] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[    6.665577] (0)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<4>[    8.674072] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[    8.674112] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc0737de000
+<4>[    8.685002] (1)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[    8.685016] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[    8.685028] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[    8.685033] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[    8.685042] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[    8.685048] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[    8.685054] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[    8.685059] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[    8.685064] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[    8.685069] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[    8.685074] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[    8.685079] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[    8.685089] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<4>[   10.694099] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[   10.694150] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc072b7d400
+<4>[   10.704514] (1)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[   10.704529] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[   10.704540] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[   10.704545] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[   10.704554] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[   10.704560] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[   10.704566] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[   10.704571] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[   10.704576] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[   10.704581] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[   10.704586] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[   10.704591] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[   10.704601] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<4>[   12.714082] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[   12.714138] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc061ee3c00
+<4>[   12.724087] (0)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[   12.724103] (0)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[   12.724117] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[   12.724125] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[   12.724136] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[   12.724146] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[   12.724154] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[   12.724162] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[   12.724169] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[   12.724176] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[   12.724183] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[   12.724190] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[   12.724207] (0)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<4>[   14.734070] (0)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[   14.734115] (0)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc061ee4400
+<4>[   14.743555] (0)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[   14.743571] (0)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[   14.743583] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[   14.743589] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[   14.743597] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[   14.743604] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[   14.743609] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[   14.743615] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[   14.743620] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[   14.743625] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[   14.743630] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[   14.743635] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[   14.743645] (0)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<4>[   16.744135] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[   16.744187] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc07076c000
+<4>[   16.746348] (1)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[   16.746360] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[   16.746370] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[   16.746375] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[   16.746384] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[   16.746390] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[   16.746396] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[   16.746401] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[   16.746406] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[   16.746412] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[   16.746417] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[   16.746422] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[   16.746432] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<6>[   18.700608]-(1)[159:kworker/u16:7][[FH]] -fh,skip (1)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[   18.754210] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc063f77400
+<4>[   18.765845] (1)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[   18.765859] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[   18.765879] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[   18.765891] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[   18.765906] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[   18.765921] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[   18.765934] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[   18.765945] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[   18.765956] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[   18.765968] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[   18.765980] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[   18.765991] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[   18.766011] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<4>[   20.774071] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[   20.774119] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc061e42000
+<4>[   20.785348] (1)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[   20.785355] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[   20.785368] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[   20.785373] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[   20.785381] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[   20.785387] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[   20.785393] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[   20.785398] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[   20.785404] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[   20.785409] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[   20.785414] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[   20.785419] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[   20.785430] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<4>[   22.794072] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[   22.794119] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc051a1c400
+<4>[   22.804882] (1)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[   22.804896] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[   22.804908] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[   22.804913] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[   22.804922] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[   22.804929] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[   22.804934] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[   22.804939] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[   22.804945] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[   22.804950] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[   22.804955] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[   22.804960] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[   22.804972] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<4>[   24.814082] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[   24.814136] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc070796000
+<4>[   24.824377] (1)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[   24.824391] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[   24.824404] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[   24.824409] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[   24.824417] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[   24.824424] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[   24.824430] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[   24.824435] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[   24.824439] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[   24.824444] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[   24.824449] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[   24.824454] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[   24.824463] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<4>[   26.834070] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[   26.834122] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc070796000
+<4>[   26.843898] (1)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[   26.843913] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[   26.843925] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[   26.843930] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[   26.843939] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[   26.843945] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[   26.843951] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[   26.843956] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[   26.843961] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[   26.843966] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[   26.843972] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[   26.843977] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[   26.843988] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<4>[   28.844106] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[   28.844167] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc05195d000
+<4>[   28.846696] (1)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[   28.846706] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[   28.846714] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[   28.846719] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[   28.846727] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[   28.846734] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[   28.846740] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[   28.846745] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[   28.846750] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[   28.846755] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[   28.846761] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[   28.846766] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[   28.846777] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<4>[   30.854085] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[   30.854130] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc05195d000
+<4>[   30.866227] (1)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[   30.866241] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[   30.866254] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[   30.866260] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[   30.866268] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[   30.866275] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[   30.866281] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[   30.866286] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[   30.866291] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[   30.866296] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[   30.866301] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[   30.866306] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[   30.866317] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<4>[   32.874090] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[   32.874140] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc061ec7000
+<4>[   32.885734] (1)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[   32.885748] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[   32.885760] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[   32.885765] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[   32.885774] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[   32.885780] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[   32.885786] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[   32.885791] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[   32.885796] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[   32.885802] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[   32.885807] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[   32.885812] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[   32.885825] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<4>[   34.894096] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[   34.894154] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc061d6c000
+<4>[   34.905234] (1)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[   34.905248] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[   34.905258] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[   34.905263] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[   34.905272] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[   34.905278] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[   34.905284] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[   34.905290] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[   34.905295] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[   34.905300] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[   34.905305] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[   34.905310] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[   34.905321] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<4>[   36.914074] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[   36.914121] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc061fc6800
+<4>[   36.924745] (1)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[   36.924760] (1)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[   36.924772] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[   36.924777] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[   36.924785] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[   36.924792] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[   36.924797] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[   36.924802] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[   36.924807] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[   36.924812] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[   36.924817] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[   36.924822] (1)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[   36.924832] (1)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<4>[   38.934097] (0)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[   38.934149] (0)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc07076c000
+<4>[   38.944288] (0)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[   38.944303] (0)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[   38.944315] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[   38.944320] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[   38.944328] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[   38.944335] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[   38.944340] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[   38.944346] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[   38.944351] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[   38.944356] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[   38.944361] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[   38.944366] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[   38.944377] (0)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<4>[   40.954078] (0)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[   40.954125] (0)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc061ee4000
+<4>[   40.963780] (0)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[   40.963795] (0)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[   40.963808] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[   40.963813] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[   40.963821] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[   40.963828] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[   40.963834] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[   40.963839] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[   40.963844] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[   40.963849] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[   40.963854] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[   40.963859] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[   40.963870] (0)[120:display_esd_che][DISPCHECK][ESD]ESD check end
+<4>[   42.964065] (0)[120:display_esd_che][DISPCHECK][ESD]ESD check begin
+<4>[   42.964121] (0)[120:display_esd_che][DISPCHECK][ESD]ESD config thread=ffffffc0200aa400
+<4>[   42.966611] (0)[120:display_esd_che][DISPCHECK][ESD]_esd_check_config_handle_vdo ret=0
+<4>[   42.966625] (0)[120:display_esd_che][DISPCHECK][ESD]ESD config thread done~
+<4>[   42.966638] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp
+<4>[   42.966642] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp i=0
+<4>[   42.966651] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp read_data0 byte0=0x21 byte1=0x9c byte2=0x0 byte3=0x1e 
+<4>[   42.966657] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp check_table cmd=0xa,count=0x1,para_list[0]=0x9c,para_list[1]=0x0
+<4>[   42.966663] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x200=0x13700
+<4>[   42.966668] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x204=0xa0604
+<4>[   42.966673] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x60=0x2
+<4>[   42.966678] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x74=0x1e009c21
+<4>[   42.966684] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x88=0x440
+<4>[   42.966689] (0)[120:display_esd_che][DISPCHECK][DSI]enter cmp DSI+0x0c=0x80000000
+<4>[   42.966699] (0)[120:display_esd_che][DISPCHECK][ESD]ESD check end
