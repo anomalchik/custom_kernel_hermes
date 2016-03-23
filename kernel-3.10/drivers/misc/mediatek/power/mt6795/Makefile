@@ -19,11 +19,7 @@ else
      ifeq ($(CONFIG_MTK_SWCHR_SUPPORT),y)
           obj-$(CONFIG_MTK_SMART_BATTERY) += charging_hw_mt_sw_charger.o                
      else
-	  ifeq ($(CONFIG_RGK_DRIVER_FG_CW2015),y)
-          obj-$(CONFIG_MTK_SMART_BATTERY) += cw2015_battery.o charging_hw_pmic.o
-          else
           obj-$(CONFIG_MTK_SMART_BATTERY) += charging_hw_pmic.o 
-	endif
      endif
   endif
 endif

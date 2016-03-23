@@ -1572,7 +1572,7 @@ config MTK_EXTMEM
 	   depends on MTK_INTERNAL
 	   default n
 #--------------------------RGK driver cfg add (start)------------------------------	  
-config RGK_DRIVER_FG_CW2015
-        bool "RGK for cw2015 charger ic"
+config FG_CW2015
+        bool "Battery HW driver cw2015"
         default n
 #--------------------------RGK driver cfg add (end)------------------------------

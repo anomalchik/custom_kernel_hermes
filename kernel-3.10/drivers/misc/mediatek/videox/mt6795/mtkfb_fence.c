@@ -15,7 +15,7 @@
 #include "display_recorder.h"
 #include "ddp_mmp.h"
 /************************* log*********************/
-
+#define MTK_FB_ION_SUPPORT //if fb don't work disable this
 static bool mtkfb_fence_on = false;
 
 #define MTKFB_FENCE_LOG(fmt, arg...) \

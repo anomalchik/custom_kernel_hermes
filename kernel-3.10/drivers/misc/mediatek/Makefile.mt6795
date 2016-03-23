@@ -91,6 +91,12 @@ obj-$(CONFIG_CUSTOM_KERNEL_MAGNETOMETER) += magnetometer/
 obj-$(CONFIG_CUSTOM_KERNEL_BAROMETER) += barometer/
 endif
 
+ifdef CONFIG_CUSTOM_KERNEL_SSW
+ifneq ($(strip $(CONFIG_CUSTOM_KERNEL_SSW)),"")
+obj-y	+= ssw/
+endif
+endif
+
 obj-$(CONFIG_MTK_XHCI)   +=  xhci/
 
 

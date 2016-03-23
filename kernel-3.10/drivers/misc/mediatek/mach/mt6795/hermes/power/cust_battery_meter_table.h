@@ -14,7 +14,7 @@
 #endif
 
 #if (BAT_NTC_47 == 1)
-#define RBAT_PULL_UP_R             61900
+#define RBAT_PULL_UP_R             61900	
 #endif
 
 #define RBAT_PULL_UP_VOLT          2800
@@ -843,7 +843,7 @@ R_PROFILE_STRUC r_profile_temperature[] =
 	{0  , 0 },
 	{0  , 0 },
 	{0  , 0 }
-};    
+};  
 
 // ============================================================
 // function prototype

@@ -145,6 +145,7 @@ endif
 #obj-y	+= matv/
 #obj-y	+= touchpanel/
 #
+obj-y	+= battery_fual/
 
 obj-$(CONFIG_MTK_VOW_SUPPORT)	+= vow/
 

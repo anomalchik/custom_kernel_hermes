@@ -91,6 +91,7 @@ static int tianma_second_vlue;
 #define REGFLAG_END_OF_TABLE		 0xFD   // END OF REGISTERS MARKER
 
 static LCM_DSI_MODE_SWITCH_CMD lcm_switch_mode_cmd;
+extern int mtkfb_set_backlight_level(unsigned int level);
 
 #ifndef TRUE
     #define TRUE 1
