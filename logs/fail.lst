@@ -1,0 +1,241 @@
+<4>[    0.534136] (5)[1:swapper/0]mtk-msdc: probe of 11250000.MSDC2 failed with error 1
+<4>[    0.586482] (1)[1:swapper/0]als_ps: probe of als_ps failed with error -1
+<4>[    1.705100] (5)[1:swapper/0]<BATCHDEV>  batch_real_driver_init fail
+<3>[    1.705111] (5)[1:swapper/0]<BATCHDEV> batch_probe 985 : batch real driver init fail
+<4>[    1.705122] (5)[1:swapper/0]<BATCHDEV> ----batch_probe fail !!!
+<4>[    1.705142] (5)[1:swapper/0]m_batch_pl: probe of m_batch_pl.48 failed with error -1
+<4>[    1.705547] (5)[1:swapper/0]<ALS/PS>  alsps_real_driver_init fail
+<4>[    1.705559] (5)[1:swapper/0]<ALS/PS> alsps_probe 1142 : alsps real driver init fail
+<4>[    1.705569] (5)[1:swapper/0]<ALS/PS> ----alsps_probe fail !!!
+<4>[    1.705585] (5)[1:swapper/0]m_alsps_pl: probe of m_alsps_pl.47 failed with error -1
+<4>[    1.803110] (5)[1:swapper/0]<GYROSCOPE> gyro_probe 744 : gyro_factory_device_init fail
+<4>[    1.809287] (5)[1:swapper/0]<MAGNETIC> mag_probe 989 : mag_factory_device_init fail
+<4>[    2.837891] (0)[1:init][1:init] fork fail retval:0xfffffdff
+<4>[    2.837900] (0)[1:init][1:init] fork fail:[fffffffffffffdff, -513]
+<6>[    2.845551] (0)[244:healthd]binder: 244:244 transaction failed 29189, size 0-0
+<3>[    6.404961] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[    6.607638] (4)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[    6.810348] (2)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[    7.012998] (6)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<11>[    7.357051] (0)[692:mcd]octvm: mount cgroup failed, Permission denied
+<7>[    7.474964] (4)[251:wmt_loader][FM_ERR | CHIP]open "etc/fmr/mt6630_fm_cust.cfg" failed
+<7>[    7.475009] (4)[251:wmt_loader][FM_ERR | MAIN]MT6630fm_cust_config_setup failed
+<3>[    7.708935] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+3[WMT-CORE][E]opfunc_pwr_on(1004):WMT-CORE: wmt_core_stp_init fail (-1)
+3[WMT-CORE][E]wmt_core_ctrl(522):WMT-CORE: wmt_core_ctrl failed: id(5), type(1), value(0) iRet:(-1)
+3[WMT-CORE][E]wmt_core_ctrl(522):WMT-CORE: wmt_core_ctrl failed: id(5), type(0), value(0) iRet:(-1)
+3[WMT-CORE][W]wmt_core_stp_deinit:end with fail:-2
+<3>[    7.911740] (5)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[    8.114293] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[    8.316966] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[    8.519613] (2)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+3[WMT-CORE][E]opfunc_pwr_on(1004):WMT-CORE: wmt_core_stp_init fail (-1)
+3[WMT-CORE][E]wmt_core_ctrl(522):WMT-CORE: wmt_core_ctrl failed: id(5), type(1), value(0) iRet:(-1)
+3[WMT-CORE][E]wmt_core_ctrl(522):WMT-CORE: wmt_core_ctrl failed: id(5), type(0), value(0) iRet:(-1)
+3[WMT-CORE][W]wmt_core_stp_deinit:end with fail:-2
+<3>[    8.722287] (4)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[    8.925547] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<5>[    8.981134] (1)[387:mtk_agpsd][ccci1/chr]port ttyC2 ch40 write fail when md_s=2
+<3>[    9.085899] (0)[106:kworker/u17:1][ccci1/err/rpc][0x00004005] fail: name:MD1_SIM3_HOT_PLUG_EINT, len:23, type:6, ret:-11
+<3>[    9.085965] (0)[106:kworker/u17:1][ccci1/err/rpc][0x00004005] fail: name:MD1_SIM3_HOT_PLUG_EINT, len:23, type:5, ret:-11
+<3>[    9.086030] (0)[106:kworker/u17:1][ccci1/err/rpc][0x00004005] fail: name:MD1_SIM4_HOT_PLUG_EINT, len:23, type:6, ret:-11
+<3>[    9.086096] (0)[106:kworker/u17:1][ccci1/err/rpc][0x00004005] fail: name:MD1_SIM4_HOT_PLUG_EINT, len:23, type:5, ret:-11
+<3>[    9.128204] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+3[WMT-CORE][E]opfunc_pwr_on(1004):WMT-CORE: wmt_core_stp_init fail (-1)
+3[WMT-CORE][E]wmt_core_ctrl(522):WMT-CORE: wmt_core_ctrl failed: id(5), type(1), value(0) iRet:(-1)
+3[WMT-CORE][E]wmt_core_ctrl(522):WMT-CORE: wmt_core_ctrl failed: id(5), type(0), value(0) iRet:(-1)
+3[WMT-CORE][W]wmt_core_stp_deinit:end with fail:-2
+3[WMT-CORE][E]opfunc_func_on(1112):func(9) pwr_on fail(-2)
+3[HIF-SDIO][W]wmtd_thread:opid (0x3) failed, iRet(-3)
+3[HIF-SDIO][W]mtk_wcn_wmt_func_ctrl:OPID(3) type(9) fail
+<3>[    9.331290] (3)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[    9.533928] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[    9.736694] (3)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[    9.939343] (2)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   10.142070] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   10.344655] (2)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   10.547570] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   10.750136] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   10.952673] (2)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   11.156343] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   11.358994] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   11.561989] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   11.764770] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<6>[   11.960318] (0)[324:mediaserver][[kd_sensorlist]] [CAMERA SENSOR] I2C send failed!!, Addr = 0x30
+<6>[   11.960438] (0)[324:mediaserver][[kd_sensorlist]] [CAMERA SENSOR] I2C send failed!!, Addr = 0x30
+<5>[   11.960447] (0)[324:mediaserver][ov5670_camera_sensor] [get_imgsensor_id] Read sensor id fail, id: 0x6c
+<6>[   11.960574] (1)[324:mediaserver][[kd_sensorlist]] [CAMERA SENSOR] I2C send failed!!, Addr = 0x30
+<6>[   11.960692] (1)[324:mediaserver][[kd_sensorlist]] [CAMERA SENSOR] I2C send failed!!, Addr = 0x30
+<5>[   11.960701] (1)[324:mediaserver][ov5670_camera_sensor] [get_imgsensor_id] Read sensor id fail, id: 0x6c
+<6>[   11.961018] (1)[324:mediaserver][[kd_sensorlist]] [CAMERA SENSOR] I2C send failed!!, Addr = 0x30
+<6>[   11.961137] (1)[324:mediaserver][[kd_sensorlist]] [CAMERA SENSOR] I2C send failed!!, Addr = 0x30
+<5>[   11.961146] (1)[324:mediaserver][ov5670_camera_sensor] [get_imgsensor_id] Read sensor id fail, id: 0x20
+<6>[   11.961265] (1)[324:mediaserver][[kd_sensorlist]] [CAMERA SENSOR] I2C send failed!!, Addr = 0x30
+<6>[   11.961382] (1)[324:mediaserver][[kd_sensorlist]] [CAMERA SENSOR] I2C send failed!!, Addr = 0x30
+<5>[   11.961391] (1)[324:mediaserver][ov5670_camera_sensor] [get_imgsensor_id] Read sensor id fail, id: 0x20
+<3>[   11.967388] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<6>[   12.024304] (0)[324:mediaserver][[kd_sensorlist]] [CAMERA SENSOR] I2C send failed!!, Addr = 0x30
+<6>[   12.024402] (0)[324:mediaserver][[kd_sensorlist]] [CAMERA SENSOR] I2C send failed!!, Addr = 0x30
+<5>[   12.024408] (0)[324:mediaserver][ov5670_camera_sensor] [get_imgsensor_id] Read sensor id fail, id: 0x6c
+<6>[   12.024508] (0)[324:mediaserver][[kd_sensorlist]] [CAMERA SENSOR] I2C send failed!!, Addr = 0x30
+<6>[   12.024605] (0)[324:mediaserver][[kd_sensorlist]] [CAMERA SENSOR] I2C send failed!!, Addr = 0x30
+<5>[   12.024610] (0)[324:mediaserver][ov5670_camera_sensor] [get_imgsensor_id] Read sensor id fail, id: 0x6c
+<6>[   12.024710] (0)[324:mediaserver][[kd_sensorlist]] [CAMERA SENSOR] I2C send failed!!, Addr = 0x30
+<6>[   12.024809] (0)[324:mediaserver][[kd_sensorlist]] [CAMERA SENSOR] I2C send failed!!, Addr = 0x30
+<5>[   12.024814] (0)[324:mediaserver][ov5670_camera_sensor] [get_imgsensor_id] Read sensor id fail, id: 0x20
+<6>[   12.024913] (0)[324:mediaserver][[kd_sensorlist]] [CAMERA SENSOR] I2C send failed!!, Addr = 0x30
+<6>[   12.025011] (0)[324:mediaserver][[kd_sensorlist]] [CAMERA SENSOR] I2C send failed!!, Addr = 0x30
+<5>[   12.025016] (0)[324:mediaserver][ov5670_camera_sensor] [get_imgsensor_id] Read sensor id fail, id: 0x20
+<3>[   12.171930] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   12.380985] (3)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   12.583530] (2)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   12.786067] (3)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   12.988718] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   13.191496] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   13.394094] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   13.596734] (2)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   13.799288] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   14.001853] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   14.205259] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   14.408010] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   14.611836] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   14.814478] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   15.017090] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   15.219749] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   15.422936] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   15.625822] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   15.828427] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   16.031095] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   16.233663] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   16.436245] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   16.639014] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   16.841702] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   17.044332] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   17.246959] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   17.449587] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   17.652183] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   17.854754] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   18.057319] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   18.259904] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   18.462766] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   18.665600] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   18.868361] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   19.071122] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   19.273788] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   19.476961] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   19.679803] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   19.882705] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   20.085336] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   20.288020] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   20.490651] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   20.693227] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   20.895903] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   21.098494] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   21.301105] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   21.503704] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   21.706335] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   21.909028] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   22.111618] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   22.314320] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   22.517124] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   22.719709] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   22.923043] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   23.125653] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   23.328263] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   23.531285] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   23.737895] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   23.940513] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   24.143121] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   24.345808] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   24.554224] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   24.761733] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   24.964381] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   25.167127] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   25.369741] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   25.572412] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   25.775083] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   25.977697] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   26.180546] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   26.383167] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   26.586887] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   26.789597] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   26.992260] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   27.194936] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   27.397656] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   27.600600] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   27.803341] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   28.005966] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   28.208516] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   28.411121] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   28.613787] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   28.816434] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   29.019039] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   29.221858] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   29.424593] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   29.627991] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   29.831109] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   30.033893] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   30.237198] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   30.441256] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   30.644193] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   30.850256] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   31.052883] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   31.255583] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   31.458221] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   31.660853] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   31.863644] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   32.066406] (2)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   32.270656] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   32.473270] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<6>[   32.675825]-(0)[56:cfinteractive][[FH]] FHCTL1_DDS: 0x00122000<3>[   32.675834] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   32.879059] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   33.081708] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   33.284352] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   33.486968] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   33.689607] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   33.892528] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   34.095329] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   34.298292] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   34.500907] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   34.703516] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   34.906249] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   35.108859] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   35.311472] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   35.514426] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   35.717232] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   35.919963] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   36.122553] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   36.325582] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   36.528199] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   36.731136] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   36.933915] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   37.136514] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   37.339133] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   37.541737] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   37.744374] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   37.947161] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   38.150036] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   38.352870] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   38.555581] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   38.758209] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   38.960836] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   39.163595] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   39.366221] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   39.578171] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   39.781770] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   39.984462] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   40.187136] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   40.390176] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   40.592737] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   40.795360] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   40.998816] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   41.201406] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   41.404127] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   41.606989] (1)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   41.811843] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   42.014405] (2)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   42.217193] (2)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   42.419878] (0)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   42.622528] (3)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   42.825158] (2)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail
+<3>[   43.027829] (2)[375:AALLightSensor][ALS/AAL]alsps_aal_get_data fail

@@ -1,0 +1,319 @@
+<6>[    0.000000]-(0)[0:swapper]psci: probing for conduit method from DT.
+<4>[    0.000000]-(0)[0:swapper]Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 486533
+3[CONN-MD-DFT][W]conn_md_add_user:uid (0x00000005) is added to user list successfully
+<6>[    0.436959] (1)[1:swapper/0]MobiCore mcd: MobiCore Driver, Build: Mon Mar 14 18:20:11 2016
+<5>[    0.440466] (5)[1:swapper/0][Power/PMIC] [hwPowerOn] acquire powerId:6 index:0 mod_name: msdc powerVolt:3300
+<5>[    0.484263] (5)[1:swapper/0][Power/PMIC] [hwPowerOn] acquire powerId:8 index:0 mod_name: msdc powerVolt:3300
+<5>[    0.484386] (5)[1:swapper/0][Power/PMIC] [hwPowerOn] acquire powerId:5 index:0 mod_name: msdc powerVolt:3300
+<5>[    0.486085] (5)[1:swapper/0][Power/PMIC] [hwPowerOn] acquire powerId:8 index:0 mod_name: msdc powerVolt:3300
+<5>[    0.486206] (5)[1:swapper/0][Power/PMIC] [hwPowerOn] acquire powerId:5 index:0 mod_name: msdc powerVolt:3300
+<4>[    0.590066] (5)[1:swapper/0][DISP]func|_build_path_direct_link
+<5>[    0.590086] (5)[1:swapper/0][DDP/ddp_manager]scenario primary_disp acquire mutex 0 , left mutex 0x1e!
+<5>[    0.638485] (5)[1:swapper/0][Power/PMIC] [hwPowerOn] acquire powerId:21 index:0 mod_name: I2C_DRV powerVolt:0
+<5>[    0.726518] (0)[6:kworker/u16:0][Power/PMIC] [hwPowerOn] acquire powerId:8 index:0 mod_name: msdc powerVolt:1800
+<5>[    1.352184] (1)[1:swapper/0][Power/PMIC] [hwPowerOn] acquire powerId:28 index:0 mod_name: VDD33_USB_P0 powerVolt:3300
+<5>[    1.352269] (1)[1:swapper/0][Power/PMIC] [hwPowerOn] acquire powerId:20 index:0 mod_name: VDD10_USB_P0 powerVolt:1000
+<4>[    1.377840] (1)[1:swapper/0][mmc_blk_probe]: mmcblk0 by manufacturer settings, quirks=0x1000
+<4>[    1.383999] (5)[1:swapper/0][mmc_blk_probe]: mmcblk1 by manufacturer settings, quirks=0x0
+<4>[    1.451777] (1)[1:swapper/0]mtk-tpd: Focaltech fts I2C Touchscreen Driver (Built Mar 15 2016 @ 17:55:12)
+<5>[    1.464091] (5)[1:swapper/0][Power/PMIC] [hwPowerOn] acquire powerId:10 index:0 mod_name: TP powerVolt:2800
+<5>[    1.998065] (0)[1:init]type=1403 audit(1458054420.680:2): policy loaded auid=4294967295 ses=4294967295
+<5>[    2.023046] (0)[1:init]type=1404 audit(1458054420.700:3): enforcing=1 old_enforcing=0 auid=4294967295 ses=4294967295
+<14>[    2.313219] (5)[1:init]init: found import '/init.environ.rc', adding to import listinit: found import '/init.usb.rc', adding to import listinit: found import '/init.mt6795.rc', adding to import listinit: found import '/init.zygote64_32.rc', adding to import listinit: found import '/init.trace.rc', adding to import listinit: found import '/init.miui.rc', adding to import listinit: found import '/init.storage.rc', adding to import listinit: importing '/init.environ.rc'init: <<Parsing /init.environ.rc>>
+<14>[    2.315920] (5)[1:init]init: importing '/init.miui.rc'init: <<Parsing /init.miui.rc>>
+<11>[    2.315964] (5)[1:init]init: /init.miui.rc: 21: ignored duplicate definition of service 'mdbd'
+<14>[    2.355361] (1)[180:ueventd]init: restorecon_recursive: /sys/devices/bus.2/uibc.40
+<14>[    2.355496] (1)[180:ueventd]init: restorecon_recursive: /sys/devices/bus.2/uibc.40/misc/uibc
+<14>[    2.406315] (5)[180:ueventd]init: restorecon_recursive: /sys/devices/virtual/misc/xt_qtaguid
+<14>[    2.412261] (5)[180:ueventd]init: restorecon_recursive: /sys/devices/virtual/misc/uinput
+<14>[    2.520529] (5)[1:init]init: command 'mkdir /acct/uid' action=init status=0 (/init.rc:51)
+<14>[    2.520635] (5)[1:init]init: command 'mount tmpfs none /sys/fs/cgroup mode=0750,uid=0,gid=1000' action=init status=0 (/init.rc:54)
+<14>[    2.524459] (5)[1:init]init: command 'chown root net_bw_acct /proc/net/xt_qtaguid/ctrl' action=init status=0 (/init.rc:153)
+<14>[    2.524523] (5)[1:init]init: command 'chown root net_bw_stats /proc/net/xt_qtaguid/stats' action=init status=0 (/init.rc:154)
+<14>[    2.524553] (5)[1:init]init: command 'chmod 0644 /dev/xt_qtaguid' action=init status=0 (/init.rc:158)
+<14>[    2.527930] (5)[1:init]init: command 'mount tmpfs tmpfs /storage/emulated mode=0755,uid=1023,gid=1023' action=init status=0 (init.ssd.rc:34)
+<14>[    2.528167] (5)[1:init]init: command 'mount tmpfs none /sys/fs/cgroup mode=0750,uid=0,gid=1000' action=init status=0 (/init.miui.rc:5)
+<14>[    2.528263] (5)[1:init]init: command 'mkdir /sys/fs/cgroup/memory 0750 root system' action=init status=0 (/init.miui.rc:6)
+<14>[    2.528310] (5)[1:init]init: command 'mount cgroup none /sys/fs/cgroup/memory memory' action=init status=-1 (/init.miui.rc:7)
+<14>[    2.528382] (5)[1:init]init: command 'mkdir /sys/fs/cgroup/freezer 0750 root system' action=init status=0 (/init.miui.rc:8)
+<14>[    2.528422] (5)[1:init]init: command 'mount cgroup none /sys/fs/cgroup/freezer freezer' action=init status=-1 (/init.miui.rc:9)
+<14>[    2.752119] (1)[1:init]init: command 'mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000' action=fs status=0 (init.mt6795.usb.rc:15)
+<14>[    2.772128] (5)[1:init]init: command 'chmod 777 system/bin/getuuid' action=post-fs-data status=-2 (/init.rc:758)
+<14>[    2.794454] (5)[1:init]init: command 'chown system net_bt_admin /dev/uinput' action=post-fs-data status=0 (/init.mt6795.rc:453)
+<14>[    2.794480] (5)[1:init]init: command 'chown system media /dev/uibc' action=post-fs-data status=0 (/init.mt6795.rc:456)
+<14>[    2.794496] (5)[1:init]init: command 'chmod 0660 /dev/uibc' action=post-fs-data status=0 (/init.mt6795.rc:457)
+<14>[    2.802428] (0)[1:init]init: command 'mkdir /data/system/mcd 755 system system' action=post-fs-data status=-2 (/init.miui.rc:12)
+<14>[    2.802515] (0)[1:init]init: command 'restorecon_recursive /data/system/mcd' action=post-fs-data status=0 (/init.miui.rc:13)
+<14>[    2.805121] (1)[1:init]init: computing context for service '/system/xbin/miuioneshots'
+<14>[    2.806517] (1)[1:init]init: command 'start checkpath' action=post-fs-data status=0 (/init.miui.rc:80)
+<14>[    2.806805] (1)[1:init]init: command 'mkdir /data/system/theme 0755 theme theme' action=post-fs-data status=-2 (/init.miui.rc:94)
+<14>[    2.806843] (1)[1:init]init: command 'chown theme theme /data/system/theme' action=post-fs-data status=-2 (/init.miui.rc:95)
+<14>[    2.806859] (1)[1:init]init: command 'chmod 0755 /data/system/theme' action=post-fs-data status=-2 (/init.miui.rc:96)
+<14>[    2.806916] (1)[1:init]init: command 'restorecon /data/system/theme' action=post-fs-data status=-2 (/init.miui.rc:97)
+<14>[    2.806935] (1)[1:init]init: command 'chown theme theme /data/system/theme/lock_wallpaper' action=post-fs-data status=-2 (/init.miui.rc:98)
+<14>[    2.806950] (1)[1:init]init: command 'chmod 0755 /data/system/theme/lock_wallpaper' action=post-fs-data status=-2 (/init.miui.rc:99)
+7[2:kthreadd] fork [241n /data/system/theme/lock_wallpaper' action=post-fs-data status=-2 (/init.miui.rc:100)
+<14>[    2.807095] (1)[1:init]init: command 'mkdir /data/system/theme_magic 0755 theme theme' action=post-fs-data status=-2 (/init.miui.rc:101)
+<14>[    2.807113] (1)[1:init]init: command 'chown theme theme /data/system/theme_magic' action=post-fs-data status=-2 (/init.miui.rc:102)
+<14>[    2.807129] (1)[1:init]init: command 'chmod 0775 /data/system/theme_magic' action=post-fs-data status=-2 (/init.miui.rc:103)
+<14>[    2.807160] (1)[1:init]init: command 'restorecon /data/system/theme_magic' action=post-fs-data status=-2 (/init.miui.rc:104)
+<11>[    2.808928] (1)[1:init]init_hook_E: Could not find /cust/cust_variant and /data/miui/cust_variant
+<11>[    2.811033] (1)[1:init]init_hook_I: cust prop white key: ro.miui.cust_variant
+<11>[    2.811042] (1)[1:init]init_hook_I: cust prop white key: ro.miui.region
+<11>[    2.811066] (1)[1:init]init_hook_I: cust prop white key: ro.miui.mcc
+<11>[    2.811074] (1)[1:init]init_hook_I: cust prop white key: ro.miui.mnc
+<11>[    2.811130] (1)[1:init]init: can not load properties (null) from /data/miui/app/recommended/version
+<14>[    2.812877] (0)[1:init]init: PropSet [ro.build.id:LRX22G] Start>>
+<14>[    2.812990] (0)[1:init]init: PropSet [ro.build.id:LRX22G] Done
+<14>[    2.812997] (0)[1:init]init: PropSet [ro.build.display.id:LRX22G] Start>>
+<14>[    2.813017] (0)[1:init]init: PropSet [ro.build.display.id:LRX22G] Done
+<14>[    2.813102] (0)[1:init]init: PropSet [ro.build.display.id.cta:H3Y_S100_20150218] Start>>
+<14>[    2.813121] (0)[1:init]init: PropSet [ro.build.display.id.cta:H3Y_S100_20150218] Done
+<14>[    2.813128] (0)[1:init]init: PropSet [ro.build.version.incremental:6.2.18] Start>>
+<14>[    2.813147] (0)[1:init]init: PropSet [ro.build.version.incremental:6.2.18] Done
+<14>[    2.813326] (0)[1:init]init: PropSet [ro.build.version.sdk:21] Start>>
+<14>[    2.813346] (0)[1:init]init: PropSet [ro.build.version.sdk:21] Done
+<14>[    2.813354] (0)[1:init]init: PropSet [ro.build.version.codename:REL] Start>>
+<14>[    2.813373] (0)[1:init]init: PropSet [ro.build.version.codename:REL] Done
+<14>[    2.813380] (0)[1:init]init: PropSet [ro.build.version.all_codenames:REL] Start>>
+<14>[    2.813398] (0)[1:init]init: PropSet [ro.build.version.all_codenames:REL] Done
+<14>[    2.813405] (0)[1:init]init: PropSet [ro.build.version.release:5.0.2] Start>>
+<14>[    2.813424] (0)[1:init]init: PropSet [ro.build.version.release:5.0.2] Done
+<14>[    2.813431] (0)[1:init]init: PropSet [ro.build.version.security_patch:2016-02-01] Start>>
+<14>[    2.813450] (0)[1:init]init: PropSet [ro.build.version.security_patch:2016-02-01] Done
+<14>[    2.813457] (0)[1:init]init: PropSet [ro.build.version.base_os:] Start>>
+<14>[    2.813475] (0)[1:init]init: PropSet [ro.build.version.base_os:] Done
+<14>[    2.813482] (0)[1:init]init: PropSet [ro.build.date:Sat Feb 20 at 20:35:35 MSK 2016] Start>>
+<14>[    2.813500] (0)[1:init]init: PropSet [ro.build.date:Sat Feb 20 at 20:35:35 MSK 2016] Done
+<14>[    2.813507] (0)[1:init]init: PropSet [ro.build.date.utc:1455989735] Start>>
+<14>[    2.813525] (0)[1:init]init: PropSet [ro.build.date.utc:1455989735] Done
+<14>[    2.813532] (0)[1:init]init: PropSet [ro.build.type:user] Start>>
+<14>[    2.813569] (0)[1:init]init: PropSet [ro.build.type:user] Done
+<14>[    2.813576] (0)[1:init]init: PropSet [ro.build.user:jenkins] Start>>
+<14>[    2.813594] (0)[1:init]init: PropSet [ro.build.user:jenkins] Done
+<14>[    2.813601] (0)[1:init]init: PropSet [ro.build.host:multirom.me] Start>>
+<14>[    2.813619] (0)[1:init]init: PropSet [ro.build.host:multirom.me] Done
+<14>[    2.813626] (0)[1:init]init: PropSet [ro.build.tags:release-keys] Start>>
+<14>[    2.813644] (0)[1:init]init: PropSet [ro.build.tags:release-keys] Done
+<14>[    2.814222] (0)[1:init]init: PropSet [ro.build.product:hermes] Start>>
+<14>[    2.814240] (0)[1:init]init: PropSet [ro.build.product:hermes] Done
+<14>[    2.814247] (0)[1:init]init: PropSet [ro.build.description:hermes-user 5.0.2 LRX22G 6.2.18 release-keys] Start>>
+<14>[    2.814266] (0)[1:init]init: PropSet [ro.build.description:hermes-user 5.0.2 LRX22G 6.2.18 release-keys] Done
+<14>[    2.814273] (0)[1:init]init: PropSet [ro.build.fingerprint:Xiaomi/hermes/hermes:5.0.2/LRX22G/6.2.18:user/release-keys] Start>>
+<14>[    2.814292] (0)[1:init]init: PropSet [ro.build.fingerprint:Xiaomi/hermes/hermes:5.0.2/LRX22G/6.2.18:user/release-keys] Done
+<14>[    2.814299] (0)[1:init]init: PropSet [ro.build.characteristics:default] Start>>
+<14>[    2.814317] (0)[1:init]init: PropSet [ro.build.characteristics:default] Done
+<14>[    2.815049] (0)[1:init]init: PropSet [debug.hwui.render_dirty_regions:false] Start>>
+<14>[    2.815066] (0)[1:init]init: PropSet [debug.hwui.render_dirty_regions:false] Done
+<14>[    2.815328] (0)[1:init]init: PropSet [ro.build.device.ninur:64687] Start>>
+<14>[    2.815348] (0)[1:init]init: PropSet [ro.build.device.ninur:64687] Done
+<14>[    2.815411] (0)[1:init]init: PropSet [ro.miui.ui.version.code:5] Start>>
+<14>[    2.815436] (0)[1:init]init: PropSet [ro.miui.ui.version.code:5] Done
+<14>[    2.815443] (0)[1:init]init: PropSet [ro.miui.ui.version.name:V7] Start>>
+<14>[    2.815462] (0)[1:init]init: PropSet [ro.miui.ui.version.name:V7] Done
+<14>[    2.818383] (0)[1:init]init: PropSet [ro.mtk_wfd_sink_uibc_support:1] Start>>
+<14>[    2.818401] (0)[1:init]init: PropSet [ro.mtk_wfd_sink_uibc_support:1] Done
+<14>[    2.819317] (0)[1:init]init: PropSet [ro.mtk_bg_power_saving_ui:1] Start>>
+<14>[    2.819335] (0)[1:init]init: PropSet [ro.mtk_bg_power_saving_ui:1] Done
+<14>[    2.819870] (0)[1:init]init: PropSet [ro.miui.has_real_blur:1] Start>>
+<14>[    2.819890] (0)[1:init]init: PropSet [ro.miui.has_real_blur:1] Done
+<14>[    2.819897] (0)[1:init]init: PropSet [ro.miui.has_handy_mode_sf:1] Start>>
+<14>[    2.819916] (0)[1:init]init: PropSet [ro.miui.has_handy_mode_sf:1] Done
+<14>[    2.820449] (0)[1:init]init: PropSet [keyguard.no_require_sim:true] Start>>
+<14>[    2.820467] (0)[1:init]init: PropSet [keyguard.no_require_sim:true] Done
+<14>[    2.820474] (0)[1:init]init: PropSet [persist.sys.miui_feature_config:/system/etc/miui_feature/lite.conf] Start>>
+<14>[    2.820492] (0)[1:init]init: PropSet [persist.sys.miui_feature_config:/system/etc/miui_feature/lite.conf] Done
+<14>[    2.820780] (0)[1:init]init: PropSet [ro.translation.build:BARS] Start>>
+<14>[    2.820799] (0)[1:init]init: PropSet [ro.translation.build:BARS] Done
+<14>[    2.825524] (0)[1:init]init: command 'chown radio system /sys/android_power/acquire_full_wake_lock' action=boot status=-2 (/init.rc:405)
+<14>[    2.825539] (0)[1:init]init: command 'chown radio system /sys/android_power/acquire_partial_wake_lock' action=boot status=-2 (/init.rc:406)
+<7>[    2.837353] (0)[239:miuioneshots][239:miuioneshots] exit
+<7>[    2.837708]-(0)[239:miuioneshots][239:miuioneshots] sig 17 to [1:init] stat=R
+<14>[    2.918475] (1)[1:init]init: processing action 0x4eb380 (property:ro.build.type=user)
+<14>[    2.918973] (1)[1:init]init: command 'start emsvr_user' action=property:ro.build.type=user status=0 (/init.mt6795.rc:1287)
+<14>[    2.948510] (0)[1:init]init: [PropSet]: pid:248 uid:0 gid:0 set persist.vold.first_boot=0
+<14>[    2.957165] (5)[1:init]init: [PropSet]: pid:248 uid:0 gid:0 set vold.swap.state=0
+<14>[    2.957513] (7)[1:init]init: [PropSet]: pid:248 uid:0 gid:0 set vold.path.internal_sd=/storage/sdcard0
+<14>[    2.957711] (5)[1:init]init: [PropSet]: pid:248 uid:0 gid:0 set vold.path.external_sd=/storage/sdcard1
+<14>[    3.049281] (5)[1:init]init: [PropSet]: pid:253 uid:0 gid:0 set persist.sys.display_ce=11
+<14>[    3.049777] (5)[1:init]init: [PropSet]: pid:253 uid:0 gid:0 set persist.sys.pq.picmode=1
+<14>[    3.050433] (7)[1:init]init: [PropSet]: pid:253 uid:0 gid:0 set persist.sys.display_prefer=2
+<14>[    3.051122] (5)[1:init]init: [PropSet]: pid:253 uid:0 gid:0 set persist.sys.ltm_enable=false
+<14>[    3.051433] (5)[1:init]init: [PropSet]: pid:253 uid:0 gid:0 set persist.sys.aal.function=0
+<14>[    3.694640] (1)[1:init]init: [PropSet]: pid:251 uid:0 gid:0 set persist.mtk.wcn.combo.chipid=0x6630
+<14>[    3.924887] (1)[1:init]init: [PropSet]: pid:248 uid:0 gid:0 set vold.encryption.type=default
+<5>[    4.024342] (0)[149:bat_thread_kthr][battery_meter_reset]1 oam_d0=46,oam_d_5=46,ui=54
+<5>[    4.024348] (0)[149:bat_thread_kthr][battery_meter_reset]2 oam_d0=46,oam_d_5=46,ui=54
+<14>[    5.432344] (0)[1:init]init: [PropSet]: pid:248 uid:0 gid:0 set ro.crypto.fs_crypto_blkdev=/dev/block/dm-0
+<14>[    5.560339] (1)[1:init]init: [PropSet]: pid:248 uid:0 gid:0 set vold.decrypt=trigger_load_persist_props
+<14>[    5.857618] (0)[1:init]init: PropSet [persist.sys.miui_feature_config:/system/etc/miui_feature/lite.conf] Start>>
+<14>[    5.862425] (1)[1:init]init: PropSet [persist.sys.miui_feature_config:/system/etc/miui_feature/lite.conf] Done
+<14>[    5.911897] (0)[1:init]init: [PropSet]: pid:248 uid:0 gid:0 set vold.post_fs_data_done=0
+<14>[    5.912289] (0)[1:init]init: [PropSet]: pid:248 uid:0 gid:0 set vold.decrypt=trigger_post_fs_data
+<14>[    5.961684] (0)[1:init]init: command 'chmod 777 system/bin/getuuid' action=post-fs-data status=-2 (/init.rc:758)
+<14>[    5.988341] (0)[1:init]init: command 'chown system net_bt_admin /dev/uinput' action=post-fs-data status=0 (/init.mt6795.rc:453)
+<14>[    5.988371] (0)[1:init]init: command 'chown system media /dev/uibc' action=post-fs-data status=0 (/init.mt6795.rc:456)
+<14>[    5.988387] (0)[1:init]init: command 'chmod 0660 /dev/uibc' action=post-fs-data status=0 (/init.mt6795.rc:457)
+<14>[    6.002448] (0)[1:init]init: command 'mkdir /data/system/mcd 755 system system' action=post-fs-data status=0 (/init.miui.rc:12)
+<14>[    6.002550] (0)[1:init]init: command 'restorecon_recursive /data/system/mcd' action=post-fs-data status=0 (/init.miui.rc:13)
+<14>[    6.002617] (0)[1:init]init: computing context for service '/system/xbin/miuioneshots'
+<14>[    6.003064] (0)[1:init]init: command 'start checkpath' action=post-fs-data status=0 (/init.miui.rc:80)
+<14>[    6.004735] (0)[1:init]init: command 'mkdir /data/system/theme 0755 theme theme' action=post-fs-data status=0 (/init.miui.rc:94)
+<14>[    6.004803] (0)[1:init]init: command 'chown theme theme /data/system/theme' action=post-fs-data status=0 (/init.miui.rc:95)
+<14>[    6.004824] (0)[1:init]init: command 'chmod 0755 /data/system/theme' action=post-fs-data status=0 (/init.miui.rc:96)
+<14>[    6.004953] (0)[1:init]init: command 'restorecon /data/system/theme' action=post-fs-data status=0 (/init.miui.rc:97)
+<14>[    6.005447] (1)[1:init]init: command 'chown theme theme /data/system/theme/lock_wallpaper' action=post-fs-data status=0 (/init.miui.rc:98)
+<14>[    6.005485] (1)[1:init]init: command 'chmod 0755 /data/system/theme/lock_wallpaper' action=post-fs-data status=0 (/init.miui.rc:99)
+<14>[    6.005615] (1)[1:init]init: command 'restorecon /data/system/theme/lock_wallpaper' action=post-fs-data status=0 (/init.miui.rc:100)
+<14>[    6.005762] (1)[1:init]init: command 'mkdir /data/system/theme_magic 0755 theme theme' action=post-fs-data status=0 (/init.miui.rc:101)
+<14>[    6.005785] (1)[1:init]init: command 'chown theme theme /data/system/theme_magic' action=post-fs-data status=0 (/init.miui.rc:102)
+<14>[    6.005805] (1)[1:init]init: command 'chmod 0775 /data/system/theme_magic' action=post-fs-data status=0 (/init.miui.rc:103)
+<14>[    6.005870] (1)[1:init]init: command 'restorecon /data/system/theme_magic' action=post-fs-data status=0 (/init.miui.rc:104)
+<7>[    6.014558] (1)[317:miuioneshots][317:miuioneshots] exit
+<7>[    6.014951]-(1)[317:miuioneshots][317:miuioneshots] sig 17 to [1:init] stat=S
+<14>[    6.163286] (1)[1:init]init: [PropSet]: pid:248 uid:0 gid:0 set vold.decrypt=trigger_restart_framework
+<14>[    6.285476] (0)[1:init]init: computing context for service '/system/bin/guiext-server'
+<13>[    6.285736] (0)[1:init]init: starting 'guiext-server'
+<14>[    6.286793] (0)[1:init]init: PropSet [init.svc.guiext-server:running] Start>>
+<14>[    6.286905] (0)[1:init]init: PropSet [init.svc.guiext-server:running] Done
+<14>[    6.350612] (5)[1:init]init: [PropSet]: pid:334 uid:1000 gid:1000 set persist.sys.pq.shp.idx=2
+<7>[    6.404734] (2)[350:guiext-server][350:guiext-server] fork [374:guiext-server]
+<12>[    6.540848] (3)[275:logd.auditd]type=1400 audit(1458054425.220:52): avc: denied { getattr } for pid=362 comm="otad" path="/system/bin/guiext-server" dev="mmcblk0p15" ino=8270 scontext=u:r:otad:s0 tcontext=u:object_r:guiext-server_exec:s0 tclass=file permissive=0
+<14>[    7.210027] (3)[1:init]init: [PropSet]: pid:332 uid:2000 gid:2000 set debug.mtklog.netlog.Running=0
+<14>[    7.210460] (3)[1:init]init: [PropSet]: pid:333 uid:0 gid:1000 set service.nvram_init=Ready
+<14>[    7.211396] (3)[1:init]init: [PropSet]: pid:329 uid:0 gid:0 set sys.boot.reason=0
+<14>[    7.212413] (3)[1:init]init: [PropSet]: pid:324 uid:0 gid:1005 set persist.af.losslessbt.on=0
+<14>[    7.277919] (1)[1:init]init: [PropSet]: pid:330 uid:2000 gid:1000 set debug.MB.running=0
+<14>[    7.279141] (1)[1:init]init: command 'start mcd_init' action=property:init.svc.zygote=running status=0 (/init.miui.rc:44)
+<14>[    7.279331] (1)[1:init]init: [PropSet]: pid:253 uid:0 gid:0 set persist.sys.display_eyecare=0
+<12>[    7.292452] (3)[275:logd.auditd]type=1403 audit(1458054425.970:122): policy loaded auid=4294967295 ses=4294967295
+<14>[    7.435866] (3)[1:init]init: computing context for service '/system/xbin/miuioneshots'
+<14>[    7.436401] (3)[1:init]init: command 'start checksdkpath' action=property:init.svc.zygote=running status=0 (/init.miui.rc:90)
+<14>[    7.436840] (3)[1:init]init: [PropSet]: pid:249 uid:1000 gid:1003 set debug.hwc.compose_level=0
+<5>[    7.437159] (0)[249:surfaceflinger][DDP/ddp_manager]scenario sub_ovl_memout acquire mutex 1 , left mutex 0x1c!
+<14>[    7.438295] (3)[1:init]init: [PropSet]: pid:692 uid:0 gid:1000 set persist.sys.memctrl=not support
+<7>[    7.458388] (2)[730:miuioneshots][730:miuioneshots] exit
+<7>[    7.458810]-(2)[730:miuioneshots][730:miuioneshots] sig 17 to [1:init] stat=D
+3[CONN-MD-DFT][W]conn_md_add_user:uid (0x80000003) is added to user list successfully
+<14>[    7.517312] (4)[1:init]init: [PropSet]: pid:364 uid:0 gid:1000 set persist.md.perm.checked=1
+<14>[    7.577800] (2)[1:init]init: [PropSet]: pid:249 uid:1000 gid:1003 set debug.hwc.bq_count=4
+<14>[    7.578411] (2)[1:init]init: [PropSet]: pid:731 uid:0 gid:0 set persist.sys.pq.picmode=1
+<11>[    7.637028] (0)[1:init]init: sys_prop: permission denied uid:1000  name:sys.autok.is_done
+<14>[    7.637484] (5)[1:init]init: [PropSet]: pid:731 uid:0 gid:0 set persist.sys.aal.function=4
+<14>[    7.697413] (6)[1:init]init: [PropSet]: pid:249 uid:1000 gid:1003 set service.bootanim.exit=0
+<14>[    7.698588] (6)[1:init]init: [PropSet]: pid:249 uid:1000 gid:1003 ctl.start bootanim
+<5>[    7.842941] (0)[256:ccci_mdinit][ccci1/util](MD)[build_ver]=, [build_time]=2016/01/19 19:24
+<12>[    7.902418] (5)[275:logd.auditd]type=1403 audit(1458054426.580:124): policy loaded auid=4294967295 ses=4294967295
+<14>[    8.258472] (0)[1:init]init: [PropSet]: pid:330 uid:2000 gid:1000 set debug.MB.running=0
+<6>[    8.403498]-(4)[157:kworker/u16:5][[FH]] -fh,skip (2)[275:logd.auditd]type=1403 audit(1458054427.110:125): policy loaded auid=4294967295 ses=4294967295
+<14>[    9.221749] (3)[1:init]init: [PropSet]: pid:256 uid:1000 gid:1001 ctl.start emdlogger1
+<14>[    9.222934] (3)[1:init]init: [PropSet]: pid:256 uid:1000 gid:1001 ctl.start gsm0710muxd
+<14>[    9.252154] (1)[1:init]init: [PropSet]: pid:806 uid:2000 gid:1000 set debug.mdlogger.Running=0
+<14>[    9.254763] (1)[1:init]init: [PropSet]: pid:806 uid:2000 gid:1000 set debug.mdlogger.log2sd.path=internal_sd
+<14>[   10.980066] (0)[1:init]init: [PropSet]: pid:817 uid:1000 gid:1000 set persist.sys.dalvik.vm.lib.2=libart.so
+3[WMT-IC][I]mt6630_patch_dwn:[Combo Patch] Built Time = 20151023163233a
+<5>[   11.938624] (0)[324:mediaserver][Power/PMIC] [hwPowerOn] acquire powerId:21 index:1 mod_name: kd_camera_hw powerVolt:1800
+<5>[   11.938665] (0)[324:mediaserver][Power/PMIC] [hwPowerOn] acquire powerId:4 index:0 mod_name: kd_camera_hw powerVolt:2800
+<5>[   11.938791] (0)[324:mediaserver][Power/PMIC] [hwPowerOn] acquire powerId:19 index:0 mod_name: kd_camera_hw powerVolt:1800
+<5>[   11.938925] (0)[324:mediaserver][Power/PMIC] [hwPowerOn] acquire powerId:9 index:0 mod_name: kd_camera_hw powerVolt:2800
+<5>[   12.002851] (1)[324:mediaserver][Power/PMIC] [hwPowerOn] acquire powerId:21 index:1 mod_name: kd_camera_hw powerVolt:1800
+<5>[   12.002869] (1)[324:mediaserver][Power/PMIC] [hwPowerOn] acquire powerId:4 index:0 mod_name: kd_camera_hw powerVolt:2800
+<5>[   12.002930] (1)[324:mediaserver][Power/PMIC] [hwPowerOn] acquire powerId:19 index:0 mod_name: kd_camera_hw powerVolt:1800
+<5>[   12.002989] (1)[324:mediaserver][Power/PMIC] [hwPowerOn] acquire powerId:9 index:0 mod_name: kd_camera_hw powerVolt:2800
+<14>[   12.158201] (0)[1:init]init: [PropSet]: pid:807 uid:0 gid:1001 ctl.stop ril-daemon
+<14>[   12.158574] (0)[1:init]init: [PropSet]: pid:807 uid:0 gid:1001 ctl.start ril-daemon-mtk
+<14>[   12.205441] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set persist.radio.simswitch=1
+<14>[   12.219788] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set persist.radio.simswitch=1
+<14>[   12.390658] (0)[1:init]init: [PropSet]: pid:324 uid:0 gid:1005 set af.rf_info=273
+<14>[   12.525902] (3)[1:init]init: [PropSet]: pid:324 uid:0 gid:1005 set af.policy.r_submix_prio_adjust=0
+<14>[   12.577342] (3)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set ril.ipo.radiooff=0
+<14>[   12.577695] (2)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.ril.mcc.mnc=
+<14>[   12.578015] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.retry.pin1=
+<14>[   12.578215] (3)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.retry.puk1=
+<14>[   12.578353] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.retry.pin2=
+<14>[   12.578483] (3)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.retry.puk2=
+<14>[   12.578645] (3)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.operator.default-name=
+<14>[   12.578801] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.ril.uicctype=
+<14>[   12.578808] (1)[1:init]init: PropSet [gsm.ril.uicctype:] Start>>
+<14>[   12.578833] (1)[1:init]init: PropSet [gsm.ril.uicctype:] Done
+<14>[   12.578953] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.ril.phbready=
+<14>[   12.579123] (2)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set ril.iccid.sim1=
+<14>[   12.579316] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set ril.ecclist=
+<14>[   12.666873] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set ril.active.md=5
+<14>[   12.679880] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set ril.mux.report.case=0
+<14>[   12.681774] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.ril.eboot=-1
+<14>[   12.989260] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.baseband.capability=503
+<14>[   12.991755] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.ril.phbready=false
+<14>[   12.994489] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.gcf.testmode=0
+<14>[   13.007785] (3)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.serial=2G537F113857                   PP        P        CIP:P     10P
+<6>[   13.264123]-(0)[56:cfinteractive][[FH]] FHCTL1_DDS: 0x0014c000 (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set ril.ipo.radiooff.2=0
+<14>[   13.264527] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.ril.mcc.mnc.2=
+<14>[   13.264812] (2)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.retry.pin1.2=
+<14>[   13.265056] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.retry.puk1.2=
+<14>[   13.265235] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.retry.pin2.2=
+<14>[   13.265426] (2)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.retry.puk2.2=
+<14>[   13.265599] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.operator.default-name.2=
+<14>[   13.265782] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.ril.uicctype.2=
+<14>[   13.265791] (0)[1:init]init: PropSet [gsm.ril.uicctype.2:] Start>>
+<14>[   13.265826] (0)[1:init]init: PropSet [gsm.ril.uicctype.2:] Done
+<14>[   13.265951] (2)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.ril.phbready.2=
+<14>[   13.266105] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set ril.iccid.sim2=
+<14>[   13.266264] (2)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set ril.ecclist1=
+<14>[   13.297987] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set ril.active.md=5
+<14>[   13.738811] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.ril.uicctype=USIM
+<14>[   13.738829] (1)[1:init]init: PropSet [gsm.ril.uicctype:USIM] Start>>
+<14>[   13.738988] (1)[1:init]init: PropSet [gsm.ril.uicctype:USIM] Done
+<14>[   13.965813] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.ril.uicctype.2=USIM
+<14>[   13.965835] (1)[1:init]init: PropSet [gsm.ril.uicctype.2:USIM] Start>>
+<14>[   13.965963] (1)[1:init]init: PropSet [gsm.ril.uicctype.2:USIM] Done
+<14>[   13.972672] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set ril.iccid.sim1=89701206235108876377
+<14>[   13.976456] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set ril.iccid.sim2=89701010061138735318
+<14>[   14.007527] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.project.baseband=LCSH6795_LWT_L_HW(LWG)
+<14>[   14.014630] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.project.baseband.2=LCSH6795_LWT_L_HW(LWG)
+<6>[   14.020598]-(0)[157:kworker/u16:5][[FH]] -fh,skip (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.baseband.capability=503
+<14>[   14.027278] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.ril.phbready.2=false
+<14>[   14.031417] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.gcf.testmode=0
+<14>[   14.036364] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.ril.testsim=0
+<14>[   14.036780] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.serial=2G537F113857                   PP        P        CIP:P     10P
+<14>[   14.145769] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.ril.mcc.mnc=25020
+<14>[   14.187844] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.ril.phbready=false
+<14>[   14.386525] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.ril.testsim.2=0
+<14>[   14.475575] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.ril.mcc.mnc.2=25001
+<14>[   14.540315] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.ril.phbready.2=false
+<14>[   15.694841] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.ril.phbready=true
+<14>[   16.989651] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set ril.ia.iccid=
+<14>[   16.990240] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.retry.pin1=
+<14>[   16.990816] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.retry.puk1=
+<14>[   16.991266] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.retry.pin2=
+<14>[   16.991754] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.retry.puk2=
+<14>[   16.992238] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.operator.default-name=
+<14>[   16.992714] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.ril.uicctype=
+<14>[   16.992726] (0)[1:init]init: PropSet [gsm.ril.uicctype:] Start>>
+<14>[   16.992817] (0)[1:init]init: PropSet [gsm.ril.uicctype:] Done
+<14>[   16.993169] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.ril.phbready=
+<14>[   16.993479] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set ril.iccid.sim1=
+<14>[   16.993749] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set ril.ecclist=
+<14>[   16.995083] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set ril.iccid.sim1=N/A
+<14>[   19.025203] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.ril.phbready.2=true
+<14>[   20.362757] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.retry.pin1.2=
+<14>[   20.363850] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.retry.puk1.2=
+<14>[   20.365236] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.retry.pin2.2=
+<14>[   20.365926] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.retry.puk2.2=
+<14>[   20.366876] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.operator.default-name.2=
+<14>[   20.368337] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.ril.uicctype.2=
+<14>[   20.368356] (0)[1:init]init: PropSet [gsm.ril.uicctype.2:] Start>>
+<14>[   20.368514] (0)[1:init]init: PropSet [gsm.ril.uicctype.2:] Done
+<14>[   20.368962] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set gsm.sim.ril.phbready.2=
+<14>[   20.370030] (1)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set ril.iccid.sim2=
+<14>[   20.370645] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set ril.ecclist1=
+<14>[   20.371145] (0)[1:init]init: [PropSet]: pid:878 uid:1001 gid:1001 set ril.iccid.sim2=N/A
+<5>[   23.520388] (1)[149:bat_thread_kthr][battery_meter_reset]1 oam_d0=46,oam_d_5=46,ui=54
+<5>[   23.520394] (1)[149:bat_thread_kthr][battery_meter_reset]2 oam_d0=46,oam_d_5=46,ui=54
+<5>[   24.544352] (0)[149:bat_thread_kthr][battery_meter_reset]1 oam_d0=46,oam_d_5=46,ui=54
+<5>[   24.544362] (0)[149:bat_thread_kthr][battery_meter_reset]2 oam_d0=46,oam_d_5=46,ui=54
+<14>[   41.230925] (1)[1:init]init: [PropSet]: pid:817 uid:1000 gid:1000 set sys.boot.reason=0
+<14>[   41.415478] (1)[1:init]init: [PropSet]: pid:817 uid:1000 gid:1000 set sys.sysctl.extra_free_kbytes=24300
+<14>[   41.504776] (1)[1:init]init: [PropSet]: pid:817 uid:1000 gid:1000 set persist.sys.language=ru
+<14>[   41.529563] (1)[1:init]init: [PropSet]: pid:817 uid:1000 gid:1000 set persist.sys.country=RU
+<7>[   41.558007] (0)[862:android.ui][862:android.ui] fork [935:android.ui]
+<14>[   41.708621] (0)[1:init]init: [PropSet]: pid:249 uid:1000 gid:1003 set service.bootanim.exit=1
