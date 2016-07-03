@@ -5,8 +5,12 @@
 
 #ifdef CONFIG_USB_MTK_OTG
 #ifdef ID_PIN_USE_EX_EINT
-//#define IDDIG_EINT_PIN (GPIO_OTG_IDDIG_EINT_PIN & ~(0x80000000))
-#define IDDIG_EINT_PIN 63
+/*Vanzo:wuzhiyong on Mon 20 Apr 12:17:00 +0800
+ * use macro
+ */
+#define IDDIG_EINT_PIN (GPIO_OTG_IDDIG_EINT_PIN & ~(0x80000000))
+//#define IDDIG_EINT_PIN 63
+//End of vanzo:wuzhiyong
 #else
 #ifdef CONFIG_OF
 extern struct musb *mtk_musb;

@@ -97,6 +97,10 @@ obj-y	+= ssw/
 endif
 endif
 
+obj-$(CONFIG_MTK_IRTX_SUPPORT) += irtx/
+# obj-$(CONFIG_MTK_SOUND) += smartpa/
+obj-$(CONFIG_MTK_SOUND)	+= sound/
+obj-$(CONFIG_MTK_BTCVSD) += btcvsd/
 obj-$(CONFIG_MTK_XHCI)   +=  xhci/
 
 

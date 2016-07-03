@@ -1,1 +1,1 @@
-bootopt=64S3,32N2,64N2
+bootopt=64S3,32N2,64N2 androidboot.selinux=permissive

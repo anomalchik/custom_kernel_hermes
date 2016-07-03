@@ -90,6 +90,10 @@ config CUSTOM_KERNEL_CHARGEPUMP
 	bool "backlight driver"
 	default n
 
+config MTK_IRTX_SUPPORT
+	bool "MediaTek consumer IR tansmitter"
+	default n
+
 # CCCI TODO refine
 menuconfig MTK_CCCI_DEVICES
 	bool "CCCI Devices"
@@ -1572,7 +1576,7 @@ config MTK_EXTMEM
 	   depends on MTK_INTERNAL
 	   default n
 #--------------------------RGK driver cfg add (start)------------------------------	  
-config FG_CW2015
-        bool "Battery HW driver cw2015"
+config RGK_DRIVER_FG_CW2015
+        bool "RGK for cw2015 charger ic"
         default n
 #--------------------------RGK driver cfg add (end)------------------------------

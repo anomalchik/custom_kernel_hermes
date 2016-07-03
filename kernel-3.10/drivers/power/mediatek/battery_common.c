@@ -77,11 +77,6 @@
 #include <mach/mt_boot.h>
 #include "mach/mtk_rtc.h"
 
-#if defined(CONFIG_RGK_DRIVER_FG_CW2015)
-#include <mach/cw2015_battery.h>
-int FG_charging_status =0;
-#endif
-
 #if defined(CONFIG_MTK_DUAL_INPUT_CHARGER_SUPPORT)
 #include <mach/diso.h>
 #endif
@@ -1507,14 +1502,6 @@ static DEVICE_ATTR(Pump_Express, 0664, show_Pump_Express, store_Pump_Express);
 
 static void mt_battery_update_EM(struct battery_data *bat_data)
 {
-
-#if defined(CONFIG_RGK_DRIVER_FG_CW2015)
-	printk("mt_battery_update_EM 1 vol = %d,cap = %d\n",BMT_status.bat_vol,BMT_status.UI_SOC);
-        BMT_status.UI_SOC = g_cw2015_capacity;
-        BMT_status.bat_vol = g_cw2015_vol / 1000;
-        bat_data->BAT_batt_vol = BMT_status.bat_vol;
-#endif
-
 	bat_data->BAT_CAPACITY = BMT_status.UI_SOC;
 	bat_data->BAT_TemperatureR = BMT_status.temperatureR;	/* API */
 	bat_data->BAT_TempBattVoltage = BMT_status.temperatureV;	/* API */

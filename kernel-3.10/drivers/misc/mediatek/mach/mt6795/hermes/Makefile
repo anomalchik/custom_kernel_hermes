@@ -8,6 +8,7 @@ endif
 
 #obj-y   +=  lcm/
 obj-y   +=  camera/camera/
+#obj-y	+=  flashlight/
 obj-$(CONFIG_MTK_VIBRATOR)   +=  vibrator/
 obj-$(CONFIG_MTK_LEDS)   +=  leds/
 obj-y   +=  keypad/

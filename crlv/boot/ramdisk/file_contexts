@@ -741,6 +741,11 @@
 /dev/socket/tunman       u:object_r:tunman_socket:s0
 /system/xbin/tunman      u:object_r:tunman_exec:s0
 
+########################################
+# Core dump for miui native debug
+#
+/data/system/nativedebug(/.*)?         u:object_r:miui_native_file:s0
+/data/system/nativedebug/core(/.*)?    u:object_r:miui_coredump_file:s0
 
 ########################################
 # theme runtime files
@@ -756,3 +761,11 @@
 # Cust files
 #
 /cust(/.*)?         u:object_r:system_file:s0
+#line 1 "vendor/graphiteplus/proprietary/sepolicy//file_contexts"
+/data/user/1[0-9]+/.*  u:object_r:app_data_file:s0
+/data/user/1[0-9]+/com.android.providers.downloads/cache u:object_r:download_file:s0
+/dev/socket/ss(/.*)?  u:object_r:securespaces_socket:s0
+/system/bin/ssServices u:object_r:zygote_exec:s0
+/system/bin/namespaceInit	u:object_r:zygote_exec:s0
+/system/bin/namespaceCreateSvc	u:object_r:namespacecreate_exec:s0
+

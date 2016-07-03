@@ -4,7 +4,7 @@
 
 static struct mag_hw cust_mag_hw = {
     .i2c_num = 3,
-    .direction = 5,
+    .direction = 0,
     .power_id = MT65XX_POWER_NONE,  /*!< LDO is not used */
     .power_vol= VOL_DEFAULT,        /*!< LDO is not used */
 };

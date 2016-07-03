@@ -82,7 +82,6 @@ typedef struct
    AFE_BLOCK_T    rBlock;
    kal_uint32   MemIfNum;
    bool interruptTrigger;
-   spinlock_t substream_lock;
 } AFE_MEM_CONTROL_T;
 
 struct pcm_afe_info

@@ -67,7 +67,7 @@ static IMG_UINT32 gauiBIFTilingHeapXStrides[RGXFWIF_NUM_BIF_TILING_CONFIGS] =
 int MTKSysGetIRQ(void);
 #else
 /* if *CONFIG_OF is not set, please makesure the following address and IRQ number are right */
-#error RGX_GPU_please_fill_the_following_defines
+//#error RGX_GPU_please_fill_the_following_defines
 #define SYS_MTK_RGX_REGS_SYS_PHYS_BASE      0x13000000
 #define SYS_MTK_RGX_REGS_SIZE               0xFFFF
 //#define SYS_MTK_RGX_IRQ                     249 // 6595

@@ -263,8 +263,10 @@ static int Audio_i2s0_hdoutput_Set(struct snd_kcontrol *kcontrol, struct snd_ctl
         return -EINVAL;
     }
     AudDrv_Clk_On();
+    mi2s0_hdoutput_control = ucontrol->value.integer.value[0];
+    printk("%s(), mi2s0_hdoutput_control=%d\n", __func__, mi2s0_hdoutput_control);
 
-    if ( (ucontrol->value.integer.value[0] == true) &&(mi2s0_hdoutput_control == false) )
+    if (mi2s0_hdoutput_control)
     {
         printk("%s(), mi2s0_hdoutput_control=%d, enable APLL!!!!\n", __func__, mi2s0_hdoutput_control);
         // set APLL clock setting
@@ -275,7 +277,7 @@ static int Audio_i2s0_hdoutput_Set(struct snd_kcontrol *kcontrol, struct snd_ctl
         AudDrv_APLL1Tuner_Clk_On();
         AudDrv_APLL2Tuner_Clk_On();
     }
-    else if( (ucontrol->value.integer.value[0] == false) &&(mi2s0_hdoutput_control == true) )
+    else
     {
         printk("%s(), mi2s0_hdoutput_control=%d, disable APLL!!!!\n", __func__, mi2s0_hdoutput_control);
         // set APLL clock setting
@@ -286,9 +288,6 @@ static int Audio_i2s0_hdoutput_Set(struct snd_kcontrol *kcontrol, struct snd_ctl
         AudDrv_APLL1Tuner_Clk_Off();
         AudDrv_APLL2Tuner_Clk_Off();
     }
-
-    mi2s0_hdoutput_control = ucontrol->value.integer.value[0];
-    printk("%s(), mi2s0_hdoutput_control=%d\n", __func__, mi2s0_hdoutput_control);
 
     AudDrv_Clk_Off();
     printk("-%s(), mi2s0_hdoutput_control=%d\n", __func__, mi2s0_hdoutput_control);

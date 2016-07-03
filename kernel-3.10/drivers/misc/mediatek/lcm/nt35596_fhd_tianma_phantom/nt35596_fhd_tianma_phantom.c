@@ -100,7 +100,7 @@ extern int mtkfb_set_backlight_level(unsigned int level);
 #ifndef FALSE
     #define FALSE 0
 #endif
-static unsigned int lcm_esd_test = FALSE;      ///only for ESD test
+//static unsigned int lcm_esd_test = FALSE;      ///only for ESD test
 // ---------------------------------------------------------------------------
 //  Local Variables
 // ---------------------------------------------------------------------------

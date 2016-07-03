@@ -10,10 +10,11 @@ struct headset_key_custom* get_headset_key_custom_setting(void)
 {
 	return &headset_key_custom_setting;
 }
-
+//LC--zwp--modify--20150606 solve headphone noise problem 
 #if defined  ACCDET_EINT || defined ACCDET_EINT_IRQ
 static struct headset_mode_settings cust_headset_settings = {
-	0x900, 0x200, 1, 0x1f0, 0x800, 0x800, 0x20
+//	0x500, 0x200, 1, 0x1f0, 0x800, 0x800, 0x20
+	0x500, 0x500, 1, 0x1f0, 0x800, 0x800, 0x20
 };
 #else
 //ACCDET only mode register settings

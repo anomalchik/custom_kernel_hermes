@@ -41,12 +41,10 @@
 #define tps6128x_SLAVE_ADDR_WRITE   0xEA
 #define tps6128x_SLAVE_ADDR_Read    0xEB
 
-#define tps6128x_SLAVE_ADDR 0x75
-
 #ifdef I2C_EXT_VBAT_BOOST_CHANNEL
 #define tps6128x_BUSNUM I2C_EXT_VBAT_BOOST_CHANNEL
 #else
-#define tps6128x_BUSNUM 1
+#define tps6128x_BUSNUM 0//1
 #endif
 
 static struct i2c_client *new_client = NULL;
@@ -371,7 +369,7 @@ static struct platform_driver tps6128x_user_space_driver = {
     },
 };
 
-static struct i2c_board_info __initdata i2c_tps6128x = { I2C_BOARD_INFO("tps6128x", tps6128x_SLAVE_ADDR)};
+static struct i2c_board_info __initdata i2c_tps6128x = { I2C_BOARD_INFO("tps6128x", (tps6128x_SLAVE_ADDR_WRITE>>1))};
 #endif
 
 static int __init tps6128x_init(void)
@@ -423,4 +421,3 @@ module_exit(tps6128x_exit);
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("I2C tps6128x Driver");
 MODULE_AUTHOR("James Lo<james.lo@mediatek.com>");
-

@@ -115,7 +115,6 @@ static bool TurnOnVOWADcPowerACC(int ADCType, bool enable);
 static void Audio_Amp_Change(int channels , bool enable);
 void OpenAnalogHeadphone(bool bEnable);
 
-
 #ifndef CONFIG_MTK_FPGA
 extern int PMIC_IMM_GetOneChannelValue(int dwChannel, int deCount, int trimd);
 #endif
@@ -158,6 +157,28 @@ static int reg_AFE_VOW_CFG3 = 0x8767;   //VOW alpha/beta value
 static int reg_AFE_VOW_CFG4 = 0x000c;   //VOW ADC test config
 static int reg_AFE_VOW_CFG5 = 0x0000;   //N min value
 
+#define GAP (2) //unit: us
+#define AW8736_MODE5 /*REVERS*/ \
+do { \
+    mt_set_gpio_out(GPIO_EXT_SPKAMP_EN_PIN,GPIO_OUT_ONE); \
+    udelay(GAP); \
+    mt_set_gpio_out(GPIO_EXT_SPKAMP_EN_PIN,GPIO_OUT_ZERO); \
+    udelay(GAP); \
+    mt_set_gpio_out(GPIO_EXT_SPKAMP_EN_PIN,GPIO_OUT_ONE); \
+    udelay(GAP); \
+    mt_set_gpio_out(GPIO_EXT_SPKAMP_EN_PIN,GPIO_OUT_ZERO); \
+    udelay(GAP); \
+    mt_set_gpio_out(GPIO_EXT_SPKAMP_EN_PIN,GPIO_OUT_ONE); \
+    udelay(GAP); \
+    mt_set_gpio_out(GPIO_EXT_SPKAMP_EN_PIN,GPIO_OUT_ZERO); \
+    udelay(GAP); \
+    mt_set_gpio_out(GPIO_EXT_SPKAMP_EN_PIN,GPIO_OUT_ONE); \
+    udelay(GAP); \
+    mt_set_gpio_out(GPIO_EXT_SPKAMP_EN_PIN,GPIO_OUT_ZERO); \
+    udelay(GAP); \
+    mt_set_gpio_out(GPIO_EXT_SPKAMP_EN_PIN,GPIO_OUT_ONE); \
+} while (0)
+
 static void  SavePowerState(void)
 {
     int i = 0;
@@ -180,10 +201,10 @@ static void  RestorePowerState(void)
 static bool mAnaSuspend = false;
 void SetAnalogSuspend(bool bEnable)
 {
-    printk("+%s bEnable ==%d mAnaSuspend = %d \n", __func__, bEnable, mAnaSuspend);
+    printk("%s bEnable ==%d mAnaSuspend = %d \n", __func__, bEnable, mAnaSuspend);
     if ((bEnable == true) && (mAnaSuspend == false))
     {
-        //Ana_Log_Print();
+        Ana_Log_Print();
         SavePowerState();
         if (mCodec_data->mAudio_Ana_DevicePower[AUDIO_ANALOG_VOLUME_HPOUTL] == true)
         {
@@ -205,12 +226,12 @@ void SetAnalogSuspend(bool bEnable)
             mCodec_data->mAudio_Ana_DevicePower[AUDIO_ANALOG_VOLUME_SPKL] = false;
             Speaker_Amp_Change(false);
         }
-        //Ana_Log_Print();
+        Ana_Log_Print();
         mAnaSuspend = true;
     }
     else if ((bEnable == false) && (mAnaSuspend == true))
     {
-        //Ana_Log_Print();
+        Ana_Log_Print();
         if (mCodec_data->mAudio_BackUpAna_DevicePower[AUDIO_ANALOG_VOLUME_HPOUTL] == true)
         {
             Audio_Amp_Change(AUDIO_ANALOG_CHANNELS_LEFT1 , true);
@@ -232,10 +253,9 @@ void SetAnalogSuspend(bool bEnable)
             mCodec_data->mAudio_Ana_DevicePower[AUDIO_ANALOG_VOLUME_SPKL] = false;
         }
         RestorePowerState();
-        //Ana_Log_Print();
+        Ana_Log_Print();
         mAnaSuspend = false;
     }
-    printk("-%s bEnable ==%d mAnaSuspend = %d \n", __func__, bEnable, mAnaSuspend);
 }
 
 
@@ -891,8 +911,6 @@ static void EnableMicBias(uint32_t Mic, bool bEnable)
                 OpenMicbias1(true);
                 break;
             case AUDIO_ANALOG_DEVICE_IN_ADC2:
-                OpenMicbias0(true);
-                OpenMicbias1(true);
                 OpenMicbias2(true);
                 break;
             case AUDIO_ANALOG_DEVICE_IN_ADC3:
@@ -910,8 +928,6 @@ static void EnableMicBias(uint32_t Mic, bool bEnable)
                 OpenMicbias1(false);
                 break;
             case AUDIO_ANALOG_DEVICE_IN_ADC2:
-                OpenMicbias0(false);
-                OpenMicbias1(false);
                 OpenMicbias2(false);
                 break;
             case AUDIO_ANALOG_DEVICE_IN_ADC3:
@@ -1193,7 +1209,7 @@ static struct snd_soc_dai_driver mtk_6331_dai_codecs[] =
             .stream_name = MT_SOC_I2SDL1_STREAM_NAME,
             .channels_min = 1,
             .channels_max = 2,
-            .rates = SNDRV_PCM_RATE_8000_192000,
+            .rates = SNDRV_PCM_RATE_8000_48000,
             .formats = SND_SOC_ADV_MT_FMTS,
         }
     },
@@ -1758,6 +1774,12 @@ static void Speaker_Amp_Change(bool enable)
             TurnOnDacPower();
         }
         printk("turn on Speaker_Amp_Change \n");
+        mt_set_gpio_dir(GPIO_EXT_SPKAMP_EN_PIN, GPIO_DIR_OUT); // output
+        mt_set_gpio_out(GPIO_EXT_SPKAMP_EN_PIN, GPIO_OUT_ZERO); // low disable
+        msleep(10);
+        
+        AW8736_MODE5;
+        
         // here pmic analog control
         //Ana_Set_Reg(AUDNVREGGLB_CFG0  , 0x0000 , 0xffffffff);
         OpenClassAB();
@@ -1789,11 +1811,14 @@ static void Speaker_Amp_Change(bool enable)
             Speaker_ReveiverMode_Open();
         }
 #endif
-        Apply_Speaker_Gain();
+        //Apply_Speaker_Gain();
+        msleep(100);
     }
     else
     {
         printk("turn off Speaker_Amp_Change \n");
+        mt_set_gpio_dir(GPIO_EXT_SPKAMP_EN_PIN, GPIO_DIR_OUT); // output
+        mt_set_gpio_out(GPIO_EXT_SPKAMP_EN_PIN, GPIO_OUT_ZERO); // low disable
 #ifdef CONFIG_MTK_SPEAKER
         if (Speaker_mode == AUDIO_SPEAKER_MODE_D)
         {
@@ -1859,42 +1884,49 @@ static void Headset_Speaker_Amp_Change(bool enable)
         printk("turn on Speaker_Amp_Change \n");
         // here pmic analog control
         //Ana_Set_Reg(AUDNVREGGLB_CFG0  , 0x0000 , 0xffffffff);
+       
+        mt_set_gpio_dir(GPIO_EXT_SPKAMP_EN_PIN, GPIO_DIR_OUT); // output
+        mt_set_gpio_out(GPIO_EXT_SPKAMP_EN_PIN, GPIO_OUT_ZERO); // low disable
+        msleep(10);
+       
+        AW8736_MODE5;
+       
         OpenClassAB();
-
+ 
         Ana_Set_Reg(AUDLDO_NVREG_CFG0 , 0x0028 , 0xffffffff); //Enable cap-less LDOs (1.6V)
         Ana_Set_Reg(AUDLDO_NVREG_CFG0 , 0x0068 , 0xffffffff); //Enable NV regulator (-1.6V)
         Ana_Set_Reg(AUDBUF_CFG5, 0x001f, 0xffff); // enable HP bias circuits
         Ana_Set_Reg(ZCD_CON0  , 0x0700 , 0xffffffff); //Disable AUD_ZCD
-
+ 
         Ana_Set_Reg(AUDBUF_CFG0  , 0xE008 , 0xffffffff); //Disable headphone, voice and short-ckt protection.
         Ana_Set_Reg(AUDBUF_CFG6  , 0x00C0 , 0xffffffff); // Disable line-out and short-ckt protection. LO MUX is opened
-
+ 
         Ana_Set_Reg(IBIASDIST_CFG0  , 0x0092 , 0xffffffff); // Enable IBIST
         Ana_Set_Reg(ZCD_CON2  , 0x0489 , 0xffffffff); // Set LOR/LOL gain as minimum (~ -40dB)
         Ana_Set_Reg(ZCD_CON1  , 0x0489 , 0xffffffff); // Set LOR/LOL gain as minimum (~ -40dB)
         Ana_Set_Reg(ZCD_CON3 , 0x001F , 0xffffffff); // Set voice gain as minimum (~ -40dB)
-
+ 
         Ana_Set_Reg(AUDBUF_CFG1  , 0x0900 , 0xffffffff); // De_OSC of HP and enable output STBENH
         Ana_Set_Reg(AUDBUF_CFG7  , 0x0102 , 0xffffffff); // De_OSC of LO and enable output STBENH
         Ana_Set_Reg(AUDBUF_CFG2  , 0x0022 , 0xffffffff); // De_OSC of voice, enable output STBENH
         Ana_Set_Reg(AUDBUF_CFG0  , 0xE009 , 0xffffffff); // Enable voice driver
         Ana_Set_Reg(AUDBUF_CFG1  , 0x0940 , 0xffffffff); // Enable pre-charge buffer_map_state
         msleep(1);
-
+ 
         Ana_Set_Reg(AUDCLKGEN_CFG0  , 0x5501 , 0xffffffff); // Enable AUD_CLK
         Ana_Set_Reg(AUDDAC_CFG0  , 0x000F , 0xffffffff); //Enable Audio DAC
         SetDcCompenSation();
         Ana_Set_Reg(AUDBUF_CFG6  , 0x00E8 , 0xffffffff); //Switch LO MUX to audio DAC
         Ana_Set_Reg(AUDBUF_CFG6  , 0x00EB , 0xffffffff); //Enable LOR/LOL
         Ana_Set_Reg(ZCD_CON1  , 0x0489 , 0xffffffff); // Set LOR/LOL gain as 0dB
-
+ 
         Ana_Set_Reg(AUDBUF_CFG0  , 0xE0A9 , 0xffffffff); // Switch HP MUX to audio DAC
         Ana_Set_Reg(AUDBUF_CFG0  , 0xE0AF , 0xffffffff); // Enable HPR/HPL
         Ana_Set_Reg(AUDBUF_CFG1  , 0x0900 , 0xffffffff); // Disable pre-charge buffer
         Ana_Set_Reg(AUDBUF_CFG2  , 0x0020 , 0xffffffff); // Disable De_OSC of voice
         Ana_Set_Reg(AUDBUF_CFG0  , 0xE0AE , 0xffffffff); // Disable voice buffer
         Ana_Set_Reg(AUDBUF_CFG2  , 0x0489 , 0xffffffff); // Set HPR/HPL gain as 0dB
-
+ 
 #ifdef CONFIG_MTK_SPEAKER
         if (Speaker_mode == AUDIO_SPEAKER_MODE_D)
         {
@@ -1915,7 +1947,7 @@ static void Headset_Speaker_Amp_Change(bool enable)
     }
     else
     {
-
+ 
 #ifdef CONFIG_MTK_SPEAKER
         if (Speaker_mode == AUDIO_SPEAKER_MODE_D)
         {
@@ -1930,7 +1962,7 @@ static void Headset_Speaker_Amp_Change(bool enable)
             Speaker_ReveiverMode_close();
         }
 #endif
-
+ 
         Ana_Set_Reg(AUDBUF_CFG0  , 0xE149 , 0xffff); // Disable HPR/HPL
         Ana_Set_Reg(AUDDAC_CFG0  , 0x0000 , 0xffff); // Disable Audio DAC
         Ana_Set_Reg(AUDBUF_CFG0  , 0xE148 , 0xffff);
@@ -1941,8 +1973,10 @@ static void Headset_Speaker_Amp_Change(bool enable)
         Ana_Set_Reg(IBIASDIST_CFG0  , 0x0192 , 0xffff); // Disable IBIST
         Ana_Set_Reg(AUDLDO_NVREG_CFG0  , 0x0028 , 0xffff); // Disable NV regulator (-1.6V)
         Ana_Set_Reg(AUDLDO_NVREG_CFG0  , 0x0000 , 0xffff); // Disable cap-less LDOs (1.6V)
-
+ 
         printk("turn off Speaker_Amp_Change \n");
+        mt_set_gpio_dir(GPIO_EXT_SPKAMP_EN_PIN, GPIO_DIR_OUT); // output
+        mt_set_gpio_out(GPIO_EXT_SPKAMP_EN_PIN, GPIO_OUT_ZERO); // low disable
         if (GetDLStatus() == false)
         {
             Ana_Set_Reg(AFE_DL_SRC2_CON0_L , 0x1800 , 0xffff);
@@ -1953,7 +1987,7 @@ static void Headset_Speaker_Amp_Change(bool enable)
             TurnOffDacPower();
         }
     }
-
+ 
 }
 
 
@@ -1970,6 +2004,9 @@ static int Headset_Speaker_Amp_Set(struct snd_kcontrol *kcontrol, struct snd_ctl
     //struct snd_soc_codec *codec = snd_kcontrol_chip(kcontrol);
 
     printk("%s() gain = %lu \n ", __func__, ucontrol->value.integer.value[0]);
+
+    AW8736_MODE5;
+
     if ((ucontrol->value.integer.value[0]  == true) && (mCodec_data->mAudio_Ana_DevicePower[AUDIO_ANALOG_VOLUME_SPEAKER_HEADSET_R]  == false))
     {
         Headset_Speaker_Amp_Change(true);
@@ -1983,43 +2020,9 @@ static int Headset_Speaker_Amp_Set(struct snd_kcontrol *kcontrol, struct snd_ctl
     return 0;
 }
 
-static bool Ext_Speaker_Mode = false;
-static int Audio_Ext_Speaker_Set(struct snd_kcontrol *kcontrol, struct snd_ctl_elem_value *ucontrol)
-{
-    // add fpr ext speaker control , ex: GPIO pull high / low
-    Ext_Speaker_Mode = ucontrol->value.integer.value[0];
-    printk("%s Ext_Speaker_Mode = %d",__func__,Ext_Speaker_Mode);
-    if(Ext_Speaker_Mode == true) // on
-    {
-
-    }
-    else // off
-    {
-
-    }
-    return 0;
-}
-
-static int Audio_Ext_Speaker_Get(struct snd_kcontrol *kcontrol,
-                                   struct snd_ctl_elem_value *ucontrol)
-{
-    ucontrol->value.integer.value[0] = Ext_Speaker_Mode ;
-    return 0;
-}
-
-static const char *Ext_speaker_amp_function[] = {"Off", "On"};
-static const struct soc_enum Audio_Ext_dev_Enum[] =
-{
-    SOC_ENUM_SINGLE_EXT(ARRAY_SIZE(Ext_speaker_amp_function), Ext_speaker_amp_function),
-};
-
-static const struct snd_kcontrol_new mt_ext_dev_controls[] =
-{
-    SOC_ENUM_EXT("Ext_Speaker_Amp_Switch", Audio_Ext_dev_Enum[0], Audio_Ext_Speaker_Get, Audio_Ext_Speaker_Set),
-};
 #ifdef CONFIG_MTK_SPEAKER
 static const char *speaker_amp_function[] = {"CALSSD", "CLASSAB", "RECEIVER"};
-static const char *speaker_PGA_function[] = {"4Db", "5Db", "6Db", "7Db", "8Db", "9Db", "10Db",
+static const char *speaker_PGA_function[] = {"0Db", "4Db", "5Db", "6Db", "7Db", "8Db", "9Db", "10Db",
                                              "11Db", "12Db", "13Db", "14Db", "15Db", "16Db", "17Db"
                                             };
 static const char *speaker_OC_function[] = {"Off", "On"};
@@ -2662,8 +2665,8 @@ static int Headset_PGAL_Set(struct snd_kcontrol *kcontrol, struct snd_ctl_elem_v
     {
         step = 1;
     }
-    //remove while due to headset gain update too late for user experience, trade off: headset pop hw limitation
-#if 0
+//remove while due to headset gain update too late for user experience, trade off: headset pop hw limitation
+#if 0    
     while (offset != 0)
     {
         mCodec_data->mAudio_Ana_Volume[AUDIO_ANALOG_VOLUME_HPOUTL] += step;
@@ -2728,7 +2731,7 @@ static int Headset_PGAR_Set(struct snd_kcontrol *kcontrol, struct snd_ctl_elem_v
         step = 1;
     }
 //remove while due to headset gain update too late for user experience, trade off: headset pop hw limitation
-#if 0
+#if 0 
     while (offset != 0)
     {
         mCodec_data->mAudio_Ana_Volume[AUDIO_ANALOG_VOLUME_HPOUTR] += step;
@@ -3179,7 +3182,6 @@ static bool TurnOnADcPowerDmic(int ADCType, bool enable)
             Ana_Set_Reg(PMIC_AFE_TOP_CON0, (ULIndex << 7) | (ULIndex << 6), 0xffff); //configure ADC setting
             Ana_Set_Reg(AFE_UL_DL_CON0, 0x0001, 0xffff);   //turn on afe
             Ana_Set_Reg(AFE_UL_SRC0_CON0_H, (ULSampleRateTransform(SampleRate_VUL1) << 3 | ULSampleRateTransform(SampleRate_VUL1) << 1) , 0x001f); // ULsampling rate
-            Ana_Set_Reg(AFE_UL_SRC0_CON0_H, (1 << 7),(1<<7) ); // dmic open
             Ana_Set_Reg(AFE_UL_SRC0_CON0_H, (1 << 5) | (1 << 6), (1 << 5) | (1 << 6)); // dmic open
 
             Ana_Set_Reg(AFE_ADDA2_UL_SRC_CON0_H, (ULSampleRateTransform(SampleRate_VUL2) << 3 | ULSampleRateTransform(SampleRate_VUL2) << 1) , 0x001f); // ULsampling rate
@@ -3227,11 +3229,7 @@ static bool TurnOnADcPowerDmic(int ADCType, bool enable)
             Ana_Set_Reg(AUDDIGMI_CFG0, 0x0040, 0xffff);    //Disable DMIC0 (BIAS=10)
             Ana_Set_Reg(AUDDIGMI_CFG1, 0x0040, 0xffff);    //Disable DMIC1 (BIAS=10)
 
-            Ana_Set_Reg(AFE_UL_SRC0_CON0_H, (0 << 7),(1<<7) ); // dmic close
-            Ana_Set_Reg(AFE_UL_SRC0_CON0_H, (0 << 5) | (0 << 6), (1 << 5) | (1 << 6)); // dmic close
-
             Ana_Set_Reg(AFE_UL_SRC0_CON0_L, 0x0000, 0xffff);   //power on uplink
-            Ana_Set_Reg(AFE_UL_SRC0_CON0_H, 0x0000, 0xffe0);   //ch1 and ch2 digital mic OFF
             Ana_Set_Reg(AFE_ADDA2_UL_SRC_CON0_L, 0x0000, 0xffff);   //power on uplink
             Ana_Set_Reg(AFE_ADDA2_UL_SRC_CON1_L, 0xa000, 0xffff);   //power off
 
@@ -3239,11 +3237,10 @@ static bool TurnOnADcPowerDmic(int ADCType, bool enable)
             ClsqEnable(false);
             NvregEnable(false);
             Topck_Enable(false);
-            audckbufEnable(false);
             if (GetDLStatus() == false)
             {
                 // check for if DL/UL will share same register
-                Ana_Set_Reg(AFE_UL_DL_CON0, 0x0000, 0xffff);   //turn off afe
+
             }
             else
             {
@@ -5474,8 +5471,6 @@ static int mt6331_codec_probe(struct snd_soc_codec *codec)
     snd_soc_add_codec_controls(codec, mt6331_snd_Speaker_controls,
                                ARRAY_SIZE(mt6331_snd_Speaker_controls));
 #endif
-    snd_soc_add_codec_controls(codec,mt_ext_dev_controls,
-                               ARRAY_SIZE(mt_ext_dev_controls));
 
     snd_soc_add_codec_controls(codec, Audio_snd_auxadc_controls,
                                ARRAY_SIZE(Audio_snd_auxadc_controls));

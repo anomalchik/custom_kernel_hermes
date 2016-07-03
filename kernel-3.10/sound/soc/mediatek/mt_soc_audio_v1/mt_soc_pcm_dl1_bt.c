@@ -131,13 +131,11 @@ static snd_pcm_uframes_t mtk_dl1bt_pcm_pointer(struct snd_pcm_substream *substre
     kal_int32 HW_Cur_ReadIdx = 0;
     kal_uint32 Frameidx = 0;
     kal_int32 Afe_consumed_bytes = 0;
-    unsigned long flags;
-
     AFE_BLOCK_T *Afe_Block = &pdl1btMemControl->rBlock;
     //struct snd_pcm_runtime *runtime = substream->runtime;
     PRINTK_AUD_DL1(" %s Afe_Block->u4DMAReadIdx = 0x%x\n", __func__, Afe_Block->u4DMAReadIdx);
 
-    spin_lock_irqsave(&pdl1btMemControl->substream_lock, flags);
+    Auddrv_Dl1_Spinlock_lock();
 
     // get total bytes to copy
     //Frameidx = audio_bytes_to_frame(substream , Afe_Block->u4DMAReadIdx);
@@ -168,14 +166,14 @@ static snd_pcm_uframes_t mtk_dl1bt_pcm_pointer(struct snd_pcm_substream *substre
         Afe_Block->u4DMAReadIdx += Afe_consumed_bytes;
         Afe_Block->u4DMAReadIdx %= Afe_Block->u4BufferSize;
         PRINTK_AUD_DL1("[Auddrv] HW_Cur_ReadIdx =0x%x HW_memory_index = 0x%x Afe_consumed_bytes  = 0x%x\n", HW_Cur_ReadIdx, HW_memory_index, Afe_consumed_bytes);
-        spin_unlock_irqrestore(&pdl1btMemControl->substream_lock, flags);
+        Auddrv_Dl1_Spinlock_unlock();
 
         return audio_bytes_to_frame(substream , Afe_Block->u4DMAReadIdx);
     }
     else
     {
         Frameidx = audio_bytes_to_frame(substream , Afe_Block->u4DMAReadIdx);
-        spin_unlock_irqrestore(&pdl1btMemControl->substream_lock, flags);
+        Auddrv_Dl1_Spinlock_unlock();
         return Frameidx;
     }
     return 0;

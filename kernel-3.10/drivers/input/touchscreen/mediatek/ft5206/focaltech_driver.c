@@ -36,6 +36,10 @@
 #include <asm/io.h>
 #include <cust_eint.h>
 #include <cust_alsps.h>
+/********swf add start for vibrator 20150703*********/
+#include <cust_vibrator.h>
+#include <vibrator_hal.h>
+/********swf add end   for vibrator 20150703*********/
 
 /*if need these function, pls enable this MACRO*/
 //#define MT_PROTOCOL_B
@@ -1341,6 +1345,11 @@ extern int register_alsps(void);
 	int reset_count = 0;
 	unsigned char uc_reg_value;
 	unsigned char uc_reg_addr;
+/*****LC--swf--add--start--20150703 add vibrator when tp doubel click  */
+		vibr_Enable_HW();
+		mdelay(50);
+		vibr_Disable_HW();
+/*****LC--swf--add--end-- 20150703 add vibrator when tp doubel click  */
 	#ifdef TPD_PROXIMITY
 		int err;
 		struct hwmsen_object obj_ps;	
@@ -1367,6 +1376,8 @@ extern int register_alsps(void);
 		hwPowerOn(TPD_POWER_SOURCE_CUSTOM, VOL_2800, "TP");
 	#else
 		hwPowerOn(MT65XX_POWER_LDO_VGP2, VOL_2800, "TP");
+		//hwPowerOn(MT6331_POWER_LDO_VIBR, VOL_3300, "TP");//Tommy
+		//hwPowerOn(MT65XX_POWER_LDO_VGP1, VOL_3300, "TP");//Tommy
 	#endif
 	#ifdef TPD_POWER_SOURCE_1800
 		hwPowerOn(TPD_POWER_SOURCE_1800, VOL_1800, "TP");

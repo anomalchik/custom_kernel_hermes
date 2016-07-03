@@ -98,6 +98,11 @@
 ********************************************************************************/
 /* SENSOR CHIP VERSION */
 /*IMX*/
+/* Vanzo:wuzhiyong on Mon 20 Apr 12:17:00 +0800
+ * add new camera
+ */
+#define IMX230_SENSOR_ID                        0x0230
+//End of vanzo:wuzhiyong
 #define IMX220_SENSOR_ID                        0x0220
 #define IMX219_SENSOR_ID                        0x0219
 #define IMX214_SENSOR_ID                        0x0214
@@ -143,8 +148,10 @@
 #define OV2650_SENSOR_ID_3                      0x2655
 #define OV23850_SENSOR_ID											0x023850
 /*S5K*/
-#define S5K2P8_SENSOR_ID                        0x2108
-#define S5K3M2_SENSOR_ID                        0x30D2
+#define S5k3M2_OFILM_MID			0x07
+#define S5k3M2_2ND_MID			        0x01
+#define S5K3M2_SENSOR_ID                        (0x30D2+S5k3M2_OFILM_MID)
+#define S5K3M2_2ND_SENSOR_ID                    (0x30D2+S5k3M2_2ND_MID)
 #define S5K3AAEA_SENSOR_ID                      0x07AC
 #define S5K3BAFB_SENSOR_ID                      0x7070
 #define S5K3H7Y_SENSOR_ID                       0x3087
@@ -248,6 +255,11 @@
 #define CAMERA_HW_DEVNAME                       "kd_camera_hw"
 /* SENSOR DEVICE DRIVER NAME */
 /*IMX*/
+/* Vanzo:wuzhiyong on Mon 20 Apr 12:17:00 +0800
+ * add new camera
+ */
+#define SENSOR_DRVNAME_IMX230_MIPI_RAW          "imx230mipiraw"
+//End of vanzo:wuzhiyong
 #define SENSOR_DRVNAME_IMX220_MIPI_RAW          "imx220mipiraw"
 #define SENSOR_DRVNAME_IMX219_MIPI_RAW          "imx219mipiraw"
 #define SENSOR_DRVNAME_IMX214_MIPI_RAW          "imx214mipiraw"
@@ -296,6 +308,7 @@
 /*S5K*/
 #define SENSOR_DRVNAME_S5K2P8_MIPI_RAW          "s5k2p8mipiraw"
 #define SENSOR_DRVNAME_S5K3M2_MIPI_RAW          "s5k3m2mipiraw"
+#define SENSOR_DRVNAME_S5K3M2_2ND_MIPI_RAW      "s5k3m2_2ndmipiraw"
 #define SENSOR_DRVNAME_S5K3H2YX_MIPI_RAW        "s5k3h2yxmipiraw"
 
 #define SENSOR_DRVNAME_S5K3H7Y_MIPI_RAW         "s5k3h7ymipiraw"

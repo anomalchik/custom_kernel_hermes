@@ -188,6 +188,10 @@ typedef enum {
     SENSOR_FEATURE_GET_PDAF_DATA,
     SENSOR_FEATURE_GET_SENSOR_PDAF_CAPACITY,
     SENSOR_FEATURE_SET_HDR_SHUTTER,
+    /*lenovo-sw sunliang modify for long_shutter 2015_4_25 begin*/
+    SENSOR_FEATURE_LOCK_AE,
+    SENSOR_FEATURE_UNLOCK_AE,
+    /*lenovo-sw sunliang modify for long_shutter 2015_4_25 end*/
     SENSOR_FEATURE_MAX
 } ACDK_SENSOR_FEATURE_ENUM;
 

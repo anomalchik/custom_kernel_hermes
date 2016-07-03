@@ -172,9 +172,15 @@ miui.whetstone.net u:object_r:mcd_service:s0
 miui.whetstone    u:object_r:system_app_service:s0
 mdb.remote_display u:object_r:mdb_display_service:s0
 miui.fdpp u:object_r:fdpp_service:s0
+miui.sedc u:object_r:sedc_service:s0
 #line 1 "miui/device/common/sepolicy/v21/service_contexts"
 security          u:object_r:system_server_service:s0
 MiuiBackup        u:object_r:system_server_service:s0
 MiuiInit          u:object_r:system_server_service:s0
 whetstone.activity u:object_r:system_server_service:s0
 miui.security.keystore  u:object_r:system_server_service:s0
+#line 1 "vendor/graphiteplus/proprietary/sepolicy//service_contexts"
+securespaces                              u:object_r:system_server_service:s0
+spaceencryption                           u:object_r:system_server_service:s0
+spacenotification                         u:object_r:system_server_service:s0
+

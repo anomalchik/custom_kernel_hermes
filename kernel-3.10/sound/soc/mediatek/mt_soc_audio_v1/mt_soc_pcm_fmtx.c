@@ -110,7 +110,8 @@ static int Audio_fmtx_hdoutput_Set(struct snd_kcontrol *kcontrol, struct snd_ctl
         printk("return -EINVAL\n");
         return -EINVAL;
     }
-    if ((ucontrol->value.integer.value[0] == true) &&(fmtx_hdoutput_control == false))
+    fmtx_hdoutput_control = ucontrol->value.integer.value[0];
+    if (fmtx_hdoutput_control)
     {
         // set APLL clock setting
         EnableApll1(true);
@@ -120,7 +121,7 @@ static int Audio_fmtx_hdoutput_Set(struct snd_kcontrol *kcontrol, struct snd_ctl
         AudDrv_APLL1Tuner_Clk_On();
         AudDrv_APLL2Tuner_Clk_On();
     }
-    else if ((ucontrol->value.integer.value[0] == false) &&(fmtx_hdoutput_control == true))
+    else
     {
         // set APLL clock setting
         EnableApll1(false);
@@ -130,8 +131,6 @@ static int Audio_fmtx_hdoutput_Set(struct snd_kcontrol *kcontrol, struct snd_ctl
         AudDrv_APLL1Tuner_Clk_Off();
         AudDrv_APLL2Tuner_Clk_Off();
     }
-
-    fmtx_hdoutput_control = ucontrol->value.integer.value[0];
     return 0;
 }
 

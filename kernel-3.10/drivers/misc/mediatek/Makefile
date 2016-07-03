@@ -145,7 +145,6 @@ endif
 #obj-y	+= matv/
 #obj-y	+= touchpanel/
 #
-obj-y	+= battery_fual/
 
 obj-$(CONFIG_MTK_VOW_SUPPORT)	+= vow/
 
@@ -230,6 +229,7 @@ obj-$(CONFIG_MTK_MMC)	+= mmc-host/
 obj-$(CONFIG_MTK_GPT_SCHEME_SUPPORT)	+= partition/
 obj-$(CONFIG_MTK_MMC)	+= pmt/
 obj-$(CONFIG_MTK_SOUND) += smartpa/
+obj-$(CONFIG_MTK_IRTX) += irtx/
 
 #charge pump
 ifeq ($(CONFIG_CUSTOM_KERNEL_CHARGEPUMP),y)

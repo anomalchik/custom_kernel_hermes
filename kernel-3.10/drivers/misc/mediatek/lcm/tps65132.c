@@ -31,7 +31,7 @@
  * Define
  *****************************************************************************/
 
-#define TPS_I2C_BUSNUM  I2C_I2C_LCD_BIAS_CHANNEL//for I2C channel 0
+#define TPS_I2C_BUSNUM  0
 #define I2C_ID_NAME "tps65132"
 #define TPS_ADDR 0x3E
 

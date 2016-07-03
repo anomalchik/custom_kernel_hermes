@@ -2,8 +2,6 @@
 
 include $(srctree)/drivers/misc/mediatek/Makefile.custom
 
-EXTRA_CFLAGS := -I$(src)/../common
-
 obj-$(CONFIG_MT_SND_SOC_V1) += AudDrv_Afe.o AudDrv_Ana.o AudDrv_Clk.o
 obj-$(CONFIG_MT_SND_SOC_V1) += mt_soc_afe_control.o mt_soc_afe_connection.o mt_soc_pcm_common.o
 obj-$(CONFIG_MT_SND_SOC_V1) += mt_soc_pcm_capture.o mt_soc_pcm_dl1.o mt_soc_pcm_dummy.o mt_soc_pcm_routing.o mt_soc_pcm_capture2.o mt_soc_pcm_mod_adci2s.o mt_soc_pcm_adc2_adci2s2.o mt_soc_pcm_io2_awb.o 
