@@ -40,7 +40,7 @@
 //#define LOG_WRN(format, args...) xlog_printk(ANDROID_LOG_WARN ,PFX, "[%S] " format, __FUNCTION__, ##args)
 //#defineLOG_INF(format, args...) xlog_printk(ANDROID_LOG_INFO ,PFX, "[%s] " format, __FUNCTION__, ##args)
 //#define LOG_DBG(format, args...) xlog_printk(ANDROID_LOG_DEBUG ,PFX, "[%S] " format, __FUNCTION__, ##args)
-#define LOG_INF(format, args...)	xlog_printk(ANDROID_LOG_INFO   , PFX, "[OV5670][%s] " format, __FUNCTION__, ##args)
+#define LOG_INF(format, args...)	xlog_printk(ANDROID_LOG_INFO   , PFX, "[OV5670_2ND][%s] " format, __FUNCTION__, ##args)
 
 static DEFINE_SPINLOCK(imgsensor_drv_lock);
 
@@ -141,7 +141,7 @@ static imgsensor_info_struct imgsensor_info = {
 	.sensor_output_dataformat = SENSOR_OUTPUT_FORMAT_RAW_B,//sensor output first pixel color
 	.mclk = 24,//mclk value, suggest 24 or 26 for 24Mhz or 26Mhz
 	.mipi_lane_num = SENSOR_MIPI_2_LANE,//mipi lane num
-	.i2c_addr_table = {0x6c, 0xff},//record sensor support all write id addr, only supprt 4must end with 0xff
+	.i2c_addr_table = {0x20, 0xff},//record sensor support all write id addr, only supprt 4must end with 0xff
 };
 
 
@@ -157,7 +157,7 @@ static imgsensor_struct imgsensor = {
 	.test_pattern = KAL_FALSE,		//test pattern mode or not. KAL_FALSE for in test pattern mode, KAL_TRUE for normal output
 	.current_scenario_id = MSDK_SCENARIO_ID_CAMERA_PREVIEW,//current scenario id
 	.ihdr_en = 0, //sensor need support LE, SE with HDR feature
-	.i2c_write_id = 0x6c,//record current sensor's i2c write id
+	.i2c_write_id = 0x20,//record current sensor's i2c write id
 };
 
 
@@ -807,7 +807,7 @@ static void sensor_init(void)
 
 static void preview_setting(void)
 {
-	LOG_INF(" OV5670PreviewSetting_2lane enter\n");
+	LOG_INF(" OV5670_2ND_PreviewSetting_2lane enter\n");
 
 	//@@PV_Quarter_size_30fps_800Mbps/lane_1296x972							  
 	//99 1296 972 															  
@@ -859,7 +859,7 @@ static void preview_setting(void)
 
 static void capture_setting(kal_uint16 currefps)
 {
-	LOG_INF("OV5670CaptureSetting_2lane enter! currefps:%d\n",currefps);
+	LOG_INF("OV5670_2ND_CaptureSetting_2lane enter! currefps:%d\n",currefps);
 	if (currefps == 240) { //24fps for PIP
 		write_cmos_sensor(0x0100, 0x00); 
 		

@@ -13,8 +13,8 @@
  *	 CMOS sensor header file
  *
  ****************************************************************************/
-#ifndef _OV5670MIPI_SENSOR_H
-#define _OV5670MIPI_SENSOR_H
+#ifndef _OV5670MIPI_2ND_SENSOR_H
+#define _OV5670MIPI_2ND_SENSOR_H
 
 
 typedef enum{
