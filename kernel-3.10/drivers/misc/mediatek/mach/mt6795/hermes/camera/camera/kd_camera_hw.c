@@ -1,3 +1,10 @@
+/*
+Some imgsensors name i don't replace on define from kd_imgsensor.h
+it may cause errors because it missing in kd_imgsensor.h
+
+Reversed by LazyC0DEr
+Edited by Anomalchik
+*/
 #include <linux/videodev2.h>
 #include <linux/i2c.h>
 #include <linux/platform_device.h>
@@ -117,7 +124,7 @@ u32 pinSet[3][8] = {
         }
  
 		if (currSensorName){
-			if( (0 == strcmp("ov5670mipi", currSensorName))	|| (0 == strcmp("ov5670_2nd_mipi", currSensorName)) || (0 == strcmp("ov5670_flt_2nd_mipi", currSensorName))	|| (0 == strcmp("s5k5e8yxmipiraw", currSensorName))){
+			if( (0 == strcmp(SENSOR_DRVNAME_OV5670_MIPI_RAW, currSensorName))	|| (0 == strcmp(SENSOR_DRVNAME_OV5670_2ND_MIPI_RAW, currSensorName)) || (0 == strcmp("ov5670_flt_2nd_mipi", currSensorName))	|| (0 == strcmp("s5k5e8yxmipiraw", currSensorName))){
 					
 				if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_A, VOL_2800,mode_name))
 				{
@@ -145,7 +152,7 @@ u32 pinSet[3][8] = {
 				if(mt_set_gpio_dir(pinSet[pinSetIdx][IDX_PS_CMPDN],GPIO_DIR_OUT)){PK_DBG("[CAMERA LENS] set gpio dir failed!!\n");}
 				if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_ON])){PK_DBG("[CAMERA LENS] set gpio failed!!\n");}
 				
-			}else if( (0 == strcmp("s5k3m2mipiraw", currSensorName)) || (0 == strcmp("s5k3m2_2ndmipiraw", currSensorName)) || (0 == strcmp("s5k3l8mipiraw", currSensorName)) || (0 == strcmp("ov13853mipiraw", currSensorName))){
+			}else if( (0 == strcmp(SENSOR_DRVNAME_S5K3M2_MIPI_RAW, currSensorName)) || (0 == strcmp(SENSOR_DRVNAME_S5K3M2_2ND_MIPI_RAW, currSensorName)) || (0 == strcmp("s5k3l8mipiraw", currSensorName)) || (0 == strcmp("ov13853mipiraw", currSensorName))){
 				if(mt_set_gpio_mode(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_MODE])){PK_DBG("[CAMERA SENSOR] set gpio mode failed!! (CMRST)\n");}
 				if(mt_set_gpio_dir(pinSet[pinSetIdx][IDX_PS_CMRST],GPIO_DIR_OUT)){PK_DBG("[CAMERA SENSOR] set gpio dir failed!! (CMRST)\n");}
 				if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_OFF])){PK_DBG("[CAMERA SENSOR] set gpio failed!! (CMRST)\n");}
@@ -240,7 +247,7 @@ u32 pinSet[3][8] = {
 				if(mt_set_gpio_mode(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_MODE])){PK_DBG("[CAMERA LENS] set gpio mode failed!!\n");}
 				if(mt_set_gpio_dir(pinSet[pinSetIdx][IDX_PS_CMPDN],GPIO_DIR_OUT)){PK_DBG("[CAMERA LENS] set gpio dir failed!!\n");}
 				if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_OFF])){PK_DBG("[CAMERA LENS] set gpio failed!!\n");}
-			}else if ((0 == strcmp("s5k3m2mipiraw", currSensorName))){
+			}else if ((0 == strcmp(SENSOR_DRVNAME_S5K3M2_MIPI_RAW, currSensorName))){
 				return 0;
 			}
 			
@@ -260,7 +267,7 @@ u32 pinSet[3][8] = {
             ISP_MCLK2_EN(0);
         }
 		if (currSensorName){
-			if( (0 == strcmp("ov5670mipi", currSensorName))	|| (0 == strcmp("ov5670_2nd_mipi", currSensorName)) || (0 == strcmp("ov5670_flt_2nd_mipi", currSensorName))	|| (0 == strcmp("s5k5e8yxmipiraw", currSensorName))){
+			if( (0 == strcmp(SENSOR_DRVNAME_OV5670_MIPI_RAW, currSensorName))	|| (0 == strcmp(SENSOR_DRVNAME_OV5670_2ND_MIPI_RAW , currSensorName)) || (0 == strcmp("ov5670_flt_2nd_mipi", currSensorName))	|| (0 == strcmp("s5k5e8yxmipiraw", currSensorName))){
 					
 				if(mt_set_gpio_mode(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_MODE])){PK_DBG("[CAMERA LENS] set gpio mode failed!!\n");}
 				if(mt_set_gpio_dir(pinSet[pinSetIdx][IDX_PS_CMPDN],GPIO_DIR_OUT)){PK_DBG("[CAMERA LENS] set gpio dir failed!!\n");}
@@ -285,7 +292,7 @@ u32 pinSet[3][8] = {
 				}
 				return 0;
 				
-			}else if( (0 == strcmp("s5k3m2mipiraw", currSensorName)) || (0 == strcmp("s5k3m2_2ndmipiraw", currSensorName)) || (0 == strcmp("s5k3l8mipiraw", currSensorName)) || (0 == strcmp("ov13853mipiraw", currSensorName))){
+			}else if( (0 == strcmp(SENSOR_DRVNAME_S5K3M2_MIPI_RAW, currSensorName)) || (0 == strcmp(SENSOR_DRVNAME_S5K3M2_2ND_MIPI_RAW, currSensorName)) || (0 == strcmp("s5k3l8mipiraw", currSensorName)) || (0 == strcmp("ov13853mipiraw", currSensorName))){
 				if(mt_set_gpio_mode(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_MODE])){PK_DBG("[CAMERA SENSOR] set gpio mode failed!! (CMRST)\n");}
 				if(mt_set_gpio_dir(pinSet[pinSetIdx][IDX_PS_CMRST],GPIO_DIR_OUT)){PK_DBG("[CAMERA SENSOR] set gpio dir failed!! (CMRST)\n");}
 				if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_OFF])){PK_DBG("[CAMERA SENSOR] set gpio failed!! (CMRST)\n");}
