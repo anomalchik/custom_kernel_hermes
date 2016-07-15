@@ -102,10 +102,10 @@
  * add new camera
  */
 /* XRN 2 CAMERAS start*/ 
-#define OV5670MIPI_SENSOR_ID                    0x5671//5670
-#define OV5670MIPI_2ND_SENSOR_ID				0x5670//5671
-#define S5K3M2_SENSOR_ID                        (0x30D2+S5k3M2_OFILM_MID) //i don't know id for this sensor. need take log from phone with imgsensor
-#define S5K3M2_2ND_SENSOR_ID                    (0x30d2)
+#define OV5670MIPI_SENSOR_ID                    0x5670
+#define OV5670MIPI_2ND_SENSOR_ID				0x5671
+#define S5K3M2_SENSOR_ID                        (0x30D2)
+#define S5K3M2_2ND_SENSOR_ID                    (0x30d3)
 /* XRN 2 CAMERAS end*/ 
 #define IMX230_SENSOR_ID                        0x0230
 //End of vanzo:wuzhiyong
