@@ -266,8 +266,9 @@ static SET_PD_BLOCK_INFO_T imgsensor_pd_info =
 	.i4PosL = {{23,20},{75,20},{39,24},{59,24},{27,32},{71,32},{43,36},{55,36},{43,52},{55,52},{27,56},{71,56},{39,64},{59,64},{23,68},{75,68}},    
     .i4PosR = {{23,16},{75,16},{39,20},{59,20},{27,36},{71,36},{43,40},{55,40},{43,48},{55,48},{27,52},{71,52},{39,68},{59,68},{23,72},{75,72}},
 };
-
+/* Disable long shuter_feature
 #define LONG_SHUTTER_FEATURE
+*/
 #ifdef LONG_SHUTTER_FEATURE
 /*lenovo-sw sunliang modify for long_shutter 2015_4_25 begin*/
 static kal_uint16	preview_gain=0;
