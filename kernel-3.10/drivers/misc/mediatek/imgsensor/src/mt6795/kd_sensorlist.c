@@ -1767,8 +1767,8 @@ inline static int  adopt_CAMERA_HW_FeatureControl(void *pBuf)
 	    g_NewSensorExpGain.uISPGainDelayFrame = 0xFF;
 	    spin_unlock(&kdsensor_drv_lock);
     /*lenovo-sw sunliang modify for long_shutter 2015_4_25 begin*/
-        case SENSOR_FEATURE_LOCK_AE:
-        case SENSOR_FEATURE_UNLOCK_AE:
+     //   case SENSOR_FEATURE_LOCK_AE:
+      //  case SENSOR_FEATURE_UNLOCK_AE:
     /*lenovo-sw sunliang modify for long_shutter 2015_4_25 end*/
 	case SENSOR_FEATURE_SET_ISP_MASTER_CLOCK_FREQ:
 	case SENSOR_FEATURE_SET_REGISTER:
