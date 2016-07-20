@@ -3,7 +3,7 @@
 Works in all roms(libsrv_init.so is include to buildable zip) and recovery
 
 * Works:
-	* LCM(nt35596 tianma)
+	* LCM(nt35596_tianma, nt35596_auo)
 	* tps65132
 	* Sdcard
 	* Wi-fi
@@ -14,7 +14,7 @@ Works in all roms(libsrv_init.so is include to buildable zip) and recovery
 	* Brightness
 	* Leds indication (only red,green,blue)
 	* MD1 and MD2(sim1 and sim2)
-	* Touch(focaltech)
+	* Touch(focaltech and atmel)
 	* Sound
 
 * Partitialy works:
@@ -26,8 +26,7 @@ Works in all roms(libsrv_init.so is include to buildable zip) and recovery
 
 * Don't work:
 	* tps6128x (mt-i2c: transfer error)
-	* LCM (nt35532_boe, nt35596_auo)
-	* Touch(atmel)
+	* LCM (nt35532_boe)
 	* Imgsensor(all img sensors)
 	* Lens
 	* CW2015 (hw battery driver)
