@@ -1,6 +1,6 @@
 # Custom kernel for Xiaomi Hermes (Redmi Note 2)
 # Kernel version 3.10.61 LCSH and Vanzo Hybrid
-Works in rom(tested 7.0.8.0) and recovery
+Works in all roms(libsrv_init.so is include to buildable zip) and recovery
 
 * Works:
 	* LCM(nt35596 tianma)
@@ -12,11 +12,12 @@ Works in rom(tested 7.0.8.0) and recovery
 	* Bt
 	* Button-backlight
 	* Brightness
-	* Leds indication only (red,green,blu)
+	* Leds indication (only red,green,blue)
 	* MD1 and MD2(sim1 and sim2)
+	* Touch(focaltech)
+	* Sound
 
 * Partitialy works:
-	* Touch(focaltech)
 	* Alsps (ps bugged)
 	* Accel
 	* Mag
@@ -36,38 +37,41 @@ Works in rom(tested 7.0.8.0) and recovery
 # BUILD
 Сonfigure shell script "build.sh" and RUN!
 
+# CLEAN
+Сonfigure shell script "clean.sh" and RUN!
+
 # OTHER
 Dts forked from stock
 
 # I2c
 
 * I2C0
-	* tps65132              (003e)
-	* kd_camera_hw          (007f)
+	* tps65132              (003e) - lcm
+	* kd_camera_hw          (007f) - kd_sensor_list
 	* DF9761BAF             (0018) - LENS
-	* CAM_CAL_DRV           (0036)
+	* CAM_CAL_DRV           (0036) - S5K3M2 cam cal driver
 
 * I2C1
-	* da9210                (0068)
-	* tps6128x              (0075)
+	* da9210                (0068) - charger
+	* tps6128x              (0075) - charger
 
 * I2C2
-	* atmel                 (004a)
-	* kd_camera_hw_bus 2    (007f)
-	* FT			(0038)
+	* atmel                 (004a) - atmel touch
+	* kd_camera_hw_bus 2    (007f) - kd_sensor_list
+	* FT			(0038) - focaltech touch
 
 * I2C3
 	* akm0991               (000c)
 	* yas537                (002e)
-	* LSM6DS3_ACCEL         (006a)
-	* LTR_559ALS		(0023)
-	* LSM6DS3_GYRO		(0034)
+	* LSM6DS3_ACCEL         (006a) - accelerometer
+	* LTR_559ALS		(0023) - AutomaticLightSensor/ProximitySensor
+	* LSM6DS3_GYRO		(0034) - gyroscope
 	* stk3x1x               (0048)
-	* bmi160_gyro		(0066)
-	* bmi160_acc		(0068)
+	* bmi160_gyro		(0066) - gyroscope
+	* bmi160_acc		(0068) - accelerometer 
 
 * I2C4
-	* CW2015 		(0062)
+	* CW2015 		(0062) - hw charger driver
 
 # AUTORS
 * nofearnohappy

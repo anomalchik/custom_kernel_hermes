@@ -59,7 +59,7 @@ extern int iReadRegI2C(u8 *a_pSendData , u16 a_sizeSendData, u8 * a_pRecvData, u
 /*******************************************************************************
 *
 ********************************************************************************/
-#define S5K3M2_CAM_CAL_DRVNAME "S5K3M2_CAM_CAL_DRV"
+#define S5K3M2_CAM_CAL_DRVNAME "CAM_CAL_DRV"
 #define CAM_CAL_I2C_GROUP_ID 0
 /*******************************************************************************
 *

@@ -29,7 +29,7 @@
 
 static DEFINE_SPINLOCK(g_CAM_CALLock); // for SMP
 
-#define CAM_CAL_I2C_BUSNUM 1
+#define CAM_CAL_I2C_BUSNUM 0
 static struct i2c_board_info __initdata kd_cam_cal_dev={ I2C_BOARD_INFO("dummy_cam_cal", 0xAB>>1)}; //make dummy_eeprom co-exist
 
 /*******************************************************************************
