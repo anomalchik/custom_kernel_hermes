@@ -1446,8 +1446,9 @@ static inline void mt_i2c_init_hw(mt_i2c *i2c)
 {
 
   //power on
-  mt_i2c_power_ctl(i2c->id,1);
+  //mt_i2c_power_ctl(i2c->id,1);
   //
+  mt_i2c_power_ctl(i2c->id,0); 
   i2c_writel(i2c,OFFSET_SOFTRESET, 0x0001);
   i2c_writel(i2c,OFFSET_DCM_EN, 0x0);
   

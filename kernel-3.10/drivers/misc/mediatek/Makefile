@@ -299,15 +299,15 @@ obj-y	+= ddr/$(CONFIG_MTK_PLATFORM)/
 endif
 # Vanzo:wangfei on: Tue, 10 Mar 2015 15:57:44 +0800
 # add hall framework
-
-project_name:=$(shell echo $(VANZO_INNER_PROJECT_NAME))
-ifneq ($(project_name),)
-
-custom_kernel_hall:= $(addprefix hall/,$(addsuffix /, $(shell echo $(CUSTOM_KERNEL_HALL))))
-
-$(info "custom_kernel_hall:$(custom_kernel_hall)")
-obj-y += $(custom_kernel_hall)
-
-endif
-
+#
+#project_name:=$(shell echo $(VANZO_INNER_PROJECT_NAME))
+#ifneq ($(project_name),)
+#
+#custom_kernel_hall:= $(addprefix hall/,$(addsuffix /, $(shell echo $(CUSTOM_KERNEL_HALL))))
+#
+#$(info "custom_kernel_hall:$(custom_kernel_hall)")
+#obj-y += $(custom_kernel_hall)
+#
+#endif
+#
 # End of Vanzo: wangfei

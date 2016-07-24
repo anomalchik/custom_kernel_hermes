@@ -128,6 +128,7 @@ bool hwPowerOn(MT65XX_POWER powerId, MT65XX_POWER_VOLTAGE powerVolt, char *mode_
     	||(powerId == MT6331_POWER_LDO_VGP2)
     	||(powerId == MT6331_POWER_LDO_VGP3)
     	||(powerId == MT6331_POWER_LDO_VBIASN)
+    	||(powerId == MT6331_POWER_LDO_VTCXO2) //CORE-BH-LDOSetting-03+
     	
     	||(powerId == MT6332_POWER_LDO_VAUXB32)
     	||(powerId == MT6332_POWER_LDO_VDIG18)

@@ -2738,7 +2738,7 @@ static int CAMERA_HW_i2c_probe(struct i2c_client *client, const struct i2c_devic
     spin_lock(&kdsensor_drv_lock);
     g_pstI2Cclient = client;
     /* set I2C clock rate */
-    g_pstI2Cclient->timing = 200;/* 200k */
+    g_pstI2Cclient->timing = 400;/* 400k */
     g_pstI2Cclient->ext_flag &= ~I2C_POLLING_FLAG; /* No I2C polling busy waiting */
 
     spin_unlock(&kdsensor_drv_lock);
@@ -2937,7 +2937,7 @@ static int CAMERA_HW_i2c_probe2(struct i2c_client *client, const struct i2c_devi
     g_pstI2Cclient2 = client;
 
     /* set I2C clock rate */
-    g_pstI2Cclient2->timing = 200;/* 200k */
+    g_pstI2Cclient2->timing = 400;/* 400k */
     g_pstI2Cclient2->ext_flag &= ~I2C_POLLING_FLAG; /* No I2C polling busy waiting */
     spin_unlock(&kdsensor_drv_lock);
 

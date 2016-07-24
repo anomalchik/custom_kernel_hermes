@@ -7912,7 +7912,7 @@ EXIT:
 static MINT32 mmap_kmem(struct file *filp, struct vm_area_struct *vma)
 {
 	int ret;
-	long length = 0;
+	unsigned long length = 0; /*MM-SL-MTKPatch-00+ */
 	length = vma->vm_end - vma->vm_start;
 
 	/* check length - do not allow larger mappings than the number of
@@ -7945,7 +7945,7 @@ static MINT32 ISP_mmap(
     struct file *pFile,
     struct vm_area_struct *pVma)
 {
-    long length = 0;
+    unsigned long length = 0; /*MM-SL-MTKPatch-00+ */
     MUINT32 pfn = 0x0;
     LOG_DBG("- E.");
     length = pVma->vm_end - pVma->vm_start;

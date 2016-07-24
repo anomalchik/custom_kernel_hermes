@@ -58,6 +58,7 @@ enum dvfs_kicker {
 	KR_SCREEN_OFF,		/* 3 */
 	KR_MM_SCEN,		/* 4 */
 	KR_EMI_MON,		/* 5 */
+	KR_MM_CAM,      /* 6 *//* MM-MC-SetI2cClockRateTo400kHz-00+ */
 	NUM_KICKERS
 };
 #else
